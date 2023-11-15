@@ -5,27 +5,27 @@ import FeedbackCard from "../components/FeedbackCard";
 import { Box, Button as MuiButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import Contacts from "./Contacts";
 
 const Button = styled(MuiButton)((props) => ({
+  marginLeft: "2rem",
+  boxShadow: 3,
+  color: "white",
+  backgroundColor: remarkableRed,
   "&:hover": {
-    backgroundColor: "green",
+    backgroundColor: "#f8b9b9",
   },
 }));
 
 const Home = ({}) => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <div style={{ display: "inline-flex", backgroundColor: "black" }}>
-        <a href="https://instagram.com/remarkable.mkt" target="_blank">
-          <img
-            src={letteringLogo}
-            className="logo remarkable"
-            alt="Remarkable logo"
-          />
-        </a>
-      </div>
-      <div style={{ backgroundColor: "black" }}>
+      <div>
         <h1>TORNA-TE NOTÁVEL</h1>
+        <h3>
+          Aqui viverá a descrição da empresa. Os nossos projetos, marcas,
+          parcerias, etc...
+        </h3>
       </div>
       <div style={{ backgroundColor: remarkableRed }}>
         <h1>Feedback</h1>
@@ -56,29 +56,13 @@ const Home = ({}) => {
         }}
       >
         <h1 style={{ color: "black" }}>Entre em contacto!</h1>
-        <Button
-          className="button"
-          sx={{
-            marginLeft: 5,
-            boxShadow: 3,
-            color: "white",
-            backgroundColor: remarkableRed,
-          }}
-        >
-          Aqui
-        </Button>
+        <Button className="button">Aqui</Button>
       </div>
-      <div style={{ backgroundColor: "black" }}>
-        <h1>Contactos</h1>
-        <Box display={"inline-flex"} alignItems={"center"}>
-          <InstagramIcon />
-          <h3 style={{ marginLeft: 5 }}>remarkable.mkt</h3>
-        </Box>
-      </div>
+      <Contacts />
     </div>
   );
 };
 
-Home.protoTypes = {};
+Home.proptypes = {};
 
 export default Home;

@@ -14,7 +14,7 @@ const FeedbackCard = ({ name, description, last}) => {
   );
 };
 
-FeedbackCard.propTypes = {
+FeedbackCard.proptypes = {
   name: PropTypes.string,
   description: PropTypes.string,
 };
