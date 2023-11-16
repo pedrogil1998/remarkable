@@ -4,7 +4,6 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneCallbackIcon from "@mui/icons-material/PhoneCallback";
 import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
 import maLogo from "./../assets/maLogo.svg";
-
 import { Box } from "@mui/material";
 
 const Contacts = () => {
@@ -44,8 +43,8 @@ const Contacts = () => {
           <a href="https://instagram.com/remarkable.mkt" target="_blank">
             <img
               src={maLogo}
-              className="contact remarkable"
-              alt="Remarkable contact"
+              className="logoContact remarkable"
+              alt="Remarkable logoContact"
             />
           </a>
         </Box>
@@ -55,4 +54,5 @@ const Contacts = () => {
 };
 
 Contacts.proptypes = {};
+
 export default Contacts;

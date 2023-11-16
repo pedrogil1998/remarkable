@@ -1,10 +1,8 @@
 import PropTypes from "prop-types";
-import letteringLogo from "./../assets/letteringLogo.svg";
 import { remarkableRed } from "./../utils/colors";
 import FeedbackCard from "../components/FeedbackCard";
 import { Box, Button as MuiButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import Contacts from "./Contacts";
 
 const Button = styled(MuiButton)((props) => ({

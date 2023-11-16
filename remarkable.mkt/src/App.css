@@ -11,11 +11,16 @@
   transition: filter 300ms;
 }
 
-.contact {
+.logoContact {
   height: 20em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+}
+
+.about {
+  height: 10em;
+  padding: 1.5em;
 }
 
 .logo:hover {
