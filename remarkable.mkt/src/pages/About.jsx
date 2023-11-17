@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
-import Contacts from "./Contacts";
 import mission from "./../assets/mission.svg";
 import vision from "./../assets/vision.svg";
 import values from "./../assets/values.svg";
 import { Box } from "@mui/material";
+import Contacts from "../components/Contacts";
 
 const About = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <Box margin="2rem 15rem">
+      <Box margin="0 15rem">
         <h1>A nossa história</h1>
         <h3>
           Aqui vamos contar um pedacinho da nossa história. Lorem Ipsum is
@@ -39,38 +39,53 @@ const About = () => {
           justifyContent="space-between"
           bgcolor="white"
         >
-          <Box maxWidth="350px" display="flex" flexDirection="column">
+          <Box
+            margin="2rem"
+            maxWidth="350px"
+            display="flex"
+            flexDirection="column"
+          >
             <img
               src={mission}
               className="about remarkable"
               alt="Remarkable about"
             />
-            <text style={{ color: "black" }}>
+            <p style={{ color: "black" }}>
               A nossa missão é ajudar-te a ti! Queremos que o teu negocio seja o
-              negócio.
-            </text>
+              negócio. Vamos ajudar-te a alcançar os teus objetivos.
+            </p>
           </Box>
-          <Box maxWidth="350px" display="flex" flexDirection="column">
+          <Box
+            margin="2rem"
+            maxWidth="350px"
+            display="flex"
+            flexDirection="column"
+          >
             <img
               src={vision}
               className="about remarkable"
               alt="Remarkable about"
             />
-            <text style={{ color: "black" }}>
+            <p style={{ color: "black" }}>
               Somos uma empresa focada em empresas. O digital não é o futuro, é
               o presente. Connosco tem soluções 360.
-            </text>
+            </p>
           </Box>
-          <Box maxWidth="350px" display="flex" flexDirection="column">
+          <Box
+            margin="2rem"
+            maxWidth="350px"
+            display="flex"
+            flexDirection="column"
+          >
             <img
               src={values}
               className="about remarkable"
               alt="Remarkable about"
             />
-            <text style={{ color: "black" }}>
+            <p style={{ color: "black" }}>
               Eticamente somos fortíssimos, leais, trabalhadores e
-              perfecionistas.
-            </text>
+              perfecionistas. Queremos ter um impacto enorme no seu trabalho.
+            </p>
           </Box>
         </Box>
       </div>

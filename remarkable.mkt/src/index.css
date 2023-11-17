@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Arimo-Bold";
+  src: url("./fonts/Arimo-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Arimo";
+  src: url("./fonts/Arimo-Regular.ttf") format("truetype");
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

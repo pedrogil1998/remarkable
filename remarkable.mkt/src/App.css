@@ -27,10 +27,18 @@
   filter: drop-shadow(0 0 2em #b21111);
 }
 
+.feedbackCard:hover {
+  filter: drop-shadow(0 0 1em black);
+}
+
 .card {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+.aspas {
+  height: 5em;
 }

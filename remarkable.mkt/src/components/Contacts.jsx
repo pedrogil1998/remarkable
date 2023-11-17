@@ -20,23 +20,23 @@ const Contacts = () => {
           <Box display={"flex"} flexDirection={"column"}>
             <Box display={"inline-flex"} alignItems={"center"}>
               <InstagramIcon />
-              <text style={{ marginLeft: 5 }}>remarkable.mkt</text>
+              <p style={{ marginLeft: 5 }}>remarkable.mkt</p>
             </Box>
             <Box display={"inline-flex"} alignItems={"center"}>
               <EmailIcon />
-              <text style={{ marginLeft: 5 }}>remarkable.mkt@gmail.com</text>
+              <p style={{ marginLeft: 5 }}>remarkable.mkt@gmail.com</p>
             </Box>
             <Box display={"inline-flex"} alignItems={"center"}>
               <PhoneCallbackIcon />
-              <text style={{ marginLeft: 5 }}>+351 917 264 157</text>
+              <p style={{ marginLeft: 5 }}>+351 917 264 157</p>
             </Box>
           </Box>
           <h2 style={{ textDecoration: "underline" }}>Office</h2>
           <Box display={"inline-flex"} alignItems={"center"}>
             <MapsHomeWorkIcon />
-            <text style={{ marginLeft: 5 }}>
+            <p style={{ marginLeft: 5 }}>
               Rua do Calvário, 4580-130 Paredes
-            </text>
+            </p>
           </Box>
         </Box>
         <Box>
