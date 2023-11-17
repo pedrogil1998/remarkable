@@ -60,7 +60,7 @@ const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
               className="service"
               alt="Service marketingdigital"
             />
-            <TitleText align="center" variant="h4">
+            <TitleText align="center" variant="h5">
               {name}
             </TitleText>
           </Box>
