@@ -4,7 +4,8 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneCallbackIcon from "@mui/icons-material/PhoneCallback";
 import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
 import maLogo from "./../assets/maLogo.svg";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+
 
 const Contacts = () => {
   return (
@@ -20,23 +21,21 @@ const Contacts = () => {
           <Box display={"flex"} flexDirection={"column"}>
             <Box display={"inline-flex"} alignItems={"center"}>
               <InstagramIcon />
-              <p style={{ marginLeft: 5 }}>remarkable.mkt</p>
+              <Typography style={{ marginLeft: 5 }}>remarkable.mkt</Typography>
             </Box>
             <Box display={"inline-flex"} alignItems={"center"}>
               <EmailIcon />
-              <p style={{ marginLeft: 5 }}>remarkable.mkt@gmail.com</p>
+              <Typography style={{ marginLeft: 5 }}>remarkable.mkt@gmail.com</Typography>
             </Box>
             <Box display={"inline-flex"} alignItems={"center"}>
               <PhoneCallbackIcon />
-              <p style={{ marginLeft: 5 }}>+351 917 264 157</p>
+              <Typography style={{ marginLeft: 5 }}>+351 917 264 157</Typography>
             </Box>
           </Box>
           <h2 style={{ textDecoration: "underline" }}>Office</h2>
           <Box display={"inline-flex"} alignItems={"center"}>
             <MapsHomeWorkIcon />
-            <p style={{ marginLeft: 5 }}>
-              Rua do Calvário, 4580-130 Paredes
-            </p>
+            <Typography style={{ marginLeft: 5 }}>Rua do Calvário, 4580-130 Paredes</Typography>
           </Box>
         </Box>
         <Box>

@@ -18,7 +18,7 @@ const Button = styled(MuiButton)((props) => ({
 const Home = ({}) => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <div style={{margin: "0 15rem"}}>
+      <div style={{ margin: "0 15rem" }}>
         <h1>TORNA-TE NOTÁVEL</h1>
         <h3>
           Aqui viverá a descrição da empresa. Os nossos projetos, marcas,
@@ -41,6 +41,7 @@ const Home = ({}) => {
             description={
               "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!"
             }
+            stars={5}
           />
           <FeedbackCard
             name={"Marco António"}
@@ -48,12 +49,14 @@ const Home = ({}) => {
             description={
               "Criar a reMArkable foi importantíssimo para cumprir a minha missão no mundo"
             }
+            stars={4}
           />
           <FeedbackCard
             last
             name={"Pedro Maia"}
             subtitle="Empresa"
             description={"O meu irmão precisa de ajuda!! Alguém mande."}
+            stars={2}
           />
         </Box>
       </div>

@@ -5,18 +5,21 @@ import { styled } from "@mui/material/styles";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import { remarkableRed } from "../utils/colors";
 
-
 const TitleText = styled(Typography)((props) => ({
-  fontFamily: 'Arimo-Bold'
+  fontFamily: "Arimo-Bold",
 }));
-
 
 const Text = styled(Typography)((props) => ({
-  fontFamily: 'Arimo'
+  fontFamily: "Arimo",
 }));
 
-
-const FeedbackCard = ({ name, subtitle = "", description, last }) => {
+const FeedbackCard = ({
+  name,
+  subtitle = "",
+  description,
+  last,
+  stars = 0,
+}) => {
   return (
     <Card
       className="feedbackCard"
@@ -50,11 +53,9 @@ const FeedbackCard = ({ name, subtitle = "", description, last }) => {
               {subtitle}
             </Text>
             <Box>
-              <StarRoundedIcon style={{ color: remarkableRed }} />
-              <StarRoundedIcon style={{ color: remarkableRed }} />
-              <StarRoundedIcon style={{ color: remarkableRed }} />
-              <StarRoundedIcon style={{ color: remarkableRed }} />
-              <StarRoundedIcon style={{ color: remarkableRed }} />
+              {[...Array(stars)].map((_, index) => {
+                return <StarRoundedIcon key={index} style={{ color: remarkableRed }} />;
+              })}
             </Box>
           </Box>
           <Box>

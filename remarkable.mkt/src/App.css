@@ -18,6 +18,10 @@
   transition: filter 300ms;
 }
 
+.service {
+  height: 10em;
+}
+
 .about {
   height: 10em;
   padding: 1.5em;

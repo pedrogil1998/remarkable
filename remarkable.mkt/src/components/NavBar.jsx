@@ -38,7 +38,7 @@ const NavBar = ({}) => {
           <nav>
             <Link to="/">Home</Link>
             <Link to="/about">Sobre</Link>
-            <Link to="/error">Serviços</Link>
+            <Link to="/services">Serviços</Link>
             <Link to="/error">Portefólio</Link>
             <a
               href="#contacts"
