@@ -3,6 +3,7 @@ import { Box, Card, CardContent, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import { CardText, CardTitleText } from "../utils/utils";
+import ReactCardFlip from "react-card-flip";
 
 const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,53 +15,68 @@ const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
   function handleMouseOut() {
     setIsHovered(false);
   }
+
+  function handleClick(e) {
+    e.preventDefault();
+    setIsHovered(!isHovered);
+  }
+
   return (
-    <Card
-      className="serviceCard"
-      sx={{
-        borderRadius: 10,
-        minWidth: wide ? 1300 : 500,
-        maxWidth: wide ? 1300 : 500,
-        mr: !last && 2,
-        visibility: hidden && "hidden",
-      }}
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
-    >
-      <CardContent
-        className="serviceCardInner"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          margin: "1rem",
-        }}
+    <Box onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+      <ReactCardFlip
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+        isFlipped={isHovered}
+        flipDirection="horizontal"
+        flipSpeedBackToFront="1"
+        flipSpeedFrontToBack="1"
       >
-        {isHovered ? (
-          <CardText className="serviceCardBack" width="100%" variant="h7" align="justify" color="text.secondary">
+        <Box
+          padding="2rem"
+          display="flex"
+          flexDirection="column"
+          justifyContent="space-around"
+          alignItems="center"
+          width="100%"
+          sx={{
+            borderRadius: 10,
+            minWidth: wide ? 1300 : 450,
+            maxWidth: wide ? 1300 : 450,
+            minHeight: 250,
+            mr: !last && 2,
+            visibility: hidden && "hidden",
+            backgroundColor: "white",
+          }}
+        >
+          <img src={icon} className="service" alt="Service marketingdigital" />
+          <CardTitleText sx={{ color: "black" }} align="center" variant="h5">
+            {name}
+          </CardTitleText>
+        </Box>
+        <Box
+          padding="2rem"
+          justifyContent="space-around"
+          sx={{
+            borderRadius: 10,
+            minWidth: wide ? 1300 : 450,
+            maxWidth: wide ? 1300 : 450,
+            minHeight: 250,
+            mr: !last && 2,
+            visibility: hidden && "hidden",
+            backgroundColor: "white",
+          }}
+        >
+          <CardText
+            width="100%"
+            variant="h7"
+            align="justify"
+            color="text.secondary"
+          >
             {description}
           </CardText>
-        ) : (
-          <Box
-            display="flex"
-            flexDirection="column"
-            justifyContent="space-between"
-            alignItems="center"
-            width="100%"
-            sx={{ mb: 1.5 }}
-          >
-            <img
-              src={icon}
-              className="service"
-              alt="Service marketingdigital"
-            />
-            <CardTitleText align="center" variant="h5">
-              {name}
-            </CardTitleText>
-          </Box>
-        )}
-      </CardContent>
-    </Card>
+        </Box>
+      </ReactCardFlip>
+    </Box>
   );
 };
 

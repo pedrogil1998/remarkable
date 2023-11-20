@@ -36,25 +36,49 @@
 }
 
 .aqui {
-  height: 5em; 
+  height: 5em;
 }
 .aqui:hover {
   filter: drop-shadow(0 0 1em black);
 }
 
+.serviceCard {
+  background-color: transparent;
+  width: 500;
+  height: 500px;
+  perspective: 500px;
+}
+
 .serviceCardInner {
-  transition: transform 1s;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
   transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .serviceCard:hover .serviceCardInner {
   transform: rotateY(180deg);
 }
-.serviceCard {
-  perspective: 1000px;
+
+.serviceCardFront, .serviceCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.serviceCardFront {
+  background-color: #bbb;
+  color: black;
 }
 
 .serviceCardBack {
+  background-color: #2980b9;
+  color: white;
   transform: rotateY(180deg);
 }
 
