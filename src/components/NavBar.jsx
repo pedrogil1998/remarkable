@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import letteringLogo from "./../assets/letteringLogo.svg";
 import { Outlet, Link as RouterLink } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { remarkableRed } from "../utils/colors";
 
 const Link = styled(RouterLink)((props) => ({
   color: "white",
@@ -35,21 +36,44 @@ const NavBar = ({}) => {
           />
         </a>
         <Box>
-          <nav>
+          <nav style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
             <Link to="/">Home</Link>
             <Link to="/about">Sobre</Link>
             <Link to="/services">Serviços</Link>
             <Link to="/error">Portefólio</Link>
-            <a
-              href="#contacts"
-              style={{
-                color: "white",
+            {/* <Box
+              sx={{
+                width: "fit-content",
+                borderRadius: "5px",
+                backgroundColor: remarkableRed,
                 marginRight: "1rem",
-                textDecoration: "none",
               }}
             >
-              Contactos
-            </a>
+              <a
+                href="#contacts"
+                style={{
+                  color: "white",
+                  margin: "1rem",
+                  textDecoration: "none",
+                }}
+              >
+                Contactos
+              </a>
+            </Box> */}
+
+            <Button
+              sx={{
+                width: "fit-content",
+                borderRadius: "5px",
+                backgroundColor: remarkableRed,
+                marginRight: "1rem",
+                color: "white",
+                textTransform: "none",
+              }}
+              href="#contacts"
+            >
+              <Typography>Contactos</Typography>
+            </Button>
           </nav>
 
           <Outlet />

@@ -35,6 +35,29 @@
   filter: drop-shadow(0 0 1em black);
 }
 
+.aqui {
+  height: 5em; 
+}
+.aqui:hover {
+  filter: drop-shadow(0 0 1em black);
+}
+
+.serviceCardInner {
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.serviceCard:hover .serviceCardInner {
+  transform: rotateY(180deg);
+}
+.serviceCard {
+  perspective: 1000px;
+}
+
+.serviceCardBack {
+  transform: rotateY(180deg);
+}
+
 .card {
   padding: 2em;
 }

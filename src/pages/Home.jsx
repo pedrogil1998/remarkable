@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 import { remarkableRed } from "./../utils/colors";
 import FeedbackCard from "../components/FeedbackCard";
-import { Box, Button as MuiButton } from "@mui/material";
+import { Box, Button as MuiButton, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Contacts from "../components/Contacts";
+import { LongText, TitleText } from "../utils/utils";
+import aquiButton from "../assets/aquiButton.svg";
 
 const Button = styled(MuiButton)((props) => ({
   marginLeft: "2rem",
@@ -19,8 +21,13 @@ const Home = ({}) => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <div style={{ margin: "0 15rem" }}>
-        <h1>TORNA-TE NOTÁVEL</h1>
-        <h3>
+        <TitleText variant="h1">TORNA-TE NOTÁVEL</TitleText>
+        <LongText
+          align="justify"
+          variant="h5"
+          margin="1rem"
+          marginBottom="3rem"
+        >
           Aqui viverá a descrição da empresa. Os nossos projetos, marcas,
           parcerias, etc... Lorem Ipsum has been the industry's standard dummy
           text ever since the 1500s, when an unknown printer took a galley of
@@ -30,11 +37,13 @@ const Home = ({}) => {
           the 1960s with the release of Letraset sheets containing Lorem Ipsum
           passages, and more recently with desktop publishing software like
           Aldus PageMaker including versions of Lorem Ipsum.
-        </h3>
+        </LongText>
       </div>
       <div style={{ backgroundColor: remarkableRed }}>
-        <h1>Feedback</h1>
-        <Box sx={{ display: "inline-flex", margin: "2rem" }}>
+        <TitleText variant="h1" margin="1rem">
+          Feedback
+        </TitleText>
+        <Box sx={{ display: "inline-flex", marginBottom: "2rem" }}>
           <FeedbackCard
             name={"Flávio Magalhães"}
             subtitle="Marca Pessoal - Fisioterapeuta"
@@ -68,8 +77,16 @@ const Home = ({}) => {
           alignItems: "center",
         }}
       >
-        <h1 style={{ color: "black" }}>Entre em contacto!</h1>
-        <Button className="button">Aqui</Button>
+        <TitleText variant="h2" margin="2rem" style={{ color: "black" }}>
+          Entre em contacto:
+        </TitleText>
+        <a href="https://instagram.com/remarkable.mkt" target="_blank">
+          <img
+            src={aquiButton}
+            className="aqui remarkable"
+            alt="Aqui Button"
+          />
+        </a>
       </div>
       <Contacts />
     </div>

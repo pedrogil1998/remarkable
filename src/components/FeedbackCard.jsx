@@ -4,14 +4,7 @@ import aspas from "../assets/aspas.svg";
 import { styled } from "@mui/material/styles";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import { remarkableRed } from "../utils/colors";
-
-const TitleText = styled(Typography)((props) => ({
-  fontFamily: "Arimo-Bold",
-}));
-
-const Text = styled(Typography)((props) => ({
-  fontFamily: "Arimo",
-}));
+import { CardText, CardTitleText } from "../utils/utils";
 
 const FeedbackCard = ({
   name,
@@ -46,12 +39,12 @@ const FeedbackCard = ({
           sx={{ mb: 1.5 }}
         >
           <Box display="flex" flexDirection="column" alignItems="flex-start">
-            <TitleText align="left" variant="h4">
+            <CardTitleText align="left" variant="h4">
               {name}
-            </TitleText>
-            <Text align="left" variant="h6" color="text.secondary">
+            </CardTitleText>
+            <CardText align="left" variant="h6" color="text.secondary">
               {subtitle}
-            </Text>
+            </CardText>
             <Box>
               {[...Array(stars)].map((_, index) => {
                 return <StarRoundedIcon key={index} style={{ color: remarkableRed }} />;
@@ -63,9 +56,9 @@ const FeedbackCard = ({
           </Box>
         </Box>
 
-        <Text variant="h7" align="left" color="text.secondary">
+        <CardText variant="h7" align="left" color="text.secondary">
           {description}
-        </Text>
+        </CardText>
       </CardContent>
     </Card>
   );

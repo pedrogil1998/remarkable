@@ -10,6 +10,7 @@ import siteseweb from "../assets/siteseweb.svg";
 import ServiceCard from "../components/ServiceCard";
 import Contacts from "../components/Contacts";
 import { remarkableGray } from "../utils/colors";
+import { TitleText } from "../utils/utils";
 
 const Services = () => {
   return (
@@ -20,7 +21,7 @@ const Services = () => {
       }}
     >
       <Box sx={{ backgroundColor: remarkableGray }}>
-        <h1>O Futuro começa aqui</h1>
+        <TitleText margin="2rem" variant="h1">O FUTURO COMEÇA AQUI</TitleText>
         <Box sx={{ display: "inline-flex", margin: "2rem" }}>
           <ServiceCard
             name={"Marketing Digital"}

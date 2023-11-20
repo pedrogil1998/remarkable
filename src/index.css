@@ -13,6 +13,16 @@
   src: url("./fonts/Cambria-Font.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Kdam-Regular";
+  src: url("./fonts/KdamThmor-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Playfair-Regular";
+  src: url("./fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

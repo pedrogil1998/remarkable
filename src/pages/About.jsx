@@ -2,15 +2,16 @@ import PropTypes from "prop-types";
 import mission from "./../assets/mission.svg";
 import vision from "./../assets/vision.svg";
 import values from "./../assets/values.svg";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Contacts from "../components/Contacts";
+import { LongText, TitleText } from "../utils/utils";
 
 const About = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <Box margin="0 15rem">
-        <h1>A nossa história</h1>
-        <h3>
+        <TitleText variant="h1">A NOSSA HISTÓRIA</TitleText>
+        <LongText align="justify" variant="h5" margin="2rem">
           Aqui vamos contar um pedacinho da nossa história. Lorem Ipsum is
           simply dummy text of the printing and typesetting industry. Lorem
           Ipsum has been the industry's standard dummy text ever since the
@@ -29,7 +30,7 @@ const About = () => {
           the 1960s with the release of Letraset sheets containing Lorem Ipsum
           passages, and more recently with desktop publishing software like
           Aldus PageMaker including versions of Lorem Ipsum.
-        </h3>
+        </LongText>
       </Box>
       <div style={{ backgroundColor: "white" }}>
         <Box
@@ -45,15 +46,16 @@ const About = () => {
             display="flex"
             flexDirection="column"
           >
+            <TitleText variant="h3" sx={{color:"black"}}>MISSÃO</TitleText>
             <img
               src={mission}
               className="about remarkable"
               alt="Remarkable about"
             />
-            <p style={{ color: "black" }}>
+            <h4 style={{ color: "black" }}>
               A nossa missão é ajudar-te a ti! Queremos que o teu negocio seja o
               negócio. Vamos ajudar-te a alcançar os teus objetivos.
-            </p>
+            </h4>
           </Box>
           <Box
             margin="2rem"
@@ -61,15 +63,16 @@ const About = () => {
             display="flex"
             flexDirection="column"
           >
+            <TitleText variant="h3" sx={{color:"black"}}>VISÃO</TitleText>
             <img
               src={vision}
               className="about remarkable"
               alt="Remarkable about"
             />
-            <p style={{ color: "black" }}>
+            <h4 style={{ color: "black" }}>
               Somos uma empresa focada em empresas. O digital não é o futuro, é
               o presente. Connosco tem soluções 360.
-            </p>
+            </h4>
           </Box>
           <Box
             margin="2rem"
@@ -77,15 +80,16 @@ const About = () => {
             display="flex"
             flexDirection="column"
           >
+            <TitleText variant="h3" sx={{color:"black"}}>VALORES</TitleText>
             <img
               src={values}
               className="about remarkable"
               alt="Remarkable about"
             />
-            <p style={{ color: "black" }}>
+            <h4 style={{ color: "black" }}>
               Eticamente somos fortíssimos, leais, trabalhadores e
               perfecionistas. Queremos ter um impacto enorme no seu trabalho.
-            </p>
+            </h4>
           </Box>
         </Box>
       </div>

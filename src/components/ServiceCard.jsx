@@ -2,14 +2,7 @@ import PropTypes from "prop-types";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
-
-const TitleText = styled(Typography)((props) => ({
-  fontFamily: "Cambria",
-}));
-
-const Text = styled(Typography)((props) => ({
-  fontFamily: "Arimo",
-}));
+import { CardText, CardTitleText } from "../utils/utils";
 
 const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -23,7 +16,7 @@ const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
   }
   return (
     <Card
-      className="feedbackCard"
+      className="serviceCard"
       sx={{
         borderRadius: 10,
         minWidth: wide ? 1300 : 500,
@@ -35,6 +28,7 @@ const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
       onMouseOut={handleMouseOut}
     >
       <CardContent
+        className="serviceCardInner"
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -43,9 +37,9 @@ const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
         }}
       >
         {isHovered ? (
-          <Text variant="h7" align="justify" color="text.secondary">
+          <CardText className="serviceCardBack" width="100%" variant="h7" align="justify" color="text.secondary">
             {description}
-          </Text>
+          </CardText>
         ) : (
           <Box
             display="flex"
@@ -60,9 +54,9 @@ const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
               className="service"
               alt="Service marketingdigital"
             />
-            <TitleText align="center" variant="h5">
+            <CardTitleText align="center" variant="h5">
               {name}
-            </TitleText>
+            </CardTitleText>
           </Box>
         )}
       </CardContent>
