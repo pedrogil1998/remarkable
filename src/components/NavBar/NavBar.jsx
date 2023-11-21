@@ -1,4 +1,4 @@
-import letteringLogo from "./../assets/letteringLogo.svg";
+import letteringLogo from "./../../assets/letteringLogo.svg";
 import { Outlet, Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import styles from "./NavBar.module.scss";
