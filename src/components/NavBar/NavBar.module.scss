@@ -1,0 +1,26 @@
+.navBarBox {
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  width: 100%;
+  z-index: 1;
+}
+.navBarBoxInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navComponent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.link {
+  color: white;
+  margin-right: 1rem;
+  text-decoration: none;
+}

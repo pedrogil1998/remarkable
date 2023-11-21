@@ -18,9 +18,7 @@ const FeedbackCard = ({
       className="feedbackCard"
       sx={{
         borderRadius: 10,
-        minWidth: 500,
-        maxWidth: 500,
-        mr: !last && 2,
+        margin: "1rem"
       }}
     >
       <CardContent

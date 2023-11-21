@@ -6,6 +6,8 @@ import { styled } from "@mui/material/styles";
 import Contacts from "../components/Contacts";
 import { LongText, TitleText } from "../utils/utils";
 import aquiButton from "../assets/aquiButton.svg";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 
 const Button = styled(MuiButton)((props) => ({
   marginLeft: "2rem",
@@ -18,6 +20,25 @@ const Button = styled(MuiButton)((props) => ({
 }));
 
 const Home = ({}) => {
+  const scrollLeft = (e) => {
+    e.preventDefault();
+    let scroll = document.querySelector(".card-scroller");
+    scroll.scrollBy({
+      top: 0,
+      left: -350,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollRight = (e) => {
+    e.preventDefault();
+    let scroll = document.querySelector(".card-scroller");
+    scroll.scrollBy({
+      top: 0,
+      left: 350,
+      behavior: "smooth",
+    });
+  };
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <div style={{ margin: "0 15rem" }}>
@@ -39,34 +60,58 @@ const Home = ({}) => {
           Aldus PageMaker including versions of Lorem Ipsum.
         </LongText>
       </div>
-      <div style={{ backgroundColor: remarkableRed }}>
+      <div style={{ backgroundColor: remarkableRed, paddingBottom: "2rem" }}>
         <TitleText variant="h1" margin="1rem">
           Feedback
         </TitleText>
-        <Box sx={{ display: "inline-flex", marginBottom: "2rem" }}>
-          <FeedbackCard
-            name={"Flávio Magalhães"}
-            subtitle="Marca Pessoal - Fisioterapeuta"
-            description={
-              "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!"
-            }
-            stars={5}
-          />
-          <FeedbackCard
-            name={"Marco António"}
-            subtitle="Empresa"
-            description={
-              "Criar a reMArkable foi importantíssimo para cumprir a minha missão no mundo"
-            }
-            stars={4}
-          />
-          <FeedbackCard
-            last
-            name={"Pedro Maia"}
-            subtitle="Empresa"
-            description={"O meu irmão precisa de ajuda!! Alguém mande."}
-            stars={2}
-          />
+        <Box margin="0 6rem" display="inline-flex" alignItems="center">
+          <div>
+            <button onClick={scrollLeft} className="arrow">
+              <KeyboardDoubleArrowLeftIcon fontSize="large" />
+            </button>
+          </div>
+          <Box className="card-scroller">
+            <FeedbackCard
+              name={"Flávio Magalhães"}
+              subtitle="Marca Pessoal - Fisioterapeuta"
+              description={
+                "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!"
+              }
+              stars={5}
+            />
+            <FeedbackCard
+              name={"Marco António"}
+              subtitle="Empresa"
+              description={
+                "Criar a reMArkable foi importantíssimo para cumprir a minha missão no mundo"
+              }
+              stars={4}
+            />
+            <FeedbackCard
+              name={"Pedro Maia"}
+              subtitle="Empresa"
+              description={"O meu irmão precisa de ajuda!! Alguém mande."}
+              stars={2}
+            />
+            <FeedbackCard
+              name={"Pedro Maia"}
+              subtitle="Empresa"
+              description={"O meu irmão precisa de ajuda!! Alguém mande."}
+              stars={2}
+            />
+            <FeedbackCard
+              last
+              name={"Pedro Maia"}
+              subtitle="Empresa"
+              description={"O meu irmão precisa de ajuda!! Alguém mande."}
+              stars={2}
+            />
+          </Box>
+          <div>
+            <button onClick={scrollRight} className="arrow">
+              <KeyboardDoubleArrowRightIcon fontSize="large" />
+            </button>
+          </div>
         </Box>
       </div>
       <div
@@ -81,11 +126,7 @@ const Home = ({}) => {
           Entre em contacto:
         </TitleText>
         <a href="https://instagram.com/remarkable.mkt" target="_blank">
-          <img
-            src={aquiButton}
-            className="aqui remarkable"
-            alt="Aqui Button"
-          />
+          <img src={aquiButton} className="aqui remarkable" alt="Aqui Button" />
         </a>
       </div>
       <Contacts />

@@ -1,4 +1,5 @@
 #root {
+  --remarkableRed: #b21111;
   margin: 0 auto;
   text-align: center;
   width: 100%;
@@ -32,7 +33,7 @@
 }
 
 .feedbackCard:hover {
-  filter: drop-shadow(0 0 1em black);
+  filter: drop-shadow(0 0 0.5em black);
 }
 
 .aqui {
@@ -63,7 +64,8 @@
   transform: rotateY(180deg);
 }
 
-.serviceCardFront, .serviceCardBack {
+.serviceCardFront,
+.serviceCardBack {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -82,6 +84,17 @@
   transform: rotateY(180deg);
 }
 
+/*Scroller*/
+.card-scroller {
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 32.5%;
+
+  overflow-x: hidden;
+  overscroll-behavior-inline: contain;
+}
+
 .card {
   padding: 2em;
 }
@@ -92,4 +105,12 @@
 
 .aspas {
   height: 5em;
+}
+
+.arrow {
+  background-color: transparent;
+}
+
+.arrow:hover {
+  filter: drop-shadow(0 0 0.5em black);
 }
