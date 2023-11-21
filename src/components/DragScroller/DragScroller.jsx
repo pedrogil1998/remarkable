@@ -34,69 +34,17 @@ const DragScroller = ({ title, background, icon }) => {
             slidesPerView={6}
             style={{ marginRight: "3rem" }}
           >
-            <SwiperSlide>
-              <img
-                src={imagesFit.fitness1}
-                className={styles.sliderImage}
-                alt="slide_image"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={imagesFit.fitness2}
-                className={styles.sliderImage}
-                alt="slide_image"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={imagesFit.fitness3}
-                className={styles.sliderImage}
-                alt="slide_image"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={imagesFit.fitness4}
-                className={styles.sliderImage}
-                alt="slide_image"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={imagesFit.fitness5}
-                className={styles.sliderImage}
-                alt="slide_image"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={imagesFit.fitness6}
-                className={styles.sliderImage}
-                alt="slide_image"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={imagesFit.fitness7}
-                className={styles.sliderImage}
-                alt="slide_image"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={imagesFit.fitness8}
-                className={styles.sliderImage}
-                alt="slide_image"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={imagesFit.fitness9}
-                className={styles.sliderImage}
-                alt="slide_image"
-              />
-            </SwiperSlide>
+            {Object.values(imagesFit).map((image, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <img
+                    src={image}
+                    className={styles.sliderImage}
+                    alt="slide_image"
+                  />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         ) : title === "ENGENHARIA" ? (
           <Swiper
