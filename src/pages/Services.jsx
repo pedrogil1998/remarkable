@@ -71,14 +71,6 @@ const Services = () => {
           />
         </Box>
         <Box sx={{ display: "inline-flex", margin: "2rem" }}>
-          {/* <ServiceCard
-            hidden
-            name={"Planos de Marketing e Comunicação"}
-            icon={planosmarketing}
-            description={
-              "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!"
-            }
-          /> */}
           <ServiceCard
             wide
             name={"Planos 360"}
@@ -87,15 +79,6 @@ const Services = () => {
               "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!"
             }
           />
-          {/* <ServiceCard
-            hidden
-            name={"Planos 360"}
-            icon={plano360}
-            description={
-              "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!"
-            }
-            last
-          /> */}
         </Box>
       </Box>
       <Contacts />

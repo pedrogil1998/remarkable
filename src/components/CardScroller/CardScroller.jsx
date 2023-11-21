@@ -3,8 +3,8 @@ import { TitleText } from "../../utils/utils";
 import { remarkableRed } from "../../utils/colors";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
-import FeedbackCard from "./FeedbackCard";
-import data from "./FeedbackInfo.json";
+import FeedbackCard from "./FeedbackCard/FeedbackCard";
+import data from "./FeedbackCard/FeedbackInfo.json";
 
 const CardScroller = () => {
   const scrollCard = (e, right = false) => {

@@ -1,0 +1,27 @@
+.cardIcon {
+  height: 10em;
+}
+
+.boxContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2rem 2rem;
+  border-bottom: 2px solid;
+  border-color: white;
+}
+
+.boxLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem
+}
+
+.sliderImage {
+  height: 20em;
+}
+
+.heading {
+    color: var(--remarkableRed)
+}

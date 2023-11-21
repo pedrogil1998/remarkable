@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 import { Box, Card, CardContent } from "@mui/material";
-import aspas from "../../assets/aspas.svg";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
-import { remarkableRed } from "../../utils/colors";
-import { CardText, CardTitleText } from "../../utils/utils";
-import styles from "./CardScroller.module.scss";
+import aspas from "../../../assets/aspas.svg";
+import { remarkableRed } from "../../../utils/colors";
+import { CardText, CardTitleText } from "../../../utils/utils";
+import styles from "./FeedbackCard.module.scss";
 
 const FeedbackCard = ({ name, subtitle = "", description, stars = 0 }) => {
   return (
-    <Card className={styles.feedbackCard}>
+    <Card className={styles.feedbackCard} sx={{ borderRadius: "10px" }}>
       <CardContent className={styles.feedbackCardContent}>
         <Box className={styles.feedbackCardBox}>
           <Box className={styles.feedbackCardBoxHeader}>
@@ -43,7 +43,9 @@ const FeedbackCard = ({ name, subtitle = "", description, stars = 0 }) => {
 
 FeedbackCard.proptypes = {
   name: PropTypes.string,
+  subtitle: PropTypes.string,
   description: PropTypes.string,
+  stars: PropTypes.number
 };
 
 export default FeedbackCard;

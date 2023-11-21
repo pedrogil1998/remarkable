@@ -26,7 +26,7 @@ const NavBar = ({}) => {
             <Link className={styles.link} to="/services">
               Serviços
             </Link>
-            <Link className={styles.link} to="/error">
+            <Link className={styles.link} to="/portfolio">
               Portefólio
             </Link>
             <ContactButton href="#contacts">
