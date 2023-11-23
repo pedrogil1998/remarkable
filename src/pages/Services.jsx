@@ -20,7 +20,7 @@ const Services = () => {
         flexDirection: "column",
       }}
     >
-      <Box sx={{ backgroundColor: remarkableGray }}>
+      <Box>
         <TitleText margin="2rem" variant="h1">O TEU FUTURO COMEÇA AQUI</TitleText>
         <Box sx={{ display: "inline-flex", margin: "2rem" }}>
           <ServiceCard
