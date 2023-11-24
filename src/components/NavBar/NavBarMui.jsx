@@ -9,4 +9,6 @@ export const ContactButton = styled(Button)((props) => ({
   marginRight: "1rem",
   color: "white",
   textTransform: "none",
+  textAlign: "center",
+  margin: "2rem",
 }));
