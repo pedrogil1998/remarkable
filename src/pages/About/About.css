@@ -2,3 +2,25 @@
   opacity: 0.5;
   filter: hue-rotate(120deg);
 }
+
+.values-box-container {
+  margin: 2rem 15rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.values-box {
+  margin: 2rem;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 960px) {
+  .values-box-container {
+    margin: 1rem;
+    flex-direction: column;
+  }
+}

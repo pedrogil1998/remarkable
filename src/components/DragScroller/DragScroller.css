@@ -1,0 +1,25 @@
+.slider-image {
+  height: 20em;
+}
+.box-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swiper {
+  margin-right: 3rem;
+  width: 70%;
+}
+
+@media screen and (max-width: 960px) {
+  .slider-image {
+    display: none;
+  }
+  .swiper {
+    margin-right: 0;
+  }
+  .box-left {
+    display: none;
+  }
+}

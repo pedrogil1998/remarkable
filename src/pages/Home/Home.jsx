@@ -8,29 +8,19 @@ const Home = ({}) => {
   return (
     <>
       <div className="home-container">
+        <video
+          src="/videos/video-1.mp4"
+          autoPlay
+          loop
+          muted
+        ></video>
         <div className="upper-container">
-          <TitleText variant="h1">TORNA-TE NOTÁVEL</TitleText>
-          <LongText
-            align="center"
-            variant="h5"
-          >
-            A verdadeira MUDANÇA começa aqui... Agarra a oportunidade de tornar
-            o teu negócio NOTÁVEL.
-          </LongText>
+          <TitleText className="header-text" variant="h1">TORNA-TE NOTÁVEL</TitleText>
 
-          <LongText
-            align="center"
-            variant="h5"
-          >
-            Somos uma agência de Marketing, apaixonada pelo Marketing, temos a
-            ânsia de ser diferentes e tornar o seu negócio diferente.
-          </LongText>
-          <LongText
-            align="center"
-            variant="h5"
-            marginBottom="2rem"
-          >
-            Preparado para se tornar reMArkable?
+          <LongText className="long-text" variant="h5">
+            {
+              "A verdadeira MUDANÇA começa aqui... Agarra a oportunidade de tornar o teu negócio NOTÁVEL. Somos uma agência de Marketing, apaixonada pelo Marketing, temos a ânsia de ser diferentes e tornar o seu negócio diferente. Preparado para se tornar reMArkable?"
+            }
           </LongText>
         </div>
         <CardScroller />
@@ -48,13 +38,6 @@ const Home = ({}) => {
         </div>
         <Contacts />
       </div>
-      <video
-        className="bg-video"
-        src="/videos/video-1.mp4"
-        autoPlay
-        loop
-        muted
-      ></video>
     </>
   );
 };

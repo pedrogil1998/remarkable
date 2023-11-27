@@ -10,9 +10,9 @@ import "./About.css";
 const About = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <Box margin="0 15rem">
-        <TitleText variant="h1">A NOSSA HISTÓRIA</TitleText>
-        <LongText align="center" variant="h5" margin="2rem">
+      <Box className="upper-container">
+        <TitleText className="header-text" variant="h1">A NOSSA HISTÓRIA</TitleText>
+        <LongText className="long-text" variant="h5">
           Em junho de 2023, começa a nossa apaixonante jornada neste mundo que é
           tão competitivo. A reMArkable é uma agência de Marketing focada em
           resultados e em tornar negócios e marcas em algo diferente e notável.
@@ -28,19 +28,8 @@ const About = () => {
         </LongText>
       </Box>
       <div style={{ backgroundColor: "white" }}>
-        <Box
-          margin="2rem 15rem"
-          display="flex"
-          flexDirection="row"
-          justifyContent="space-between"
-          bgcolor="white"
-        >
-          <Box
-            margin="2rem"
-            maxWidth="350px"
-            display="flex"
-            flexDirection="column"
-          >
+        <Box className="values-box-container">
+          <Box className="values-box">
             <TitleText variant="h3" sx={{ color: "black" }}>
               MISSÃO
             </TitleText>
@@ -54,12 +43,7 @@ const About = () => {
               negócio. Vamos ajudar-te a alcançar os teus objetivos.
             </h4>
           </Box>
-          <Box
-            margin="2rem"
-            maxWidth="350px"
-            display="flex"
-            flexDirection="column"
-          >
+          <Box className="values-box">
             <TitleText variant="h3" sx={{ color: "black" }}>
               VISÃO
             </TitleText>
@@ -73,12 +57,7 @@ const About = () => {
               o presente. Connosco tem soluções 360.
             </h4>
           </Box>
-          <Box
-            margin="2rem"
-            maxWidth="350px"
-            display="flex"
-            flexDirection="column"
-          >
+          <Box className="values-box">
             <TitleText variant="h3" sx={{ color: "black" }}>
               VALORES
             </TitleText>

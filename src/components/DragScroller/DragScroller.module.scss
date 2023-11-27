@@ -6,16 +6,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 2rem 2rem;
+  padding: 2rem 15rem;
   border-bottom: 2px solid;
   border-color: white;
-}
-
-.boxLeft {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 3rem
 }
 
 .sliderImage {
@@ -23,5 +16,15 @@
 }
 
 .heading {
-    color: var(--remarkableRed)
+  color: var(--remarkableRed);
+  font-size: 4rem !important;
+}
+
+@media screen and (max-width: 960px) {
+  .sliderImage {
+    height: 10em;
+  }
+  .boxContainer {
+    padding: 2rem;
+  }
 }

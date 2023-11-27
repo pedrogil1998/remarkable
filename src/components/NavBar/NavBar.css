@@ -23,7 +23,7 @@
     height: 90vh;
     position: absolute;
     top: 8rem;
-    left: -100%;
+    left: 200%;
     opacity: 1;
     transition: all 0.5s ease;
   }
