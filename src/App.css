@@ -12,12 +12,6 @@
   transition: filter 300ms;
 }
 
-.logoContact {
-  height: 20em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
 
 .service {
   height: 10em;
@@ -33,10 +27,11 @@
 }
 
 .aqui {
-  height: 5em;
+  height: 4em;
 }
+
 .aqui:hover {
-  filter: drop-shadow(0 0 1em black);
+  filter: drop-shadow(0 0 0.5em black);
 }
 
 .serviceCard {
@@ -66,7 +61,7 @@
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  backface-visibility: hidden;  
 }
 
 .serviceCardFront {
@@ -80,17 +75,6 @@
   transform: rotateY(180deg);
 }
 
-/*Scroller*/
-.card-scroller {
-  display: grid;
-  gap: 1rem;
-  grid-auto-flow: column;
-  grid-auto-columns: 32.5%;
-
-  overflow-x: hidden;
-  overscroll-behavior-inline: contain;
-}
-
 .card {
   padding: 2em;
 }
@@ -99,13 +83,7 @@
   color: #888;
 }
 
-.arrow {
-  background-color: transparent;
-}
 
-.arrow:hover {
-  filter: drop-shadow(0 0 0.5em black);
-}
 
 video {
   object-fit: cover;
@@ -116,12 +94,4 @@ video {
   left: 0;
   top: 0;
   opacity: 0.5;
-}
-
-.home-container {
-  /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
 }

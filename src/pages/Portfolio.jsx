@@ -1,4 +1,4 @@
-import Contacts from "../components/Contacts";
+import Contacts from "../components/Contacts/Contacts";
 import DragScroller from "../components/DragScroller/DragScroller";
 import { TitleText } from "../utils/utils";
 import engenharia from "../assets/engenharia.svg";

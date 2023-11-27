@@ -5,6 +5,7 @@ import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArro
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import FeedbackCard from "./FeedbackCard/FeedbackCard";
 import data from "./FeedbackCard/FeedbackInfo.json";
+import "./CardScroller.css";
 
 const CardScroller = () => {
   const scrollCard = (e, right = false) => {
@@ -12,17 +13,17 @@ const CardScroller = () => {
     let scroll = document.querySelector(".card-scroller");
     scroll.scrollBy({
       top: 0,
-      left: right ? 350 : -350,
+      left: right ? 305 : -305,
       behavior: "smooth",
     });
   };
 
   return (
-    <div style={{ backgroundColor: remarkableRed, paddingBottom: "2rem" }}>
+    <div className="card-scroller-container">
       <TitleText variant="h1" margin="1rem">
         Feedback
       </TitleText>
-      <Box margin="0 6rem" display="inline-flex" alignItems="center">
+      <Box className="box-scroller" >
         <div>
           <button onClick={scrollCard} className="arrow">
             <KeyboardDoubleArrowLeftIcon fontSize="large" />

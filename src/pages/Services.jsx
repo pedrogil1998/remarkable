@@ -8,7 +8,7 @@ import planosmarketing from "../assets/planosmarketing.svg";
 import plano360 from "../assets/plano360.svg";
 import siteseweb from "../assets/siteseweb.svg";
 import ServiceCard from "../components/ServiceCard";
-import Contacts from "../components/Contacts";
+import Contacts from "../components/Contacts/Contacts";
 import { remarkableGray } from "../utils/colors";
 import { TitleText } from "../utils/utils";
 

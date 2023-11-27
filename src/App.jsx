@@ -1,7 +1,7 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import Home from "./pages/Home";
-import About from "./pages/About";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import NoPage from "./pages/NoPage";

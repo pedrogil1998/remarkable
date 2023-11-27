@@ -28,9 +28,7 @@ const NavBar = ({}) => {
             alt="Remarkable logo"
           />
         </a>
-        <Box className={styles.menuIcon} onClick={handleClick}>
-          {click ? <CloseRoundedIcon /> : <MenuRoundedIcon />}
-        </Box>
+        
         <Box>
           <nav className={click ? "navMenu active" : "navMenu"}>
             <Link className={styles.link} to="/" onClick={closeMobileMenu}>
@@ -53,14 +51,14 @@ const NavBar = ({}) => {
             >
               Portefólio
             </Link>
-            <ContactButton
-              href="#contacts"
-              onClick={closeMobileMenu}
-            >
+            <ContactButton href="#contacts" onClick={closeMobileMenu}>
               <Typography>Contactos</Typography>
             </ContactButton>
           </nav>
           <Outlet />
+        </Box>
+        <Box className="menuIcon" onClick={handleClick}>
+          {click ? <CloseRoundedIcon /> : <MenuRoundedIcon />}
         </Box>
       </Box>
     </Box>

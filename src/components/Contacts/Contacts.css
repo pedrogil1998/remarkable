@@ -1,0 +1,28 @@
+.contacts-container {
+  margin: 0 5rem;
+  text-align: left;
+}
+
+.logoContact {
+  height: 20em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+@media screen and (max-width: 960px) {
+  .contacts-container {
+    margin: 1rem;
+    justify-content: center !important;
+  }
+
+  .logoContact {
+    display: none;
+  }
+
+  h1 {
+    margin: 0 0 1rem 0;
+    line-height: normal; 
+      font-size: 4rem !important;
+  }
+}

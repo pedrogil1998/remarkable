@@ -1,0 +1,13 @@
+@media screen and (max-width: 960px) {
+  .card-title-text {
+    font-size: large !important;
+  }
+
+  .card-text {
+    font-size: small !important;
+  }
+
+  .card-text-description {
+    font-size: small !important;
+  }
+}
