@@ -25,14 +25,6 @@
   filter: drop-shadow(0 0 2em #b21111);
 }
 
-.aqui {
-  height: 4em;
-}
-
-.aqui:hover {
-  filter: drop-shadow(0 0 0.5em black);
-}
-
 .serviceCard {
   background-color: transparent;
   width: 500;
@@ -94,7 +86,4 @@ video {
 }
 
 @media screen and (max-width: 960px) {
-  .header-text {
-    font-size: 4rem !important;
-  }
 }

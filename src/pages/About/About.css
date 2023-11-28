@@ -18,6 +18,15 @@
   flex-direction: column;
 }
 
+.aqui {
+  height: 4em;
+  rotate: 180deg;
+}
+
+.aqui:hover {
+  filter: drop-shadow(0 0 0.5em black);
+}
+
 @media screen and (max-width: 960px) {
   .values-box-container {
     margin: 1rem;

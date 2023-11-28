@@ -74,13 +74,13 @@ const About = () => {
         </Box>
       </div>
       <Contacts />
-      <video
+      {/* <video
         className="bg-video"
         src="/videos/video-10.mp4"
         autoPlay
         loop
         muted
-      ></video>
+      ></video> */}
     </div>
   );
 };

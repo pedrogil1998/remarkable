@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
-import { CardText, CardTitleText } from "../utils/utils";
+import useIsMobile, { CardText, CardTitleText } from "../../utils/utils";
 import ReactCardFlip from "react-card-flip";
+import "./ServiceCard.css";
 
 const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -21,6 +22,7 @@ const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
     setIsHovered(!isHovered);
   }
 
+  const isMobile = useIsMobile();
   return (
     <Box onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
       <ReactCardFlip
@@ -32,20 +34,11 @@ const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
         flipSpeedFrontToBack="1"
       >
         <Box
-          padding="2rem"
-          display="flex"
-          flexDirection="column"
-          justifyContent="space-around"
-          alignItems="center"
-          width="100%"
+          className="service-card-box service-card-content"
           sx={{
-            borderRadius: 10,
-            minWidth: wide ? 1300 : 450,
-            maxWidth: wide ? 1300 : 450,
-            minHeight: 250,
+            width: wide && (!isMobile ? 1300 : 300),
             mr: !last && 2,
             visibility: hidden && "hidden",
-            backgroundColor: "white",
           }}
         >
           <img src={icon} className="service" alt="Service marketingdigital" />
@@ -54,16 +47,11 @@ const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
           </CardTitleText>
         </Box>
         <Box
-          padding="2rem"
-          justifyContent="space-around"
+          className="service-card-content"
           sx={{
-            borderRadius: 10,
-            minWidth: wide ? 1300 : 450,
-            maxWidth: wide ? 1300 : 450,
-            minHeight: 250,
+            width: wide && (!isMobile ? 1300 : 300),
             mr: !last && 2,
             visibility: hidden && "hidden",
-            backgroundColor: "white",
           }}
         >
           <CardText

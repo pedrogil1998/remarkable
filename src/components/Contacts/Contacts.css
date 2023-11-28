@@ -19,10 +19,4 @@
   .logoContact {
     display: none;
   }
-
-  h1 {
-    margin: 0 0 1rem 0;
-    line-height: normal; 
-      font-size: 4rem !important;
-  }
 }

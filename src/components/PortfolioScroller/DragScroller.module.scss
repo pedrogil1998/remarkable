@@ -1,14 +1,16 @@
 .cardIcon {
   height: 10em;
+  width: 300px;
 }
 
 .boxContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 2rem 15rem;
+  padding: 2rem 7rem;
   border-bottom: 2px solid;
   border-color: white;
+  justify-content: center;
 }
 
 .sliderImage {
@@ -17,14 +19,19 @@
 
 .heading {
   color: var(--remarkableRed);
-  font-size: 4rem !important;
+  font-size: 2.5rem !important;
 }
 
 @media screen and (max-width: 960px) {
   .sliderImage {
     height: 10em;
   }
+  .cardIcon {
+    height: 3em;
+    width: 3em;
+  }
   .boxContainer {
     padding: 2rem;
+    justify-content: space-between;
   }
 }

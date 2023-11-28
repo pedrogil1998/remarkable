@@ -69,3 +69,8 @@ button {
   transition: border-color 0.25s;
 }
 
+@media screen and (max-width: 960px) {
+  h1 {
+    font-size: 3.2rem !important;
+  }
+}

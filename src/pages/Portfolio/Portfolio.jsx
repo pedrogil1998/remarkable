@@ -1,5 +1,5 @@
 import Contacts from "../../components/Contacts/Contacts";
-import DragScroller from "../../components/DragScroller/DragScroller";
+import DragScroller from "../../components/PortfolioScroller/DragScroller";
 import { TitleText } from "../../utils/utils";
 import engenharia from "../../assets/engenharia.svg";
 import financeiro from "../../assets/financeiro.svg";
@@ -12,8 +12,8 @@ import "./Portfolio.css";
 const Portfolio = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <div>
-        <TitleText className="header-text" variant="h1">SÊ O PRÓXIMO</TitleText>
+      <div className="upper-container">
+        <TitleText variant="h1">SÊ O PRÓXIMO</TitleText>
       </div>
 
       {/* <DragScroller title="FINANCEIRO" icon={financeiro}/> */}

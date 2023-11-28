@@ -1,21 +1,16 @@
 import Contacts from "../../components/Contacts/Contacts";
-import { LongText, TitleText } from "../../utils/utils";
+import useIsMobile, { LongText, TitleText } from "../../utils/utils";
 import aquiButton from "../../assets/aquiButton.svg";
-import CardScroller from "../../components/CardScroller/CardScroller";
+import CardScroller from "../../components/FeedbackScroller/CardScroller";
 import "./Home.css";
 
 const Home = ({}) => {
+  const isMobile = useIsMobile();
   return (
     <>
       <div className="home-container">
-        <video
-          src="/videos/video-1.mp4"
-          autoPlay
-          loop
-          muted
-        ></video>
         <div className="upper-container">
-          <TitleText className="header-text" variant="h1">TORNA-TE NOTÁVEL</TitleText>
+          <TitleText variant="h1">TORNA-TE NOTÁVEL</TitleText>
 
           <LongText className="long-text" variant="h5">
             {
@@ -37,6 +32,9 @@ const Home = ({}) => {
           </a>
         </div>
         <Contacts />
+        {!isMobile && (
+          <video src="/videos/video-1.mp4" autoPlay loop muted></video>
+        )}
       </div>
     </>
   );

@@ -1,28 +1,24 @@
 import { Box } from "@mui/material";
 import PropTypes from "prop-types";
-import marketingdigital from "../assets/marketingdigital.svg";
-import gestaofrotas from "../assets/gestaofrotas.svg";
-import branding from "../assets/branding.svg";
-import gestaoredesociais from "../assets/gestaoredesociais.svg";
-import planosmarketing from "../assets/planosmarketing.svg";
-import plano360 from "../assets/plano360.svg";
-import siteseweb from "../assets/siteseweb.svg";
-import ServiceCard from "../components/ServiceCard";
-import Contacts from "../components/Contacts/Contacts";
-import { remarkableGray } from "../utils/colors";
-import { TitleText } from "../utils/utils";
+import marketingdigital from "../../assets/marketingdigital.svg";
+import gestaofrotas from "../../assets/gestaofrotas.svg";
+import branding from "../../assets/branding.svg";
+import gestaoredesociais from "../../assets/gestaoredesociais.svg";
+import planosmarketing from "../../assets/planosmarketing.svg";
+import plano360 from "../../assets/plano360.svg";
+import siteseweb from "../../assets/siteseweb.svg";
+import ServiceCard from "../../components/ServiceCard/ServiceCard";
+import Contacts from "../../components/Contacts/Contacts";
+import { TitleText } from "../../utils/utils";
+import "./Services.css";
 
 const Services = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <Box>
-        <TitleText margin="2rem" variant="h1">O TEU FUTURO COMEÇA AQUI</TitleText>
-        <Box sx={{ display: "inline-flex", margin: "2rem" }}>
+    <div className="service-container">
+        <TitleText variant="h1">
+          O TEU FUTURO COMEÇA AQUI
+        </TitleText>
+        <Box className="service-box">
           <ServiceCard
             name={"Marketing Digital"}
             icon={marketingdigital}
@@ -46,7 +42,7 @@ const Services = () => {
             last
           />
         </Box>
-        <Box sx={{ display: "inline-flex", margin: "2rem" }}>
+        <Box className="service-box">
           <ServiceCard
             name={"Gestao de Redes Sociais"}
             icon={gestaoredesociais}
@@ -70,7 +66,7 @@ const Services = () => {
             last
           />
         </Box>
-        <Box sx={{ display: "inline-flex", margin: "2rem" }}>
+        <Box className="service-box">
           <ServiceCard
             wide
             name={"Planos 360"}
@@ -80,11 +76,11 @@ const Services = () => {
             }
           />
         </Box>
-      </Box>
       <Contacts />
     </div>
   );
 };
 
 Services.proptypes = {};
+
 export default Services;

@@ -2,7 +2,7 @@ import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
-import Services from "./pages/Services";
+import Services from "./pages/Services/Services";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import NoPage from "./pages/NoPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";

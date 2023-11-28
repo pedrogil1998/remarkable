@@ -5,11 +5,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 300px;
 }
 
 .swiper {
-  margin-right: 3rem;
   width: 70%;
+  margin: 0;
 }
 
 @media screen and (max-width: 960px) {
