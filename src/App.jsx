@@ -15,11 +15,11 @@ function App() {
         <NavBar />
         <Box style={{ width: "100%", marginTop: "10rem" }}>
           <Routes>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="services" element={<Services />} />
-            <Route path="portfolio" element={<Portfolio />} />
-            <Route path="*" element={<NoPage />} />
+            <Route path="remarkable" index element={<Home />} />
+            <Route path="remarkable/about" element={<About />} />
+            <Route path="remarkable/services" element={<Services />} />
+            <Route path="remarkable/portfolio" element={<Portfolio />} />
+            <Route path="remarkable/*" element={<NoPage />} />
           </Routes>
         </Box>
       </BrowserRouter>

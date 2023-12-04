@@ -31,22 +31,22 @@ const NavBar = ({}) => {
         
         <Box>
           <nav className={click ? "navMenu active" : "navMenu"}>
-            <Link className={styles.link} to="/" onClick={closeMobileMenu}>
+            <Link className={styles.link} to="/remarkable" onClick={closeMobileMenu}>
               Home
             </Link>
-            <Link className={styles.link} to="/about" onClick={closeMobileMenu}>
+            <Link className={styles.link} to="/remarkable/about" onClick={closeMobileMenu}>
               Sobre
             </Link>
             <Link
               className={styles.link}
-              to="/services"
+              to="remarkable/services"
               onClick={closeMobileMenu}
             >
               Serviços
             </Link>
             <Link
               className={styles.link}
-              to="/portfolio"
+              to="remarkable/portfolio"
               onClick={closeMobileMenu}
             >
               Portefólio
