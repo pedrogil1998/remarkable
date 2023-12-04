@@ -26,10 +26,6 @@
   height: 7em;
 }
 
-.aqui:hover {
-  filter: drop-shadow(0 0 0.2em black);
-}
-
 @media screen and (max-width: 960px) {
   .upper-container {
     margin: 0 1rem;

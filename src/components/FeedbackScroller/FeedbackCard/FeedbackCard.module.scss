@@ -3,7 +3,9 @@
 }
 
 .feedbackCard:hover {
-  filter: drop-shadow(0 0 0.5em black);
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
 }
 
 .feedbackCardContent {

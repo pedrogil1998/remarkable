@@ -6,6 +6,7 @@ import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
 import maLogo from "./../../assets/maLogo.svg";
 import { Box, Typography } from "@mui/material";
 import "./Contacts.css";
+import { motion } from "framer-motion";
 
 const Contacts = () => {
   return (
@@ -25,20 +26,31 @@ const Contacts = () => {
             </Box>
             <Box display={"inline-flex"} alignItems={"center"}>
               <EmailIcon />
-              <Typography style={{ marginLeft: 5 }}>remarkable.mkt@gmail.com</Typography>
+              <Typography style={{ marginLeft: 5 }}>
+                remarkable.mkt@gmail.com
+              </Typography>
             </Box>
             <Box display={"inline-flex"} alignItems={"center"}>
               <PhoneCallbackIcon />
-              <Typography style={{ marginLeft: 5 }}>+351 917 264 157</Typography>
+              <Typography style={{ marginLeft: 5 }}>
+                +351 917 264 157
+              </Typography>
             </Box>
           </Box>
           <h2 style={{ textDecoration: "underline" }}>Office</h2>
           <Box display={"inline-flex"} alignItems={"center"}>
             <MapsHomeWorkIcon />
-            <Typography style={{ marginLeft: 5 }}>Rua do Calvário, 4580-130 Paredes</Typography>
+            <Typography style={{ marginLeft: 5 }}>
+              Rua do Calvário, 4580-130 Paredes
+            </Typography>
           </Box>
         </Box>
-        <Box>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
           <a href="https://instagram.com/remarkable.mkt" target="_blank">
             <img
               src={maLogo}
@@ -46,7 +58,7 @@ const Contacts = () => {
               alt="Remarkable logoContact"
             />
           </a>
-        </Box>
+        </motion.div>
       </Box>
     </div>
   );
