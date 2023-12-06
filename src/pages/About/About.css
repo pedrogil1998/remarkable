@@ -4,7 +4,7 @@
 }
 
 .values-box-container {
-  margin: 2rem 15rem;
+  margin: 2rem 8rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -13,7 +13,7 @@
 
 .values-box {
   margin: 2rem;
-  max-width: 350px;
+  width: 300px;
   display: flex;
   flex-direction: column;
 }
@@ -22,5 +22,11 @@
   .values-box-container {
     margin: 1rem;
     flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .values-box-container {
+    margin: 2rem 15rem;
   }
 }
