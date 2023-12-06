@@ -1,5 +1,5 @@
 .upper-container {
-  margin: 0 15rem;
+  margin: 0 8rem;
 }
 
 .long-text {
@@ -38,10 +38,17 @@
 
   .contact-us {
     flex-direction: column;
-    padding-bottom: 32px; /*rever*/
+    padding-bottom: 32px;
+    /*rever*/
   }
 
   .bg-video {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .upper-container {
+    margin: 0 15rem;
   }
 }

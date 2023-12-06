@@ -39,8 +39,7 @@ const About = () => {
               alt="Remarkable about"
             />
             <h4 style={{ color: "black" }}>
-              A nossa missão é ajudar-te a ti! Queremos que o teu negocio seja o
-              negócio. Vamos ajudar-te a alcançar os teus objetivos.
+              {"Fazer parte do crescimento e mudança dos nossos Clientes/Parceiros. Com a nossa visão 360 nos negócios, queremos acrescentar valor ao mercado e as empresas que confiam em nós diariamente. Somos a ponte que conecta diretores a colaboradores e empresas a pessoas, não somos só uma agência de Marketing, somos o seu Departamento de Marketing, capacitados a tornar a sua empresa notável, aplicando estratégias que irão não só melhorar a sua presença e posição no mercado, como também o espirito de equipa e o amor á camisola dos seus colaboradores."}
             </h4>
           </Box>
           <Box className="values-box">
@@ -53,8 +52,7 @@ const About = () => {
               alt="Remarkable about"
             />
             <h4 style={{ color: "black" }}>
-              Somos uma empresa focada em empresas. O digital não é o futuro, é
-              o presente. Connosco tem soluções 360.
+              {"A nossa visão passa por nos tornarmos um parceiro de negócio das empresas/marcas que precisem de revolucionar o mercado, entregando um serviço com uma visão 360º para dar o apoio necessário a qualquer negócio. Pretendemos que quem confia em nós, apenas se preocupe com o core business da sua marca, nós iremos ser a ponte para tudo o resto."}
             </h4>
           </Box>
           <Box className="values-box">
@@ -67,8 +65,7 @@ const About = () => {
               alt="Remarkable about"
             />
             <h4 style={{ color: "black" }}>
-              Eticamente somos fortíssimos, leais, trabalhadores e
-              perfecionistas. Queremos ter um impacto enorme no seu trabalho.
+              {"Os nossos valores moldam cada interação, cada estratégia e cada trabalho que entregamos, somos movidos pela ânsia de inovar, pela transparencia em quem confia em nós e pela orientação de resultados."}
             </h4>
           </Box>
         </Box>

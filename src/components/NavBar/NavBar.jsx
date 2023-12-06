@@ -1,7 +1,6 @@
 import letteringLogo from "./../../assets/letteringLogo.svg";
 import { Outlet, Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
-import styles from "./NavBar.module.scss";
 import { ContactButton } from "./NavBarMui";
 import { useState } from "react";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
@@ -19,8 +18,8 @@ const NavBar = ({}) => {
   const handleClick = () => setClick(!click);
 
   return (
-    <Box className={styles.navBarBox}>
-      <Box className={styles.navBarBoxInner}>
+    <Box className="navBarBox">
+      <Box className="navBarBoxInner">
         <a href="#top">
           <img
             src={letteringLogo}
@@ -31,21 +30,21 @@ const NavBar = ({}) => {
         
         <Box>
           <nav className={click ? "navMenu active" : "navMenu"}>
-            <Link className={styles.link} to="/remarkable" onClick={closeMobileMenu}>
+            <Link className="link" to="/remarkable" onClick={closeMobileMenu}>
               Home
             </Link>
-            <Link className={styles.link} to="/remarkable/about" onClick={closeMobileMenu}>
+            <Link className="link" to="/remarkable/about" onClick={closeMobileMenu}>
               Sobre
             </Link>
             <Link
-              className={styles.link}
+              className="link"
               to="remarkable/services"
               onClick={closeMobileMenu}
             >
               Serviços
             </Link>
             <Link
-              className={styles.link}
+              className="link"
               to="remarkable/portfolio"
               onClick={closeMobileMenu}
             >
