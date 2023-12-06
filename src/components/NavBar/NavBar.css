@@ -9,7 +9,7 @@
   top: 0;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-image: linear-gradient(black, #141414);
   width: 100%;
   z-index: 2;
 }

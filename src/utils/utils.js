@@ -8,6 +8,11 @@ export const LongText = styled(Typography)((props) => ({
 
 export const TitleText = styled(Typography)((props) => ({
   fontFamily: "Kdam-Regular",
+  fontSize: "5rem"
+}));
+
+export const SubTitleText = styled(Typography)((props) => ({
+  fontFamily: "Kdam-Regular",
 }));
 
 export const CardTitleText = styled(Typography)((props) => ({

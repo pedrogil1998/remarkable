@@ -15,10 +15,11 @@ import "./Services.css";
 const Services = () => {
   return (
     <div className="service-container">
-        <TitleText variant="h1">
+      <div className="service-content">
+        <TitleText variant="h2">
           O TEU FUTURO COMEÇA AQUI
         </TitleText>
-        <Box className="service-box">
+        <Box className="service-line-box">
           <ServiceCard
             name={"Marketing Digital"}
             icon={marketingdigital}
@@ -42,7 +43,7 @@ const Services = () => {
             last
           />
         </Box>
-        <Box className="service-box">
+        <Box className="service-line-box">
           <ServiceCard
             name={"Gestao de Redes Sociais"}
             icon={gestaoredesociais}
@@ -66,7 +67,7 @@ const Services = () => {
             last
           />
         </Box>
-        <Box className="service-box">
+        <Box className="service-line-box">
           <ServiceCard
             wide
             name={"Planos 360"}
@@ -76,7 +77,8 @@ const Services = () => {
             }
           />
         </Box>
-      <Contacts />
+      </div>
+      <Contacts/>
     </div>
   );
 };

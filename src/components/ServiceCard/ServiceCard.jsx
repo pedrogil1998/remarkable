@@ -36,7 +36,7 @@ const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
         <Box
           className="service-card-box service-card-content"
           sx={{
-            width: wide && (!isMobile ? 1300 : 300),
+            width: wide && (!isMobile ? 1050 : 300),
             mr: !last && 2,
             visibility: hidden && "hidden",
           }}
@@ -49,7 +49,7 @@ const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
         <Box
           className="service-card-content"
           sx={{
-            width: wide && (!isMobile ? 1300 : 300),
+            width: wide && (!isMobile ? 1050 : 300),
             mr: !last && 2,
             visibility: hidden && "hidden",
           }}

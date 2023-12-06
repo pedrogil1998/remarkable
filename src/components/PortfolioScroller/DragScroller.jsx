@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Box } from "@mui/material";
-import styles from "./DragScroller.module.scss";
 import useIsMobile, { TitleText } from "../../utils/utils";
 import imagesFit from "../../assets/Fitness";
 import imagesEng from "../../assets/Engenharia";
@@ -21,9 +20,9 @@ const DragScroller = ({ title, background, icon }) => {
   const isMobile = useIsMobile();
   return (
     <div className="container">
-      <Box className={styles.boxContainer} sx={{ backgroundColor: background }}>
-        <Box className={"box-left"}>
-          <TitleText className={styles.heading} variant="h5">
+      <Box className="boxContainer" sx={{ backgroundColor: background }}>
+        <Box className="box-left">
+          <TitleText className="heading" variant="h5">
             {title}
           </TitleText>
         </Box>
@@ -41,7 +40,7 @@ const DragScroller = ({ title, background, icon }) => {
                 <SwiperSlide key={index}>
                   <img
                     src={image}
-                    className={styles.sliderImage}
+                    className="sliderImage"
                     alt="slide_image"
                   />
                 </SwiperSlide>
@@ -61,7 +60,7 @@ const DragScroller = ({ title, background, icon }) => {
                 <SwiperSlide key={index}>
                   <img
                     src={image}
-                    className={styles.sliderImage}
+                    className="sliderImage"
                     alt="slide_image"
                   />
                 </SwiperSlide>
@@ -81,7 +80,7 @@ const DragScroller = ({ title, background, icon }) => {
                 <SwiperSlide key={index}>
                   <img
                     src={image}
-                    className={styles.sliderImage}
+                    className="sliderImage"
                     alt="slide_image"
                   />
                 </SwiperSlide>
@@ -101,7 +100,7 @@ const DragScroller = ({ title, background, icon }) => {
                 <SwiperSlide key={index}>
                   <img
                     src={image}
-                    className={styles.sliderImage}
+                    className="sliderImage"
                     alt="slide_image"
                   />
                 </SwiperSlide>
@@ -121,7 +120,7 @@ const DragScroller = ({ title, background, icon }) => {
                 <SwiperSlide key={index}>
                   <img
                     src={image}
-                    className={styles.sliderImage}
+                    className="sliderImage"
                     alt="slide_image"
                   />
                 </SwiperSlide>
@@ -141,7 +140,7 @@ const DragScroller = ({ title, background, icon }) => {
                 <SwiperSlide key={index}>
                   <img
                     src={image}
-                    className={styles.sliderImage}
+                    className="sliderImage"
                     alt="slide_image"
                   />
                 </SwiperSlide>
@@ -149,7 +148,7 @@ const DragScroller = ({ title, background, icon }) => {
             })}
           </Swiper>
         )}
-        <img src={icon} className={styles.cardIcon} alt="saude_icon" />
+        <img src={icon} className="cardIcon" alt="saude_icon" />
       </Box>
     </div>
   );

@@ -1,16 +1,20 @@
 .service-container {
+  height: 100vh;
+  width: 100%;
+}
+
+.service-content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.service-box {
+.service-line-box {
   display: inline-flex;
   margin: 2rem;
 }
 
 @media screen and (max-width: 960px) {
-  .service-box {
+  .service-line-box {
     display: flex;
     flex-direction: column;
     margin: 0;

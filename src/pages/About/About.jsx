@@ -4,14 +4,14 @@ import vision from "./../../assets/vision.svg";
 import values from "./../../assets/values.svg";
 import { Box, Typography } from "@mui/material";
 import Contacts from "../../components/Contacts/Contacts";
-import { LongText, TitleText } from "../../utils/utils";
+import { LongText, SubTitleText, TitleText } from "../../utils/utils";
 import "./About.css";
 
 const About = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <Box className="upper-container">
-        <TitleText className="header-text" variant="h1">A NOSSA HISTÓRIA</TitleText>
+        <TitleText variant="h1">A NOSSA HISTÓRIA</TitleText>
         <LongText className="long-text" variant="h5">
           Em junho de 2023, começa a nossa apaixonante jornada neste mundo que é
           tão competitivo. A reMArkable é uma agência de Marketing focada em
@@ -30,9 +30,9 @@ const About = () => {
       <div style={{ backgroundColor: "white" }}>
         <Box className="values-box-container">
           <Box className="values-box">
-            <TitleText variant="h3" sx={{ color: "black" }}>
+            <SubTitleText variant="h3" sx={{ color: "black" }}>
               MISSÃO
-            </TitleText>
+            </SubTitleText>
             <img
               src={mission}
               className="about remarkable"
@@ -43,9 +43,9 @@ const About = () => {
             </h4>
           </Box>
           <Box className="values-box">
-            <TitleText variant="h3" sx={{ color: "black" }}>
+            <SubTitleText variant="h3" sx={{ color: "black" }}>
               VISÃO
-            </TitleText>
+            </SubTitleText>
             <img
               src={vision}
               className="about remarkable"
@@ -56,9 +56,9 @@ const About = () => {
             </h4>
           </Box>
           <Box className="values-box">
-            <TitleText variant="h3" sx={{ color: "black" }}>
+            <SubTitleText variant="h3" sx={{ color: "black" }}>
               VALORES
-            </TitleText>
+            </SubTitleText>
             <img
               src={values}
               className="about remarkable"
