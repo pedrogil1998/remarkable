@@ -1,0 +1,20 @@
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  background-color: #828282;
+  border: 2px solid #000;
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 1);
+}
+
+.modal-box:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 960px) {
+  .modal-box {
+    width: 300px;
+  }
+}
