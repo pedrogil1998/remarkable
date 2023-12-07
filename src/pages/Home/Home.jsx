@@ -2,6 +2,7 @@ import Contacts from "../../components/Contacts/Contacts";
 import useIsMobile, { LongText, TitleText } from "../../utils/utils";
 import aquiButton from "../../assets/aquiButton.svg";
 import CardScroller from "../../components/FeedbackScroller/CardScroller";
+import video from "../../assets/video-1.mp4"
 import "./Home.css";
 import { motion } from "framer-motion";
 
@@ -42,7 +43,7 @@ const Home = ({}) => {
         </div>
         <Contacts />
         {!isMobile && (
-          <video src="/videos/video-1.mp4" autoPlay loop muted></video>
+          <video src={video} autoPlay loop muted></video>
         )}
       </div>
     </>
