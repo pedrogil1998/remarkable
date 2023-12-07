@@ -7,7 +7,7 @@ import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import "./NavBar.css";
 
-const NavBar = ({}) => {
+const NavBar = ({ }) => {
   const [click, setClick] = useState(false);
 
   const closeMobileMenu = () => {
@@ -27,7 +27,7 @@ const NavBar = ({}) => {
             alt="Remarkable logo"
           />
         </a>
-        
+
         <Box>
           <nav className={click ? "navMenu active" : "navMenu"}>
             <Link className="link" to="/remarkable" onClick={closeMobileMenu}>
@@ -49,6 +49,13 @@ const NavBar = ({}) => {
               onClick={closeMobileMenu}
             >
               Portefólio
+            </Link>
+            <Link
+              className="link"
+              to="remarkable/partners"
+              onClick={closeMobileMenu}
+            >
+              Parceiros
             </Link>
             <ContactButton href="#contacts" onClick={closeMobileMenu}>
               <Typography>Contactos</Typography>
