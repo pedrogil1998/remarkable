@@ -7,6 +7,7 @@ import FeedbackCard from "./FeedbackCard/FeedbackCard";
 import data from "./FeedbackCard/FeedbackInfo.json";
 import "./CardScroller.css";
 import { motion } from "framer-motion";
+import EaseAppearMotion from "../Animations/AppearAnimation";
 
 const CardScroller = () => {
   const scrollCard = (e, right = false) => {
@@ -24,11 +25,7 @@ const CardScroller = () => {
       <TitleText variant="h1" margin="1rem">
         Feedback
       </TitleText>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
+      <EaseAppearMotion>
         <Box className="box-scroller">
           <div>
             <button onClick={scrollCard} className="arrow">
@@ -54,7 +51,7 @@ const CardScroller = () => {
             </button>
           </div>
         </Box>
-      </motion.div>
+      </EaseAppearMotion>
     </div>
   );
 };

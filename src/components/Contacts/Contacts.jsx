@@ -7,6 +7,7 @@ import maLogo from "./../../assets/maLogo.svg";
 import { Box, Typography } from "@mui/material";
 import "./Contacts.css";
 import { motion } from "framer-motion";
+import EaseAppearMotion from "../Animations/AppearAnimation";
 
 const Contacts = () => {
   return (
@@ -45,12 +46,7 @@ const Contacts = () => {
             </Typography>
           </Box>
         </Box>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-        >
+        <EaseAppearMotion>
           <a href="https://instagram.com/remarkable.mkt" target="_blank">
             <img
               src={maLogo}
@@ -58,7 +54,7 @@ const Contacts = () => {
               alt="Remarkable logoContact"
             />
           </a>
-        </motion.div>
+        </EaseAppearMotion>
       </Box>
     </div>
   );

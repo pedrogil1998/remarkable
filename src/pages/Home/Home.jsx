@@ -2,9 +2,10 @@ import Contacts from "../../components/Contacts/Contacts";
 import useIsMobile, { LongText, TitleText } from "../../utils/utils";
 import aquiButton from "../../assets/aquiButton.svg";
 import CardScroller from "../../components/FeedbackScroller/CardScroller";
-import video from "../../assets/video-1.mp4"
+import video from "../../assets/video-1.mp4";
 import "./Home.css";
 import { motion } from "framer-motion";
+import EaseAppearMotion from "../../components/Animations/AppearAnimation";
 
 const Home = ({}) => {
   const isMobile = useIsMobile();
@@ -14,17 +15,13 @@ const Home = ({}) => {
         <div className="upper-container">
           <TitleText variant="h1">TORNA-TE NOTÁVEL</TitleText>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-          >
+          <EaseAppearMotion>
             <LongText className="long-text" variant="h5">
               {
                 "A verdadeira MUDANÇA começa aqui... Agarra a oportunidade de tornar o teu negócio um negócio NOTÁVEL. Não somos apenas uma agência de Marketing. Temos a paixão pelo Marketing, a ânsia de inovar, marcar a diferença e tornar o seu negócio diferente. Preparado para se tornar reMArkable?"
               }
             </LongText>
-          </motion.div>
+          </EaseAppearMotion>
         </div>
         <CardScroller />
         <div className="contact-us">
@@ -42,9 +39,7 @@ const Home = ({}) => {
           </motion.div>
         </div>
         <Contacts />
-        {!isMobile && (
-          <video src={video} autoPlay loop muted></video>
-        )}
+        {!isMobile && <video src={video} autoPlay loop muted></video>}
       </div>
     </>
   );

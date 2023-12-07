@@ -5,6 +5,7 @@ import "./Partners.css";
 import { Button } from "@mui/material";
 import { PartnerButton } from "../../components/Partner/PartnerMui";
 import Contacts from "../../components/Contacts/Contacts";
+import EaseAppearMotion from "../../components/Animations/AppearAnimation";
 
 const Partners = () => {
   const [data, setData] = useState(PartnerData);
@@ -20,21 +21,25 @@ const Partners = () => {
   return (
     <div className="partners-container">
       <div className="filter-container">
-        <PartnerButton onClick={() => setData(PartnerData)}>Todos</PartnerButton>
+        <PartnerButton onClick={() => setData(PartnerData)}>
+          Todos
+        </PartnerButton>
         {collection.map((type, index) => (
           <PartnerButton key={index} onClick={() => galleryFilter(type)}>
             {type}
           </PartnerButton>
         ))}
       </div>
-      <div className="gallery-container">
-        {data.map((item) => (
-          <div key={item.id} className="gallery-item">
-            <img src={item.image} />
-          </div>
-        ))}
-      </div>
-      <Contacts/>
+      <EaseAppearMotion>
+        <div className="gallery-container">
+          {data.map((item) => (
+            <div key={item.id} className="gallery-item">
+              <img src={item.image} />
+            </div>
+          ))}
+        </div>
+      </EaseAppearMotion>
+      <Contacts />
     </div>
   );
 };
