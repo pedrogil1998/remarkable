@@ -8,6 +8,10 @@
   flex-direction: column;
   align-items: center;
 }
+.lines-content {
+  display: flex;
+  flex-direction: column;
+}
 .service-line-box {
   display: inline-flex;
   margin: 2rem;
@@ -23,5 +27,4 @@
   .service-container {
     margin: 0 1rem;
   }
-  
 }

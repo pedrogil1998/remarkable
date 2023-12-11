@@ -15,19 +15,17 @@ const About = () => {
         <TitleText variant="h1">A NOSSA HISTÓRIA</TitleText>
         <EaseAppearMotion>
           <LongText className="long-text" variant="h5">
-            Em junho de 2023, começa a nossa apaixonante jornada neste mundo que
-            é tão competitivo. A reMArkable é uma agência de Marketing focada em
-            resultados e em tornar negócios e marcas em algo diferente e
-            notável. Queremos ajudá-lo a entrar na rua mais movimentada do
-            mundo, a "Internet", da melhor forma, para que se consiga
-            diferenciar da sua concorrência. Somos apaixonados pelo nosso
-            trabalho e cada desafio motivanos a ser melhores. Adoramos trabalhar
-            em equipa, porque é na discussão e ligação de vários pensamentos e
-            ideias que surgem grandes estratégias. Os nossos Brainstorms são de
-            outro mundo! As nossas quintas-feiras de tarde são focadas em
-            atividades de Teambuilding. Isto porque somos uma equipa reMArkable,
-            e só assim é que conseguimos tornar os nossos parceiros/clientes
-            reMArkable.
+            A reMArkable surge de um desejo e de uma visão de dois irmãos que
+            apesar da sua significativa diferença de idades, partilham da mesma
+            paixão na criação de dinâmicas empresariais e exploração do
+            networking. Com estágios de experiência díspares aliamos a
+            criatividade de um recém formado, com o percurso profissional de
+            mais de 15 anos de um gestor empresarial, ambicionando, em cada
+            projeto, tirar partido das melhores capacidades de cada um e evoluir
+            com cada cliente e parceiro. É neste processo de partilha de
+            conhecimento e experiência que acreditamos, conectando empresas e
+            pessoas e estando presente em cada fase da sua jornada. Não somos
+            apenas uma agência de Marketing, somos uma rede de networking.
           </LongText>
         </EaseAppearMotion>
       </Box>

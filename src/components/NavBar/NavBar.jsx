@@ -31,34 +31,34 @@ const NavBar = ({ }) => {
         <Box>
           <nav className={click ? "navMenu active" : "navMenu"}>
             <Link className="link" to="/remarkable" onClick={closeMobileMenu}>
-              Home
+              HOME
             </Link>
             <Link className="link" to="/remarkable/about" onClick={closeMobileMenu}>
-              Sobre
+              ADN
             </Link>
             <Link
               className="link"
               to="remarkable/services"
               onClick={closeMobileMenu}
             >
-              Serviços
+              SERVIÇOS
             </Link>
             <Link
               className="link"
               to="remarkable/portfolio"
               onClick={closeMobileMenu}
             >
-              Portefólio
+              PORTEFÓLIO
             </Link>
             <Link
               className="link"
               to="remarkable/partners"
               onClick={closeMobileMenu}
             >
-              Parceiros
+              PARCEIROS
             </Link>
             <ContactButton href="#contacts" onClick={closeMobileMenu}>
-              <Typography>Contactos</Typography>
+              <Typography>CONTACTOS</Typography>
             </ContactButton>
           </nav>
           <Outlet />

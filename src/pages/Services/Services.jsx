@@ -18,7 +18,7 @@ const Services = () => {
     <div className="service-container">
       <div className="service-content">
         <TitleText variant="h2">O TEU FUTURO COMEÇA AQUI</TitleText>
-        <EaseAppearMotion>
+        <EaseAppearMotion className="lines-content">
           <Box className="service-line-box">
             <ServiceCard
               name={"Marketing Digital"}

@@ -28,7 +28,7 @@ const Contacts = () => {
             <Box display={"inline-flex"} alignItems={"center"}>
               <EmailIcon />
               <Typography style={{ marginLeft: 5 }}>
-                remarkable.mkt@gmail.com
+                geral@remarkablemkt.pt
               </Typography>
             </Box>
             <Box display={"inline-flex"} alignItems={"center"}>
@@ -38,6 +38,8 @@ const Contacts = () => {
               </Typography>
             </Box>
           </Box>
+        </Box>
+        <Box className="office-container">
           <h2 style={{ textDecoration: "underline" }}>Office</h2>
           <Box display={"inline-flex"} alignItems={"center"}>
             <MapsHomeWorkIcon />
@@ -46,7 +48,7 @@ const Contacts = () => {
             </Typography>
           </Box>
         </Box>
-        <EaseAppearMotion>
+        {/* <EaseAppearMotion>
           <a href="https://instagram.com/remarkable.mkt" target="_blank">
             <img
               src={maLogo}
@@ -54,7 +56,7 @@ const Contacts = () => {
               alt="Remarkable logoContact"
             />
           </a>
-        </EaseAppearMotion>
+        </EaseAppearMotion> */}
       </Box>
     </div>
   );

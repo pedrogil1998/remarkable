@@ -21,10 +21,10 @@ const CardScroller = () => {
   };
 
   return (
-    <div className="card-scroller-container">
-      <TitleText variant="h1" margin="1rem">
+    <div  className="card-scroller-container">
+      {/* <TitleText variant="h1" margin="1rem">
         Feedback
-      </TitleText>
+      </TitleText> */}
       <EaseAppearMotion>
         <Box className="box-scroller">
           <div>

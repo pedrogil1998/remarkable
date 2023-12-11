@@ -6,9 +6,30 @@ import video from "../../assets/video-1.mp4";
 import "./Home.css";
 import { motion } from "framer-motion";
 import EaseAppearMotion from "../../components/Animations/AppearAnimation";
+import maLogo from "../../assets/maLogo.svg";
+import HeartAnimation, {
+  RotateAnimation,
+} from "../../components/Animations/RotateAnimation";
 
 const Home = ({}) => {
   const isMobile = useIsMobile();
+  const scrollHover = () => {
+    // let scroll = document.querySelector(".logoHome");
+
+    // scroll.addEventListener("mouseenter", function () {
+    //   scroll.scrollIntoView({ alignToTop: false });
+    // });
+
+    var element = document.querySelector(".logoHome");
+    var headerOffset = 128;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition / 2,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <div className="home-container">
@@ -18,15 +39,25 @@ const Home = ({}) => {
           <EaseAppearMotion>
             <LongText className="long-text" variant="h5">
               {
-                "A verdadeira MUDANÇA começa aqui... Agarra a oportunidade de tornar o teu negócio um negócio NOTÁVEL. Não somos apenas uma agência de Marketing. Temos a paixão pelo Marketing, a ânsia de inovar, marcar a diferença e tornar o seu negócio diferente. Preparado para se tornar reMArkable?"
+                "A verdadeira MUDANÇA começa aqui. Agarra a oportunidade de tornar o teu negócio um negócio NOTÁVEL. Não somos apenas uma agência de Marketing. Temos a paixão pelo Marketing, a ânsia de inovar, marcar a diferença e tornar o seu negócio diferente."
               }
             </LongText>
+            <LongText className="long-text" variant="h5">
+              {"Preparado para se tornar reMArkable?"}
+            </LongText>
           </EaseAppearMotion>
+          <a onMouseEnter={scrollHover} href="#here">
+            <img
+              src={maLogo}
+              className="logoHome remarkable"
+              alt="Remarkable logoContact"
+            />
+          </a>
         </div>
         <CardScroller />
-        <div className="contact-us">
+        <div id="here" className="contact-us">
           <TitleText variant="h2" margin="2rem" style={{ color: "black" }}>
-            Entre em contacto:
+            Muda o teu futuro:
           </TitleText>
           <motion.div whileHover={{ scale: 1.1 }}>
             <a href="https://instagram.com/remarkable.mkt" target="_blank">

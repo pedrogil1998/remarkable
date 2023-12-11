@@ -2,9 +2,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 2rem;
-  border-bottom: 2px solid;
-  border-color: white;
+  padding: 0 2rem 0 2rem;
+
   justify-content: center;
 }
 
@@ -25,14 +24,19 @@
 }
 
 .heading {
-  color: var(--remarkableRed);
+  /* color: var(--remarkableRed); */
   font-size: 2rem !important;
 }
-
 
 .swiper {
   width: 70%;
   margin: 0;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+.container:not(:last-child) .swiper {
+  border-bottom: 2px solid;
+  border-color: white;
 }
 
 @media screen and (max-width: 960px) {
@@ -42,6 +46,7 @@
 
   .swiper {
     margin-right: 0;
+    padding-bottom: 2rem;
   }
 
   .box-left {
@@ -60,6 +65,6 @@
 
 @media screen and (min-width: 1600px) {
   .boxContainer {
-    padding: 2rem 7rem;
+    padding: 0 7rem 0 7rem;
   }
 }
