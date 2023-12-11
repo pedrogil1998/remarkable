@@ -4,10 +4,11 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneCallbackIcon from "@mui/icons-material/PhoneCallback";
 import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
 import maLogo from "./../../assets/maLogo.svg";
-import { Box, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import "./Contacts.css";
 import { motion } from "framer-motion";
 import EaseAppearMotion from "../Animations/AppearAnimation";
+import { TitleText } from "../../utils/utils";
 
 const Contacts = () => {
   return (
@@ -18,8 +19,8 @@ const Contacts = () => {
         flexDirection="row"
         justifyContent="space-between"
       >
-        <Box>
-          <h1>Contactos</h1>
+        <Box className="office-container">
+          <TitleText>Contactos</TitleText>
           <Box display={"flex"} flexDirection={"column"}>
             <Box display={"inline-flex"} alignItems={"center"}>
               <InstagramIcon />
@@ -38,15 +39,17 @@ const Contacts = () => {
               </Typography>
             </Box>
           </Box>
-        </Box>
-        <Box className="office-container">
           <h2 style={{ textDecoration: "underline" }}>Office</h2>
-          <Box display={"inline-flex"} alignItems={"center"}>
+          <Box className="text-container">
             <MapsHomeWorkIcon />
             <Typography style={{ marginLeft: 5 }}>
               Rua do Calvário, 4580-130 Paredes
             </Typography>
           </Box>
+          <Divider sx={{ backgroundColor: "white" }} />
+          <Typography>
+            ©2023 Remarkable.mkt. All rights reserved
+          </Typography>
         </Box>
         {/* <EaseAppearMotion>
           <a href="https://instagram.com/remarkable.mkt" target="_blank">

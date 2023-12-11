@@ -1,5 +1,5 @@
 .upper-container {
-  margin: 0 8rem;
+  margin: 0 16rem;
   margin-bottom: 2rem !important;
 }
 
@@ -35,7 +35,7 @@
 
 .logoHome:hover {
   animation: heartBeat 1.2s infinite;
-  filter: drop-shadow(0 0 2em rgb(59, 59, 59));
+  filter: drop-shadow(0 0 1em var(--remarkableRed));
 }
 
 @media screen and (max-width: 960px) {
@@ -66,7 +66,7 @@
 
 @media screen and (min-width: 1600px) {
   .upper-container {
-    margin: 0 14rem;
+    margin: 0 35rem;
   }
 }
 

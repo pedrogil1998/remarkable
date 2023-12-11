@@ -4,11 +4,17 @@ import { useEffect, useState } from "react";
 
 export const LongText = styled(Typography)((props) => ({
   fontFamily: "Playfair-Regular",
+  marginTop: "2rem",
+}));
+
+export const SubLongText = styled(Typography)((props) => ({
+  fontFamily: "Playfair-Regular",
 }));
 
 export const TitleText = styled(Typography)((props) => ({
   fontFamily: "Kdam-Regular",
-  fontSize: "5rem"
+  fontSize: "3rem",
+  marginBottom: "2rem",
 }));
 
 export const SubTitleText = styled(Typography)((props) => ({

@@ -9,13 +9,12 @@ import NoPage from "./pages/NoPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
 
-
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter style={{ display: "flex" }}>
         <NavBar />
-        <Box style={{ width: "100%", marginTop: "10rem" }}>
+        <Box style={{ width: "100%", marginTop: "7rem" }}>
           <Routes>
             <Route path="remarkable" index element={<Home />} />
             <Route path="remarkable/about" element={<About />} />
