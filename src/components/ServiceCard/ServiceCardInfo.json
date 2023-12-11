@@ -1,7 +1,32 @@
 {
   "services": [
     {
-      "name": "Marketing Digital"
+      "name": "Marketing Digital",
+      "description": "De acordo com Philip Kotler Marketing é o Processo social, por meio do qual pessoas e grupos de pessoas satisfazem desejos e necessidades com a criação, oferta e livre negociação de produtos e serviços de valor com outros. Marketing é Marketing, o Digital é apenas o meio onde o processo se desenvolve. O segredo é conhecer os atalhos desse grande meio, o mais movimentado do mundo para otimizar e potencializar todos os seus recursos e presença digital, através de estratégias como SEO, Inbound Marketing e Marketing de Conteúdo."
+    },
+    {
+      "name": "Gestão de Frotas",
+      "description": "Tem tempo para gerir a sua frota? Um dos maiores custos operacionais de uma empresa consiste na frota e na sua manutenção. Com mais de uma década de conhecimento e experiência acumulada nesse setor, fazemos deste serviço um indicador diferenciativo que lhe permitirá uma maior organização e conteção de custos com serviços profissionais e de confiança."
+    },
+    {
+      "name": "Branding | Identidade Visual",
+      "description": "Nunca lhe perguntaram qual a marca de chiclets que queria ? Pois é... mas a Chiclets é uma marca de pastilhas elásticas. Este é um dos raros exemplos de expoente máximo de branding em que a marca se confunde com o produto. Não prometemos o mesmo resultado, no entanto o objetivo é criar uma identidade sólida para se tornar uma marca impactante, revelando a sua paixão."
+    },
+    {
+      "name": "Gestao de Redes Sociais",
+      "description": "Facebook, Instagram, X (antigo twitter), LinkdIn, TikTok, todas estas redes sociais usam algoritmos para determinar o perfil e as perferencias de conteúdo do utilizador. O conhecimento e compreensão do funcionamento destes algoritmos são a chave para uma presença digital assertiva. Aliado a um design e a uma estratégia criativa e regular, garantimos um aumento qualitativo e quantitativo nas suas redes sociais."
+    },
+    {
+      "name": "Planos de Marketing e Comunicação",
+      "description": "Deixe-nos conhecer a sua empresa e definir consigo a melhor estratégia adaptável a  si. Os nossos planos de Marketing e Comunicação mais do que uma análise criteriosa da sua empresa e do seu setor, centram-se na sua visão e objetivos, para que juntos possamos ultrapassar os desafios e manter a sua identidade."
+    },
+    {
+      "name": "Sites e Aplicações Web",
+      "description": "Tem site? Se tem, o seu site adequa-se a si e às suas necessidades? As nossas soluções para desenvolvimento de sites e aplicações web não se limitam a criar uma presença online, pois, cada projeto é unico e programado à sua medida, indo de encontro às suas necessidades e objetivos, garantindo uma eficiência orgânica entre o processo digital e o processo logistico. Não se esqueça que o seu site é a sua morada digital."
+    },
+    {
+      "name": "Plano 360º",
+      "description": "Faça-nos uma visita guiada à volta da sua empresa. O plano 360º consiste numa abordagem total à estrutura e processos da sua empresa. Para além de englobar todos os serviços acima descritos acrescentamos valor com serviços adjacentes e diferenciadores como, Consultoria Juridica, Consultoria Financeira e Psicologia Laboral. Acreditamos que um envolvimento 360º é a estratégia ideal para garantir uma dinâmica funcional e um desempenho optimizado. Pretendemos, assim, construir consigo um futuro direcionado para o desenvolvimento de valências económicas, interpessoais e socias. Um plano que dá a volta que precisa à sua empresa."
     }
   ]
 }

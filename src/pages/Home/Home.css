@@ -34,7 +34,7 @@
 }
 
 .logoHome:hover {
-  animation: heartBeat 1.2s infinite; 
+  animation: heartBeat 1.2s infinite;
   filter: drop-shadow(0 0 2em rgb(59, 59, 59));
 }
 
@@ -57,6 +57,11 @@
   .bg-video {
     display: none;
   }
+  
+  .logoHome {
+    height: 20em;
+    padding-top: 5rem;
+  }
 }
 
 @media screen and (min-width: 1600px) {
@@ -69,11 +74,11 @@
   0% {
     transform: scale(1);
   }
-  
-  50%{
+
+  50% {
     transform: scale(1.05);
   }
-  100%{
+  100% {
     transform: scale(1);
   }
 }

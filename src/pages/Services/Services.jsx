@@ -12,6 +12,7 @@ import Contacts from "../../components/Contacts/Contacts";
 import { TitleText } from "../../utils/utils";
 import "./Services.css";
 import EaseAppearMotion from "../../components/Animations/AppearAnimation";
+import data from "../../components/ServiceCard/ServiceCardInfo.json";
 
 const Services = () => {
   return (
@@ -21,60 +22,46 @@ const Services = () => {
         <EaseAppearMotion className="lines-content">
           <Box className="service-line-box">
             <ServiceCard
-              name={"Marketing Digital"}
+              name={data.services[0].name}
               icon={marketingdigital}
-              description={
-                "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!"
-              }
+              description={data.services[0].description}
             />
             <ServiceCard
-              name={"Gestão de Frotas"}
+              name={data.services[1].name}
               icon={gestaofrotas}
-              description={
-                "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!"
-              }
+              description={data.services[1].description}
             />
             <ServiceCard
-              name={"Branding"}
+              name={data.services[2].name}
               icon={branding}
-              description={
-                "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!"
-              }
+              description={data.services[2].description}
               last
             />
           </Box>
           <Box className="service-line-box">
             <ServiceCard
-              name={"Gestao de Redes Sociais"}
+              name={data.services[3].name}
               icon={gestaoredesociais}
-              description={
-                "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!"
-              }
+              description={data.services[3].description}
             />
             <ServiceCard
-              name={"Planos de Marketing e Comunicação"}
+             name={data.services[4].name}
               icon={planosmarketing}
-              description={
-                "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!"
-              }
+              description={data.services[4].description}
             />
             <ServiceCard
-              name={"Sites e Aplicações Web"}
+              name={data.services[5].name}
               icon={siteseweb}
-              description={
-                "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!"
-              }
+              description={data.services[5].description}
               last
             />
           </Box>
           <Box className="service-line-box">
             <ServiceCard
               wide
-              name={"Planos 360"}
+              name={data.services[6].name}
               icon={plano360}
-              description={
-                "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!"
-              }
+              description={data.services[6].description}
             />
           </Box>
         </EaseAppearMotion>
