@@ -22,13 +22,13 @@ export const PartnerData = [
   {
     id: 3,
     title: "Farmotive",
-    type: "Engenharia",
+    type: "Setor Automóvel",
     image: farmotive,
   },
   {
     id: 4,
     title: "Tisoauto",
-    type: "Retalho",
+    type: "Setor Automóvel",
     image: tisoauto,
   },
   {

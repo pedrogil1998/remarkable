@@ -8,7 +8,7 @@ import { Box, Divider, Typography } from "@mui/material";
 import "./Contacts.css";
 import { motion } from "framer-motion";
 import EaseAppearMotion from "../Animations/AppearAnimation";
-import { TitleText } from "../../utils/utils";
+import { SubTitleText, TitleText } from "../../utils/utils";
 
 const Contacts = () => {
   return (
@@ -39,7 +39,7 @@ const Contacts = () => {
               </Typography>
             </Box>
           </Box>
-          <h2 style={{ textDecoration: "underline" }}>Office</h2>
+          <SubTitleText style={{ textDecoration: "underline", marginTop: "2rem" }}>Office</SubTitleText>
           <Box className="text-container">
             <MapsHomeWorkIcon />
             <Typography style={{ marginLeft: 5 }}>
@@ -48,7 +48,7 @@ const Contacts = () => {
           </Box>
           <Divider sx={{ backgroundColor: "white" }} />
           <Typography>
-            ©2023 Remarkable.mkt. All rights reserved
+            ©2023 Remarkablemkt. All rights reserved
           </Typography>
         </Box>
         {/* <EaseAppearMotion>
