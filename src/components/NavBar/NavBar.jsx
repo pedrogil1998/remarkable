@@ -6,8 +6,9 @@ import { useState } from "react";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import "./NavBar.css";
+import { CardText } from "../../utils/utils";
 
-const NavBar = ({ }) => {
+const NavBar = ({}) => {
   const [click, setClick] = useState(false);
 
   const closeMobileMenu = () => {
@@ -31,34 +32,38 @@ const NavBar = ({ }) => {
         <Box>
           <nav className={click ? "navMenu active" : "navMenu"}>
             <Link className="link" to="/remarkable" onClick={closeMobileMenu}>
-              HOME
+              <CardText>HOME</CardText>
             </Link>
-            <Link className="link" to="/remarkable/about" onClick={closeMobileMenu}>
-              ADN
+            <Link
+              className="link"
+              to="/remarkable/about"
+              onClick={closeMobileMenu}
+            >
+              <CardText>ADN</CardText>
             </Link>
             <Link
               className="link"
               to="remarkable/services"
               onClick={closeMobileMenu}
             >
-              SERVIÇOS
+              <CardText>SERVIÇOS</CardText>
             </Link>
             <Link
               className="link"
               to="remarkable/portfolio"
               onClick={closeMobileMenu}
             >
-              PORTEFÓLIO
+              <CardText>PORTEFÓLIO</CardText>
             </Link>
             <Link
               className="link"
               to="remarkable/partners"
               onClick={closeMobileMenu}
             >
-              PARCEIROS
+             <CardText>PARCEIROS</CardText> 
             </Link>
             <ContactButton href="#contacts" onClick={closeMobileMenu}>
-              <Typography>CONTACTOS</Typography>
+              <CardText>CONTACTOS</CardText>
             </ContactButton>
           </nav>
           <Outlet />
