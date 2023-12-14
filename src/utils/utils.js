@@ -29,6 +29,11 @@ export const CardText = styled(Typography)((props) => ({
   fontFamily: "Arimo",
 }));
 
+export const ServiceCardText = styled(Typography)((props) => ({
+  fontFamily: "Arimo",
+  lineHeight: 1.3,
+}));
+
 export default function useIsMobile() {
   const getIsMobile = () => window.innerWidth <= 960;
   const [isMobile, setIsMobile] = useState(getIsMobile);

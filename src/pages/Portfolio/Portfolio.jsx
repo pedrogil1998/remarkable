@@ -9,6 +9,7 @@ import retalho from "../../assets/Portfolio/retalho.svg";
 import saude from "../../assets/Portfolio/saude.svg";
 import "./Portfolio.css";
 import EaseAppearMotion from "../../components/Animations/AppearAnimation";
+import LightBackground from "../../components/Animations/LightBackground/LightBackground";
 
 const Portfolio = () => {
   return (
@@ -18,13 +19,15 @@ const Portfolio = () => {
       </div>
 
       {/* <DragScroller title="FINANCEIRO" icon={financeiro}/> */}
-      <EaseAppearMotion>
-        <DragScroller title="FITNESS" icon={fitness} />
-        <DragScroller title="IMOBILIÁRIO" icon={imobiliario} />
-        <DragScroller title="RETALHO" icon={retalho} />
-        <DragScroller title="SAÚDE" icon={saude} />
-        <DragScroller title="ENGENHARIA" icon={engenharia} />
-      </EaseAppearMotion>
+      <LightBackground zIndex={-1}>
+        <EaseAppearMotion>
+          <DragScroller title="FITNESS" icon={fitness} />
+          <DragScroller title="IMOBILIÁRIO" icon={imobiliario} />
+          <DragScroller title="RETALHO" icon={retalho} />
+          <DragScroller title="SAÚDE" icon={saude} />
+          <DragScroller title="ENGENHARIA" icon={engenharia} />
+        </EaseAppearMotion>
+      </LightBackground>
       <Contacts />
     </div>
   );

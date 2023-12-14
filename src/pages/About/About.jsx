@@ -11,9 +11,11 @@ import {
   TitleText,
 } from "../../utils/utils";
 import "./About.css";
+import "../../components/Animations/LightBackground/LightBackground.css";
 import EaseAppearMotion from "../../components/Animations/AppearAnimation";
 import EaseInAnimation from "../../components/Animations/EaseInAnimation";
 import TextInAnimation from "../../components/Animations/TextInAnimation";
+import LightBackground from "../../components/Animations/LightBackground/LightBackground";
 
 const About = () => {
   return (
@@ -39,11 +41,11 @@ const About = () => {
           </SubLongText>
         </EaseAppearMotion>
       </Box>
-      <div className="values-container">
+      <LightBackground className="values-container">
         <Box className="values-box-container">
           <Box className="values-box">
             <EaseInAnimation>
-              <div className="header-value">
+              <div className="header-value heart-beat">
                 <SubTitleText variant="h3" sx={{ color: "white" }}>
                   MISSÃO
                 </SubTitleText>
@@ -64,7 +66,7 @@ const About = () => {
           </Box>
           <Box className="values-box">
             <EaseInAnimation delay={0.4}>
-              <div className="header-value">
+              <div className="header-value heart-beat">
                 <SubTitleText variant="h3" sx={{ color: "white" }}>
                   VISÃO
                 </SubTitleText>
@@ -82,8 +84,8 @@ const About = () => {
             </h4>
           </Box>
           <Box className="values-box">
-            <EaseInAnimation >
-              <div className="header-value">
+            <EaseInAnimation>
+              <div className="header-value heart-beat">
                 <SubTitleText variant="h3" sx={{ color: "white" }}>
                   VALORES
                 </SubTitleText>
@@ -101,16 +103,7 @@ const About = () => {
             </h4>
           </Box>
         </Box>
-        <div className="light x1"></div>
-        <div className="light x2"></div>
-        <div className="light x3"></div>
-        <div className="light x4"></div>
-        <div className="light x5"></div>
-        <div className="light x6"></div>
-        <div className="light x7"></div>
-        <div className="light x8"></div>
-        <div className="light x9"></div>
-      </div>
+      </LightBackground>
       <Contacts />
       {/* <video
         className="bg-video"

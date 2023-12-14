@@ -39,6 +39,10 @@
   border-color: white;
 }
 
+.heart-drop {
+  filter: drop-shadow(0 0 0.5em var(--remarkableRed));
+}
+
 @media screen and (max-width: 960px) {
   .sliderImage {
     height: 10em;

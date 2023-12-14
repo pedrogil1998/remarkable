@@ -11,10 +11,11 @@
 .lines-content {
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 .service-line-box {
   display: inline-flex;
-  margin: 2rem;
+  margin: 0.5rem;
 }
 
 @media screen and (max-width: 960px) {

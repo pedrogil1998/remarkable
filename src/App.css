@@ -74,6 +74,12 @@
   color: #888;
 }
 
+.heart-beat {
+  will-change: filter;
+  transition: filter 300ms;
+  animation: heartBeat 1.2s infinite;
+}
+
 video {
   object-fit: cover;
   width: 100%;

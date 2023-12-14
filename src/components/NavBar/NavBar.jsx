@@ -60,7 +60,7 @@ const NavBar = ({}) => {
               to="remarkable/partners"
               onClick={closeMobileMenu}
             >
-             <CardText>PARCEIROS</CardText> 
+             <CardText>NETWORKING</CardText> 
             </Link>
             <ContactButton href="#contacts" onClick={closeMobileMenu}>
               <CardText>CONTACTOS</CardText>

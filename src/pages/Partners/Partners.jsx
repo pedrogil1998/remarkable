@@ -7,6 +7,7 @@ import { PartnerButton } from "../../components/Partner/PartnerMui";
 import Contacts from "../../components/Contacts/Contacts";
 import EaseAppearMotion from "../../components/Animations/AppearAnimation";
 import PartnerModal from "../../components/Partner/Modal/PartnerModal";
+import LightBackground from "../../components/Animations/LightBackground/LightBackground";
 
 const Partners = () => {
   const [data, setData] = useState(PartnerData);
@@ -36,20 +37,22 @@ const Partners = () => {
           </PartnerButton>
         ))}
       </div>
-      <EaseAppearMotion>
-        <div className="gallery-container">
-          {data.map((item) => (
-            <div key={item.id} className="gallery-item">
-              <img src={item.image} onClick={() => handleOpen(item)} />
-            </div>
-          ))}
-          <PartnerModal
-            open={open.open}
-            item={open.item}
-            handleClose={handleClose}
-          ></PartnerModal>
-        </div>
-      </EaseAppearMotion>
+      <LightBackground>
+        <EaseAppearMotion>
+          <div className="gallery-container">
+            {data.map((item) => (
+              <div key={item.id} className="gallery-item">
+                <img src={item.image} onClick={() => handleOpen(item)} />
+              </div>
+            ))}
+            <PartnerModal
+              open={open.open}
+              item={open.item}
+              handleClose={handleClose}
+            ></PartnerModal>
+          </div>
+        </EaseAppearMotion>
+      </LightBackground>
       <Contacts />
     </div>
   );
