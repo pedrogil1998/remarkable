@@ -34,23 +34,12 @@ const CssTextField = styled(TextField)({
   "& .MuiInputBase-input": {
     color: "#adadad",
   },
-  // '& .MuiInput-underline:after': {
-  //   borderBottom: '2px solid#B2BAC2',
-  // },
-  // '& .MuiFilledInput-root.Mui-focused': {
-  //   borderBottom: '2px solid #FFFFFF',
-  // },
-  // '& .MuiOutlinedInput-root': {
-  //   '& fieldset': {
-  //     borderColor: '#E0E3E7',
-  //   },
-  //   '&:hover fieldset': {
-  //     borderColor: '#B2BAC2',
-  //   },
-  //   '&.Mui-focused fieldset': {
-  //     borderColor: '#6F7E8C',
-  //   },
-  // },
+});
+
+const NoDisplayTextField = styled(TextField)({
+  "& .MuiInputBase-input": {
+    display: "none",
+  },
 });
 
 const theme = createTheme({
@@ -63,7 +52,8 @@ const theme = createTheme({
 
 const PartnerModal = ({ open, item, handleClose }) => {
   const form = useRef();
-  const [formValues, setFormValues] = useState({ partner_name: item?.title });
+  const [formValues, setFormValues] = useState({});
+
   const handleTextFieldChange = (event) => {
     const { name, value } = event.target;
     setFormValues({
@@ -71,29 +61,26 @@ const PartnerModal = ({ open, item, handleClose }) => {
       [name]: value,
     });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formValues);
     sendEmail(e);
   };
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
-      .sendForm(
+      .send(
         "service_19rzorb",
         "template_f88urod",
-        form.current,
+        { ...formValues, to_email: item?.to_email, partner_name: item?.title },
         "nmzOET3EouBYnpZfA"
       )
       .then(
         (result) => {
-          console.log(result.text);
+          alert("Contacto efetuado com sucesso.");
         },
         (error) => {
-          console.log(error.text);
+          alert("Algo de errado não permitiu este contacto...")
         }
       );
   };
@@ -121,8 +108,8 @@ const PartnerModal = ({ open, item, handleClose }) => {
             <FormControl fullWidth sx={{ m: 1 }}>
               <CssTextField
                 color={"primary"}
-                name="name"
-                label="Nome"
+                name="company"
+                label="Empresa"
                 variant="filled"
                 onChange={handleTextFieldChange}
               />
@@ -134,9 +121,6 @@ const PartnerModal = ({ open, item, handleClose }) => {
                 variant="filled"
                 onChange={handleTextFieldChange}
               />
-              {/* <InputLabel style={{ color: "white", borderColor: "white" }}>
-                E-mail
-              </InputLabel> */}
               <CssTextField
                 color={"primary"}
                 name="email"
@@ -144,9 +128,13 @@ const PartnerModal = ({ open, item, handleClose }) => {
                 variant="filled"
                 onChange={handleTextFieldChange}
               />
-              {/* <InputLabel style={{ color: "white", borderColor: "white" }}>
-                E-mail
-              </InputLabel> */}
+              <CssTextField
+                color={"primary"}
+                name="name"
+                label="Nome"
+                variant="filled"
+                onChange={handleTextFieldChange}
+              />
               <CssTextField
                 color={"primary"}
                 name="description"
@@ -156,6 +144,12 @@ const PartnerModal = ({ open, item, handleClose }) => {
                 variant="filled"
                 onChange={handleTextFieldChange}
               />
+              <NoDisplayTextField className="no-display" name="to_email">
+                {item?.to_email}
+              </NoDisplayTextField>
+              <NoDisplayTextField className="no-display" name="partner_name">
+                {item?.title}
+              </NoDisplayTextField>
               <Button
                 type="submit"
                 onClick={(e) => handleSubmit(e)}

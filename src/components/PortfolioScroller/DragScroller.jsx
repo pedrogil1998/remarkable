@@ -13,6 +13,7 @@ import imagesEng from "../../assets/Engenharia";
 import imagesImo from "../../assets/Imobiliário";
 import imagesRet from "../../assets/Retalho";
 import imagesSau from "../../assets/Saude";
+import imagesOutros from "../../assets/Outros";
 import "./DragScroller.css";
 import { useEffect, useState } from "react";
 
@@ -116,6 +117,26 @@ const DragScroller = ({ title, background, icon }) => {
             className="swiper"
           >
             {Object.values(imagesSau).map((image, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <img
+                    src={image}
+                    className="sliderImage"
+                    alt="slide_image"
+                  />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        ) : title === "OUTROS PROJETOS" ? (
+          <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            loop={true}
+            slidesPerView={3}
+            className="swiper"
+          >
+            {Object.values(imagesOutros).map((image, index) => {
               return (
                 <SwiperSlide key={index}>
                   <img
