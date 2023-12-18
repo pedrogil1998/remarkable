@@ -6,7 +6,7 @@ import { useState } from "react";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import "./NavBar.css";
-import { CardText } from "../../utils/utils";
+import { CardText, NavText } from "../../utils/utils";
 
 const NavBar = ({}) => {
   const [click, setClick] = useState(false);
@@ -32,35 +32,35 @@ const NavBar = ({}) => {
         <Box>
           <nav className={click ? "navMenu active" : "navMenu"}>
             <Link className="link" to="/remarkable" onClick={closeMobileMenu}>
-              <CardText>HOME</CardText>
+              <NavText>HOME</NavText>
             </Link>
             <Link
               className="link"
               to="/remarkable/about"
               onClick={closeMobileMenu}
             >
-              <CardText>ADN</CardText>
+              <NavText>ADN</NavText>
             </Link>
             <Link
               className="link"
               to="remarkable/services"
               onClick={closeMobileMenu}
             >
-              <CardText>SERVIÇOS</CardText>
+              <NavText>SERVIÇOS</NavText>
             </Link>
             <Link
               className="link"
               to="remarkable/portfolio"
               onClick={closeMobileMenu}
             >
-              <CardText>PORTEFÓLIO</CardText>
+              <NavText>PORTEFÓLIO</NavText>
             </Link>
             <Link
               className="link"
               to="remarkable/partners"
               onClick={closeMobileMenu}
             >
-             <CardText>NETWORKING</CardText> 
+             <NavText>NETWORKING</NavText> 
             </Link>
             <ContactButton href="#contacts" onClick={closeMobileMenu}>
               <CardText>CONTACTOS</CardText>

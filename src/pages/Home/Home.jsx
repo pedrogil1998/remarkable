@@ -58,7 +58,7 @@ const Home = ({}) => {
           <TitleText variant="h2" margin="2rem" style={{ color: "black" }}>
             Muda o teu futuro:
           </TitleText>
-          <motion.div whileHover={{ scale: 1.1 }}>
+          <motion.div whileHover={{ scale: 1.05 }}>
             <a href="https://instagram.com/remarkable.mkt" target="_blank">
               <img
                 src={aquiButton}

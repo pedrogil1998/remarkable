@@ -30,6 +30,10 @@
   display: none;
 }
 
+.nav-option:hover {
+  text-decoration: underline !important;
+}
+
 @media screen and (max-width: 960px) {
   .menuIcon {
     margin: 2rem;

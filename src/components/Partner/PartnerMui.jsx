@@ -1,13 +1,21 @@
-import { Button } from "@mui/material";
+import { Button, ToggleButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { remarkableRed } from "../../utils/colors";
+import { remarkableGray, remarkableRed } from "../../utils/colors";
 
-export const PartnerButton = styled(Button)((props) => ({
-  width: "fit-content",
-  borderRadius: "5px",
-  backgroundColor: remarkableRed,
-  marginRight: "1rem",
+export const PartnerButton = styled(ToggleButton)((props) => ({
+  width: "150px",
+  borderRadius: "0px",
+  borderTop: "1px solid black",
+  backgroundColor: remarkableGray,
   color: "white",
-  textTransform: "none",
   textAlign: "center",
+  textTransform: "none",
+
+  "&.Mui-selected": {
+    backgroundColor: "gray",
+    color: "white"
+  },
+  "&&:hover": {
+    backgroundColor: "DimGray"
+  }
 }));

@@ -23,7 +23,7 @@ const DragScroller = ({ title, background, icon }) => {
     <div className="container">
       <Box className="boxContainer" sx={{ backgroundColor: background }}>
         <Box className="box-left">
-          <TitleText className="heading heart-drop" variant="h5">
+          <TitleText className="heading" variant="h5">
             {title}
           </TitleText>
         </Box>
@@ -169,7 +169,7 @@ const DragScroller = ({ title, background, icon }) => {
             })}
           </Swiper>
         )}
-        <img src={icon} className="cardIcon  heart-drop" alt="saude_icon" />
+        <img src={icon} className="cardIcon" alt="saude_icon" />
       </Box>
     </div>
   );

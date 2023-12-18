@@ -1,6 +1,6 @@
 import Contacts from "../../components/Contacts/Contacts";
 import DragScroller from "../../components/PortfolioScroller/DragScroller";
-import { TitleText } from "../../utils/utils";
+import { SubLongText, TitleText } from "../../utils/utils";
 import engenharia from "../../assets/Portfolio/engenharia.svg";
 import financeiro from "../../assets/Portfolio/financeiro.svg";
 import fitness from "../../assets/Portfolio/fitness.svg";
@@ -15,21 +15,22 @@ import outros from "../../assets/Portfolio/outros.svg";
 const Portfolio = () => {
   return (
     <div className="portfolio-container">
+      <LightBackground zIndex={-1} />
       <div className="upper-container">
         <TitleText variant="h1">SÊ O PRÓXIMO</TitleText>
       </div>
-
+      <SubLongText className="long-text" variant="h7">
+        {"Os nossos trabalhos até ao momento:"}
+      </SubLongText>
       {/* <DragScroller title="FINANCEIRO" icon={financeiro}/> */}
-      <LightBackground zIndex={-1}>
-        <EaseAppearMotion>
-          <DragScroller title="FITNESS" icon={fitness} />
-          <DragScroller title="IMOBILIÁRIO" icon={imobiliario} />
-          <DragScroller title="RETALHO" icon={retalho} />
-          <DragScroller title="SAÚDE" icon={saude} />
-          <DragScroller title="ENGENHARIA" icon={engenharia} />
-          <DragScroller title="OUTROS PROJETOS" icon={outros} />
-        </EaseAppearMotion>
-      </LightBackground>
+      <EaseAppearMotion>
+        <DragScroller title="FITNESS" icon={fitness} />
+        <DragScroller title="IMOBILIÁRIO" icon={imobiliario} />
+        <DragScroller title="RETALHO" icon={retalho} />
+        <DragScroller title="SAÚDE" icon={saude} />
+        <DragScroller title="ENGENHARIA" icon={engenharia} />
+        <DragScroller title="OUTROS PROJETOS" icon={outros} />
+      </EaseAppearMotion>
       <Contacts />
     </div>
   );

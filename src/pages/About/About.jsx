@@ -23,6 +23,7 @@ const About = () => {
       className="about-container"
       style={{ display: "flex", flexDirection: "column" }}
     >
+      <LightBackground zIndex={-1} />
       <Box className="about-upper-container">
         <TitleText variant="h1">A NOSSA HISTÓRIA</TitleText>
         <EaseAppearMotion>
@@ -41,7 +42,7 @@ const About = () => {
           </SubLongText>
         </EaseAppearMotion>
       </Box>
-      <LightBackground className="values-container">
+      <div className="values-container">
         <Box className="values-box-container">
           <Box className="values-box">
             <EaseInAnimation>
@@ -65,7 +66,7 @@ const About = () => {
             </TextInAnimation>
           </Box>
           <Box className="values-box">
-            <EaseInAnimation delay={0.4}>
+            <EaseInAnimation>
               <div className="header-value heart-beat">
                 <SubTitleText variant="h3" sx={{ color: "white" }}>
                   VISÃO
@@ -103,7 +104,7 @@ const About = () => {
             </h4>
           </Box>
         </Box>
-      </LightBackground>
+      </div>
       <Contacts />
       {/* <video
         className="bg-video"

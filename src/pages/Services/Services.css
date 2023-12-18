@@ -16,7 +16,9 @@
   display: inline-flex;
   margin: 0.5rem;
 }
-
+.service-box {
+  padding: 2rem 0;
+}
 @media screen and (max-width: 960px) {
   .service-line-box {
     display: flex;

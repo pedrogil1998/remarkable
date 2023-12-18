@@ -29,6 +29,13 @@ export const CardText = styled(Typography)((props) => ({
   fontFamily: "Arimo",
 }));
 
+export const NavText = styled(Typography)((props) => ({
+  fontFamily: "Arimo",
+  "&:hover": {
+    textDecoration: "underline",
+  },
+}));
+
 export const ServiceCardText = styled(Typography)((props) => ({
   fontFamily: "Arimo",
   lineHeight: 1.3,

@@ -7,9 +7,9 @@
   margin-bottom: 2rem !important;
 }
 
-.about-container {
+/* .about-container {
   background-image: linear-gradient(black, rgb(39, 0, 0));
-}
+} */
 
 .header-value {
   filter: drop-shadow(0 0 0.5em var(--remarkableRed));
