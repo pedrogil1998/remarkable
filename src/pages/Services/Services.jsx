@@ -20,9 +20,9 @@ const Services = () => {
     <div className="service-container">
       <div className="service-content">
         <LightBackground zIndex={-1} />
-        <TitleText variant="h2">O TEU FUTURO COMEÇA AQUI</TitleText>
+        <TitleText variant="h2">AS SOLUÇÕES PARA O SEU NEGÓCIO</TitleText>
         <SubLongText className="long-text" variant="h7">
-          {"Dá uma vista de olhos nas nossas competências:"}
+          {"O que podemos fazer por si"}
         </SubLongText>
 
         <EaseAppearMotion className="lines-content service-box">

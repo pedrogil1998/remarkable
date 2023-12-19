@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { PartnerData } from "../../components/Partner/PartnerData";
 import { useState } from "react";
 import "./Partners.css";
-import { Box, Button, ToggleButtonGroup } from "@mui/material";
+import { Box, Button, ToggleButtonGroup, Typography } from "@mui/material";
 import { PartnerButton } from "../../components/Partner/PartnerMui";
 import Contacts from "../../components/Contacts/Contacts";
 import EaseAppearMotion from "../../components/Animations/AppearAnimation";
@@ -35,13 +35,20 @@ const Partners = () => {
   return (
     <div className="partners-container">
       <LightBackground zIndex={-1} />
-      <TitleText variant="h2">REDE DE PARCERIAS</TitleText>
-      <SubLongText className="long-text" variant="h7">
-        {
-          "O nosso trabalho é ajuda-te a fazer o teu. Precisas de algum serviço noutra área? Não percas tempo, procura ajuda nos nossos parceiros:"
-        }
-      </SubLongText>
+      <Box
+        sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      >
+        <TitleText variant="h2">Mais do que uma agência de Marketing</TitleText>
+        <SubLongText className="long-text" variant="h7">
+          {"Uma rede de NETWORKING"}
+        </SubLongText>
 
+        <SubLongText className="long-text" variant="h7">
+          {
+            "O nosso trabalho é ajudá-lo a fazer o seu. Precisa de algum serviço noutra área? Não perca tempo."
+          }
+        </SubLongText>
+      </Box>
       <Box className="box-filters-gallery">
         <div className="filter-container">
           <Box className="filter-tab">
@@ -83,6 +90,9 @@ const Partners = () => {
           </div>
         </EaseAppearMotion>
       </Box>
+      <Typography variant="h6" style={{marginBottom: "2rem"}}>
+        O seu negócio também pode pertencer à nossa rede. Entre em contacto connosco.
+      </Typography>
       <Contacts />
     </div>
   );

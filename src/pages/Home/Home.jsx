@@ -1,5 +1,9 @@
 import Contacts from "../../components/Contacts/Contacts";
-import useIsMobile, { LongText, SubLongText, TitleText } from "../../utils/utils";
+import useIsMobile, {
+  LongText,
+  SubLongText,
+  TitleText,
+} from "../../utils/utils";
 import aquiButton from "../../assets/aquiButton.svg";
 import CardScroller from "../../components/FeedbackScroller/CardScroller";
 import video from "../../assets/video-1.mp4";
@@ -16,7 +20,7 @@ const Home = ({}) => {
   const scrollHover = () => {
     let scroll = document.querySelector(".home-container");
 
-      scroll.scrollIntoView();
+    scroll.scrollIntoView();
 
     // var element = document.querySelector(".logoHome");
     // var headerOffset = 128;
@@ -32,12 +36,12 @@ const Home = ({}) => {
     <>
       <div className="home-container">
         <div className="upper-container">
-          <TitleText variant="h1">TORNA-TE NOTÁVEL</TitleText>
+          <TitleText variant="h1">TORNE-SE NOTÁVEL</TitleText>
 
           <EaseAppearMotion>
             <SubLongText className="long-text" variant="h7">
               {
-                "A verdadeira MUDANÇA começa aqui. Agarra a oportunidade de tornar o teu negócio um negócio NOTÁVEL. Não somos apenas uma agência de Marketing. Temos a paixão pelo Marketing, a ânsia de inovar, marcar a diferença e tornar o seu negócio diferente."
+                "A verdadeira MUDANÇA começa aqui. Agarre a oportunidade de tornar o seu negócio num negócio NOTÁVEL. Não somos apenas uma agência de Marketing. Temos a paixão pelo Marketing, a ânsia de inovar, marcar a diferença e tornar o seu negócio diferente."
               }
             </SubLongText>
             <LongText variant="h5">
@@ -45,7 +49,7 @@ const Home = ({}) => {
             </LongText>
           </EaseAppearMotion>
           <a onMouseEnter={scrollHover} href="#here">
-          {/* <a href="#here"> */}
+            {/* <a href="#here"> */}
             <img
               src={maLogo}
               className="logoHome remarkable"
@@ -55,19 +59,28 @@ const Home = ({}) => {
         </div>
         <CardScroller />
         <div id="here" className="contact-us">
-          <TitleText variant="h2" margin="2rem" style={{ color: "black" }}>
-            Muda o teu futuro:
+          <TitleText variant="h2" margin="2rem" style={{ color: "white" }}>
+            Mude o futuro do seu negócio:
           </TitleText>
-          <motion.div whileHover={{ scale: 1.05 }}>
-            <a href="https://instagram.com/remarkable.mkt" target="_blank">
+          {/* <motion.div whileHover={{ scale: 1.05 }}> */}
+          {/* <a href="https://instagram.com/remarkable.mkt" target="_blank">
               <img
                 src={aquiButton}
                 className="aqui remarkable"
                 alt="Aqui Button"
               />
-            </a>
-          </motion.div>
+            </a> */}
+          <a
+            href="https://instagram.com/remarkable.mkt"
+            target="_blank"
+          >
+            <button type="submit" className="submit-button">
+              <span>Aqui</span>
+            </button>
+          </a>
+          {/* </motion.div> */}
         </div>
+
         <Contacts />
         {!isMobile && <video src={video} autoPlay loop muted></video>}
       </div>

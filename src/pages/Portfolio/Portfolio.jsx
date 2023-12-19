@@ -20,7 +20,7 @@ const Portfolio = () => {
         <TitleText variant="h1">SÊ O PRÓXIMO</TitleText>
       </div>
       <SubLongText className="long-text" variant="h7">
-        {"Os nossos trabalhos até ao momento:"}
+        {"Alguns dos nossos trabalhos em redes sociais e identidade visual"}
       </SubLongText>
       {/* <DragScroller title="FINANCEIRO" icon={financeiro}/> */}
       <EaseAppearMotion>

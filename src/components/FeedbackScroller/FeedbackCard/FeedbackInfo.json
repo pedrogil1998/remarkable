@@ -1,18 +1,6 @@
 {
   "feedback": [
     {
-      "name": "Flávio Magalhães",
-      "subtitle": "Marca Pessoal - Fisioterapeuta",
-      "description": "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!",
-      "stars": 5
-    },
-    {
-      "name": "Fulvio Teixeira",
-      "subtitle": "Remax",
-      "description": "Duas mentes brilhantes, uma paixão, só poderia ser reMArkable. Com enorme orgulho anuncio que a Marca Fulvio Teixeira escolheu trabalhar com profissionais absolutamente visionários, revolucionários e apaixonados. É caso para dizer: vocês brincam com o Marketing!",
-      "stars": 5
-    },
-    {
       "name": "Civilworks",
       "subtitle": "Engenharia e Consultoria",
       "description": "CivilWorks - A reMArkable ficou responsável por toda a identidade visual da empresa, confiamos todo o processo criativo e digital nos mesmos e depois de recebermos o resutlado final, não podiamos ficar mais satisfeitos. São muito profissionais, interessam-se por criar uma história a volta da marca, tudo o que idealizamos e sugerimos na reunião de briefing, eles tornaram real. Confiamos na reMArkable e temos todo o gosto em associar a nossa marca a esta empresa.",
@@ -25,15 +13,15 @@
       "stars": 5
     },
     {
-      "name": "Flávio Magalhães",
-      "subtitle": "Marca Pessoal - Fisioterapeuta",
-      "description": "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!",
+      "name": "Tisoauto",
+      "subtitle": "Automobilismo e Retalho",
+      "description": "Estamos a iniciar o caminho com a reMArkable, porque percebemos que necessitamos de uma visão fora do nosso negócio que nos permita encontrar soluções onde muitas vezes não as vemos porque estamos demasiados focados no negócio em si, A Remarkable com o seu programa 360º, cativou-nos por desenvolver uma estratégia em que estamos verdadeiramente envolvidos e que vai de encontro à nossa entidade. Foi a primeira empresa que nos ouviu, aprendeu e construiu algo conosco. Tem sido uma verdadeira experiência de networking!",
       "stars": 5
     },
     {
-      "name": "Flávio Magalhães",
-      "subtitle": "Marca Pessoal - Fisioterapeuta",
-      "description": "A reMArkable foi um passo importantíssimo para impulsionar o meu negócio. O Marco é muito competente e estou bastante satisfeito com toda a dedicação e vontade demonstrada em querer ajudar-me. Os negócios crescem com pessoas assim!",
+      "name": "Fulvio Teixeira",
+      "subtitle": "Remax",
+      "description": "Duas mentes brilhantes, uma paixão, só poderia ser reMArkable. Com enorme orgulho anuncio que a Marca Fulvio Teixeira escolheu trabalhar com profissionais absolutamente visionários, revolucionários e apaixonados. É caso para dizer: vocês brincam com o Marketing!",
       "stars": 5
     }
   ]

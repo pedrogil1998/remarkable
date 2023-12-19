@@ -29,6 +29,12 @@
   align-items: center;
 }
 
+.values-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .text-value {
   margin: 2rem 2rem;
   color: white;
@@ -52,6 +58,6 @@
 
 @media screen and (min-width: 1600px) {
   .values-box-container {
-    margin: 2rem 15rem;
+    margin: 2rem 10rem;
   }
 }
