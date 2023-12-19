@@ -11,6 +11,10 @@
   object-fit: contain;
 }
 
+.gallery-item:hover {
+  cursor: pointer;
+}
+
 .box-filters-gallery {
   display: flex;
   flex-direction: row;

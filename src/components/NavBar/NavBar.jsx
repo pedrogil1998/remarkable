@@ -21,7 +21,7 @@ const NavBar = ({}) => {
   return (
     <Box className="navBarBox">
       <Box className="navBarBoxInner">
-        <a href="#top">
+        <a href="/remarkable">
           <img
             src={letteringLogo}
             className="logo remarkable"

@@ -3,12 +3,12 @@ import { styled } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 
 export const LongText = styled(Typography)((props) => ({
-  fontFamily: "Playfair-Regular",
+  fontFamily: "Arimo",
   marginTop: "2rem",
 }));
 
 export const SubLongText = styled(Typography)((props) => ({
-  fontFamily: "Playfair-Regular",
+  fontFamily: "Arimo",
 }));
 
 export const TitleText = styled(Typography)((props) => ({
@@ -33,6 +33,7 @@ export const NavText = styled(Typography)((props) => ({
   fontFamily: "Arimo",
   "&:hover": {
     textDecoration: "underline",
+    textUnderlineOffset: "4px"
   },
 }));
 

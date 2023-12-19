@@ -1,8 +1,10 @@
+import { LongText, TitleText } from "../utils/utils";
+
 const NoPage = () => {
   return (
     <div>
-      <h1>Esta página não existe...</h1>
-      <h3>Podemos estar a trabalhar nisto!</h3>
+      <TitleText>Esta página não existe...</TitleText>
+      <LongText>Podemos estar a trabalhar nisto!</LongText>
     </div>
   );
 };

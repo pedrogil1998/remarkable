@@ -1,0 +1,21 @@
+.scroll-to-top {
+  background-color: var(--remarkableRed);
+  position: fixed;
+  text-align: center;
+  cursor: pointer;
+  z-index: 99;
+  width: 2.1em;
+  height: 2.1em;
+  line-height: 2.1;
+  color: #ffffff;
+  border-radius: 20px;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scroll-to-top:hover {
+  filter: drop-shadow(0 0 2em black);
+  background-color: rgb(107, 0, 0);
+}

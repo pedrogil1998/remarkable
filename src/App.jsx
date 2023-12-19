@@ -8,6 +8,7 @@ import Partners from "./pages/Partners/Partners";
 import NoPage from "./pages/NoPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
+import ScrollTop from "./components/ScrollTop/ScrollTop";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="remarkable/*" element={<NoPage />} />
           </Routes>
         </Box>
+        <ScrollTop/>
       </BrowserRouter>
     </>
   );

@@ -22,12 +22,7 @@ const DragScroller = ({ title, background, icon }) => {
   return (
     <div className="container">
       <Box className="boxContainer" sx={{ backgroundColor: background }}>
-        <Box className="box-left">
-          <TitleText className="heading" variant="h5">
-            {title}
-          </TitleText>
-        </Box>
-
+        <img src={icon} className="cardIcon" alt="saude_icon" />
         {title === "FITNESS" ? (
           <Swiper
             effect={"coverflow"}
@@ -39,11 +34,7 @@ const DragScroller = ({ title, background, icon }) => {
             {Object.values(imagesFit).map((image, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <img
-                    src={image}
-                    className="sliderImage"
-                    alt="slide_image"
-                  />
+                  <img src={image} className="sliderImage" alt="slide_image" />
                 </SwiperSlide>
               );
             })}
@@ -59,11 +50,7 @@ const DragScroller = ({ title, background, icon }) => {
             {Object.values(imagesEng).map((image, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <img
-                    src={image}
-                    className="sliderImage"
-                    alt="slide_image"
-                  />
+                  <img src={image} className="sliderImage" alt="slide_image" />
                 </SwiperSlide>
               );
             })}
@@ -79,11 +66,7 @@ const DragScroller = ({ title, background, icon }) => {
             {Object.values(imagesImo).map((image, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <img
-                    src={image}
-                    className="sliderImage"
-                    alt="slide_image"
-                  />
+                  <img src={image} className="sliderImage" alt="slide_image" />
                 </SwiperSlide>
               );
             })}
@@ -99,11 +82,7 @@ const DragScroller = ({ title, background, icon }) => {
             {Object.values(imagesRet).map((image, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <img
-                    src={image}
-                    className="sliderImage"
-                    alt="slide_image"
-                  />
+                  <img src={image} className="sliderImage" alt="slide_image" />
                 </SwiperSlide>
               );
             })}
@@ -119,11 +98,7 @@ const DragScroller = ({ title, background, icon }) => {
             {Object.values(imagesSau).map((image, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <img
-                    src={image}
-                    className="sliderImage"
-                    alt="slide_image"
-                  />
+                  <img src={image} className="sliderImage" alt="slide_image" />
                 </SwiperSlide>
               );
             })}
@@ -139,11 +114,7 @@ const DragScroller = ({ title, background, icon }) => {
             {Object.values(imagesOutros).map((image, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <img
-                    src={image}
-                    className="sliderImage"
-                    alt="slide_image"
-                  />
+                  <img src={image} className="sliderImage" alt="slide_image" />
                 </SwiperSlide>
               );
             })}
@@ -159,17 +130,18 @@ const DragScroller = ({ title, background, icon }) => {
             {Object.values(imagesEng).map((image, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <img
-                    src={image}
-                    className="sliderImage"
-                    alt="slide_image"
-                  />
+                  <img src={image} className="sliderImage" alt="slide_image" />
                 </SwiperSlide>
               );
             })}
           </Swiper>
         )}
-        <img src={icon} className="cardIcon" alt="saude_icon" />
+
+        <Box className="box-left">
+          <TitleText className="heading" variant="h5">
+            {title}
+          </TitleText>
+        </Box>
       </Box>
     </div>
   );
