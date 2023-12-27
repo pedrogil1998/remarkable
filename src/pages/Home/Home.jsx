@@ -21,23 +21,12 @@ const Home = ({}) => {
     let scroll = document.querySelector(".home-container");
 
     scroll.scrollIntoView();
-
-    // var element = document.querySelector(".logoHome");
-    // var headerOffset = 128;
-    // var elementPosition = element.getBoundingClientRect().top;
-    // var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-    // window.scrollTo({
-    //   top: offsetPosition / 2,
-    //   behavior: "smooth",
-    // });
   };
   return (
     <>
       <div className="home-container">
         <div className="upper-container">
           <TitleText variant="h1">TORNE-SE NOTÁVEL</TitleText>
-
           <EaseAppearMotion>
             <SubLongText className="long-text" variant="h7">
               {
@@ -49,7 +38,6 @@ const Home = ({}) => {
             </LongText>
           </EaseAppearMotion>
           <a onMouseEnter={scrollHover} href="#here">
-            {/* <a href="#here"> */}
             <img
               src={maLogo}
               className="logoHome remarkable"
@@ -62,25 +50,12 @@ const Home = ({}) => {
           <TitleText variant="h2" margin="2rem" style={{ color: "white" }}>
             Mude o futuro do seu negócio:
           </TitleText>
-          {/* <motion.div whileHover={{ scale: 1.05 }}> */}
-          {/* <a href="https://instagram.com/remarkable.mkt" target="_blank">
-              <img
-                src={aquiButton}
-                className="aqui remarkable"
-                alt="Aqui Button"
-              />
-            </a> */}
-          <a
-            href="https://instagram.com/remarkable.mkt"
-            target="_blank"
-          >
+          <a href="https://instagram.com/remarkable.mkt" target="_blank">
             <button type="submit" className="submit-button">
               <span>Aqui</span>
             </button>
           </a>
-          {/* </motion.div> */}
         </div>
-
         <Contacts />
         {!isMobile && <video src={video} autoPlay loop muted></video>}
       </div>

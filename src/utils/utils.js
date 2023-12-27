@@ -29,6 +29,11 @@ export const CardText = styled(Typography)((props) => ({
   fontFamily: "Arimo",
 }));
 
+export const ErrorText = styled(Typography)((props) => ({
+  fontFamily: "Arimo",
+  color: "#ED4337"
+}));
+
 export const NavText = styled(Typography)((props) => ({
   fontFamily: "Arimo",
   "&:hover": {

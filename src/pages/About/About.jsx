@@ -82,7 +82,7 @@ const About = () => {
                   </TextInAnimation>
                 </div>
               </EaseInAnimation>
-            ) : selected == 1 ? (
+            ) : selected == 2 ? (
               <EaseInAnimation key={"vision"}>
                 <div className="values-info">
                   <div className="header-value heart-beat">
