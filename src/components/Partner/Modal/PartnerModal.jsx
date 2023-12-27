@@ -91,7 +91,7 @@ const PartnerModal = ({ open, item, handleClose }) => {
   } = useForm({
     resolver: yupResolver(partnerSchema),
   });
-
+  const watchTitular = watch("titular", "pessoal");
   const onSubmit = (data) => {
     console.log(data);
     //sendEmail(data);
@@ -183,7 +183,7 @@ const PartnerModal = ({ open, item, handleClose }) => {
                 name="name"
                 register={register}
                 required
-                label={"Nome"}
+                label={watchTitular === "pessoal" ? "Nome" : "Empresa"}
                 color={"primary"}
                 variant={"filled"}
                 style={{ marginBottom: !errors.name?.message && "1.5rem" }}
