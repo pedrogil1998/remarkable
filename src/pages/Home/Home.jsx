@@ -4,16 +4,11 @@ import useIsMobile, {
   SubLongText,
   TitleText,
 } from "../../utils/utils";
-import aquiButton from "../../assets/aquiButton.svg";
 import CardScroller from "../../components/FeedbackScroller/CardScroller";
 import video from "../../assets/video-1.mp4";
 import "./Home.css";
-import { motion } from "framer-motion";
 import EaseAppearMotion from "../../components/Animations/AppearAnimation";
 import maLogo from "../../assets/maLogo.svg";
-import HeartAnimation, {
-  RotateAnimation,
-} from "../../components/Animations/RotateAnimation";
 
 const Home = ({}) => {
   const isMobile = useIsMobile();

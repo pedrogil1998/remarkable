@@ -17,12 +17,12 @@ function App() {
         <NavBar />
         <Box style={{ width: "100%", marginTop: "7rem" }}>
           <Routes>
-            <Route path="remarkable" index element={<Home />} />
-            <Route path="remarkable/about" element={<About />} />
-            <Route path="remarkable/services" element={<Services />} />
-            <Route path="remarkable/portfolio" element={<Portfolio />} />
-            <Route path="remarkable/partners" element={<Partners />} />
-            <Route path="remarkable/*" element={<NoPage />} />
+            <Route path="" index element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/partners" element={<Partners />} />
+            <Route path="/*" element={<NoPage />} />
           </Routes>
         </Box>
         <ScrollTop/>

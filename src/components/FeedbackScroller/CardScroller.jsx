@@ -1,12 +1,9 @@
 import { Box } from "@mui/material";
-import { TitleText } from "../../utils/utils";
-import { remarkableRed } from "../../utils/colors";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import FeedbackCard from "./FeedbackCard/FeedbackCard";
 import data from "./FeedbackCard/FeedbackInfo.json";
 import "./CardScroller.css";
-import { motion } from "framer-motion";
 import EaseAppearMotion from "../Animations/AppearAnimation";
 
 const CardScroller = () => {
@@ -20,11 +17,13 @@ const CardScroller = () => {
     });
   };
 
+  const scrollHover = () => {
+    let scroll = document.querySelector(".home-container");
+    scroll.scrollIntoView();
+  };
+
   return (
-    <div  className="card-scroller-container">
-      {/* <TitleText variant="h1" margin="1rem">
-        Feedback
-      </TitleText> */}
+    <div className="card-scroller-container">
       <EaseAppearMotion>
         <Box className="box-scroller">
           <div>
