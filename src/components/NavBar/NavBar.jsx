@@ -21,7 +21,7 @@ const NavBar = ({}) => {
   return (
     <Box className="navBarBox">
       <Box className="navBarBoxInner">
-        <a href="/remarkable">
+        <a href="/">
           <img
             src={letteringLogo}
             className="logo remarkable"
@@ -31,33 +31,33 @@ const NavBar = ({}) => {
 
         <Box>
           <nav className={click ? "navMenu active" : "navMenu"}>
-            <Link className="link" to="/remarkable" onClick={closeMobileMenu}>
+            <Link className="link" to="/" onClick={closeMobileMenu}>
               <NavText>HOME</NavText>
             </Link>
             <Link
               className="link"
-              to="/remarkable/about"
+              to="/about"
               onClick={closeMobileMenu}
             >
               <NavText>ADN</NavText>
             </Link>
             <Link
               className="link"
-              to="remarkable/services"
+              to="/services"
               onClick={closeMobileMenu}
             >
               <NavText>SERVIÇOS</NavText>
             </Link>
             <Link
               className="link"
-              to="remarkable/portfolio"
+              to="/portfolio"
               onClick={closeMobileMenu}
             >
               <NavText>PORTEFÓLIO</NavText>
             </Link>
             <Link
               className="link"
-              to="remarkable/partners"
+              to="/partners"
               onClick={closeMobileMenu}
             >
              <NavText>NETWORKING</NavText> 

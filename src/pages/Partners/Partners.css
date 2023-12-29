@@ -13,6 +13,8 @@
 
 .gallery-item:hover {
   cursor: pointer;
+  transition: .3s;
+  opacity: 0.5;
 }
 
 .box-filters-gallery {
