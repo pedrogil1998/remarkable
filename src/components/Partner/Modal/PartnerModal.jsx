@@ -21,7 +21,7 @@ import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { partnerSchema } from "../../../utils/schemas/partnerSchema";
-import { ErrorText } from "../../../utils/utils";
+import { ErrorText, TitleText } from "../../../utils/utils";
 import background from "../../../assets/form/background.png";
 
 const WhiteBorderOutlinedInput = styled(OutlinedInput)`
@@ -75,6 +75,9 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#000000",
+    },
+    secondary: {
+      main: "#ffffff",
     },
   },
 });
@@ -142,15 +145,15 @@ const PartnerModal = ({ open, item, handleClose }) => {
           style={{ backgroundImage: background }}
         >
           <Box margin="0.5rem">
-            <Typography
+            <TitleText
               id="modal-modal-contact"
               variant="h3"
-              component="h2"
-              color="black"
+              color="white"
               align="center"
+              marginTop="1rem"
             >
               {"Formulário de Contacto"}
-            </Typography>
+            </TitleText>
             <Typography
               id="modal-modal-title"
               variant="h5"
@@ -231,12 +234,11 @@ const PartnerModal = ({ open, item, handleClose }) => {
               <ErrorText>{errors.to_email?.message}</ErrorText>
               <ErrorText>{errors.partner_name?.message}</ErrorText>
               <Button
-                sx={{ margin: "0 10rem" }}
+                sx={{ margin: "1rem 10rem 0" }}
                 size={"small"}
                 type="submit"
                 variant="outlined"
-                color="error"
-                disabled={errors && true}
+                color="secondary"
               >
                 Enviar
               </Button>
