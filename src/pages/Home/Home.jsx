@@ -1,7 +1,9 @@
 import Contacts from "../../components/Contacts/Contacts";
 import useIsMobile, {
   LongText,
+  SpanKdam,
   SubLongText,
+  SubTitleText,
   TitleText,
 } from "../../utils/utils";
 import CardScroller from "../../components/FeedbackScroller/CardScroller";
@@ -9,6 +11,8 @@ import video from "../../assets/video-1.mp4";
 import "./Home.css";
 import EaseAppearMotion from "../../components/Animations/AppearAnimation";
 import maLogo from "../../assets/maLogo.svg";
+import AdsClickIcon from '@mui/icons-material/AdsClick';
+import TouchAppIcon from '@mui/icons-material/TouchApp';
 
 const Home = ({}) => {
   const isMobile = useIsMobile();
@@ -47,7 +51,8 @@ const Home = ({}) => {
           </TitleText>
           <a href="https://instagram.com/remarkable.mkt" target="_blank">
             <button type="submit" className="submit-button">
-              <span>Aqui</span>
+              
+              <SpanKdam>Aqui&nbsp;<AdsClickIcon/></SpanKdam>
             </button>
           </a>
         </div>

@@ -31,21 +31,31 @@ export const CardText = styled(Typography)((props) => ({
 
 export const ErrorText = styled(Typography)((props) => ({
   fontFamily: "Arimo",
-  color: "#ED4337"
+  color: "#ED4337",
 }));
 
 export const NavText = styled(Typography)((props) => ({
   fontFamily: "Arimo",
   "&:hover": {
     textDecoration: "underline",
-    textUnderlineOffset: "4px"
+    textUnderlineOffset: "4px",
   },
+}));
+
+export const UnderlinedNavText = styled(Typography)((props) => ({
+  fontFamily: "Arimo",
+  textDecoration: "underline",
+  textUnderlineOffset: "4px",
 }));
 
 export const ServiceCardText = styled(Typography)((props) => ({
   fontFamily: "Arimo",
   lineHeight: 1.3,
 }));
+
+export const SpanKdam = styled("span")({
+  fontFamily: "Kdam-Regular",
+});
 
 export default function useIsMobile() {
   const getIsMobile = () => window.innerWidth <= 960;

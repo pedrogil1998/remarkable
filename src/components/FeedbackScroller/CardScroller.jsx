@@ -7,19 +7,31 @@ import "./CardScroller.css";
 import EaseAppearMotion from "../Animations/AppearAnimation";
 
 const CardScroller = () => {
-  const scrollCard = (e, right = false) => {
-    e.preventDefault();
-    let scroll = document.querySelector(".card-scroller");
-    scroll.scrollBy({
-      top: 0,
-      left: right ? 305 : -305,
+  // const scrollCard = (e, right = false) => {
+  //   e.preventDefault();
+  //   let scroll = document.querySelector(".card-scroller");
+  //   scroll.scrollBy({
+  //     top: 0,
+  //     left: right ? 305 : -305,
+  //     behavior: "smooth",
+  //   });
+  // };
+
+  const scrollRight = () => {
+    let scroll = document.getElementById("card-3");
+    scroll.scrollIntoView({
       behavior: "smooth",
+      block: "nearest",
+      inline: "center",
     });
   };
-
-  const scrollHover = () => {
-    let scroll = document.querySelector(".home-container");
-    scroll.scrollIntoView();
+  const scrollLeft = () => {
+    let scroll = document.getElementById("card-0");
+    scroll.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
   };
 
   return (
@@ -27,7 +39,7 @@ const CardScroller = () => {
       <EaseAppearMotion>
         <Box className="box-scroller">
           <div>
-            <button onClick={scrollCard} className="arrow">
+            <button onClick={scrollLeft} className="arrow">
               <KeyboardDoubleArrowLeftIcon fontSize="large" />
             </button>
           </div>
@@ -35,6 +47,7 @@ const CardScroller = () => {
             {data?.feedback.map((obj, index) => {
               return (
                 <FeedbackCard
+                  id={"card-" + index}
                   key={index}
                   name={obj.name}
                   subtitle={obj.subtitle}
@@ -45,7 +58,7 @@ const CardScroller = () => {
             })}
           </Box>
           <div>
-            <button onClick={(e) => scrollCard(e, true)} className="arrow">
+            <button onClick={scrollRight} className="arrow">
               <KeyboardDoubleArrowRightIcon fontSize="large" />
             </button>
           </div>

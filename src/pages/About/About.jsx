@@ -19,15 +19,56 @@ import LightBackground from "../../components/Animations/LightBackground/LightBa
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import { useState } from "react";
+import { textValues } from "./values";
+import { motion, AnimatePresence } from "framer-motion";
+
+const arrayContent = [
+  { value: "MISSÃO", image: mission, text: textValues[0] },
+  { value: "VALORES", image: values, text: textValues[2] },
+  { value: "VISÃO", image: vision, text: textValues[1] },
+];
+const xValue = 1500;
+const variants = {
+  enter: (direction) => {
+    return {
+      x: -xValue,
+      opacity: 0,
+    };
+  },
+  center: {
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction) => {
+    return {
+      x: xValue,
+      opacity: 0,
+    };
+  },
+};
+
+const swipeConfidenceThreshold = 400;
+const swipePower = (offset, velocity) => {
+  return Math.abs(offset) * velocity;
+};
 
 const About = () => {
+  const [direction, setDirection] = useState(0);
   const [selected, setSelected] = useState(0);
+
   const handleSelectNext = () => {
-    selected != 2 ? setSelected(selected + 1) : setSelected(0);
+    selected != 0 ? setSelected(selected - 1) : setSelected(2);
+    console.log("previous selected: " + selected);
+    console.log("previous direction: " + direction);
+    setDirection(-1);
   };
   const handleSelectPrevious = () => {
-    selected != 0 ? setSelected(selected - 1) : setSelected(2);
+    selected != 2 ? setSelected(selected + 1) : setSelected(0);
+    console.log("previous selected: " + selected);
+    console.log("previous direction: " + direction);
+    setDirection(1);
   };
+
   return (
     <div
       className="about-container"
@@ -52,7 +93,7 @@ const About = () => {
           </SubLongText>
         </EaseAppearMotion>
       </Box>
-      <div className="values-container">
+      {/* <div className="values-container">
         <Box className="values-box-container">
           <Box className="values-box">
             <div>
@@ -74,11 +115,7 @@ const About = () => {
                     />
                   </div>
                   <TextInAnimation>
-                    <LongText className="text-value">
-                      {
-                        "Fazer parte do crescimento e mudança dos nossos Clientes/Parceiros. Com a nossa visão 360 nos negócios, queremos acrescentar valor ao mercado e as empresas que confiam em nós diariamente. Somos a ponte que conecta diretores a colaboradores e empresas a pessoas, não somos só uma agência de Marketing, somos o seu Departamento de Marketing, capacitados a tornar a sua empresa notável, aplicando estratégias que irão não só melhorar a sua presença e posição no mercado, como também o espirito de equipa e o amor á camisola dos seus colaboradores."
-                      }
-                    </LongText>
+                    <LongText className="text-value">{textValues[0]}</LongText>
                   </TextInAnimation>
                 </div>
               </EaseInAnimation>
@@ -96,11 +133,7 @@ const About = () => {
                     />
                   </div>
                   <TextInAnimation>
-                    <LongText className="text-value">
-                      {
-                        "A nossa visão passa por nos tornarmos um parceiro de negócio das empresas/marcas que precisem de revolucionar o mercado, entregando um serviço com uma visão 360º para dar o apoio necessário a qualquer negócio. Pretendemos que quem confia em nós, apenas se preocupe com o core business da sua marca, nós iremos ser a ponte para tudo o resto."
-                      }
-                    </LongText>
+                    <LongText className="text-value">{textValues[1]}</LongText>
                   </TextInAnimation>
                 </div>
               </EaseInAnimation>
@@ -118,17 +151,72 @@ const About = () => {
                     />
                   </div>
                   <TextInAnimation>
-                    <LongText className="text-value">
-                      {
-                        "Os nossos valores moldam cada interação, cada estratégia e cada trabalho que entregamos, somos movidos pela ânsia de inovar, pela transparencia em quem confia em nós e pela orientação de resultados."
-                      }
-                    </LongText>
+                    <LongText className="text-value">{textValues[2]}</LongText>
                   </TextInAnimation>
                 </div>
               </EaseInAnimation>
             )}
             <div>
               <button onClick={handleSelectPrevious} className="arrow">
+                <KeyboardDoubleArrowRightIcon fontSize="large" />
+              </button>
+            </div>
+          </Box>
+        </Box>
+      </div> */}
+      <div className="values-container">
+        <Box className="values-box-container">
+          <Box className="values-box">
+            <div>
+              <button onClick={handleSelectPrevious} className="arrow">
+                <KeyboardDoubleArrowLeftIcon fontSize="large" />
+              </button>
+            </div>
+            <AnimatePresence>
+              <motion.div
+                key={selected}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 100, damping: 30 },
+                  opacity: { duration: 0.3 },
+                }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={1}
+                onDragEnd={(e, { offset, velocity }) => {
+                  const swipe = swipePower(offset.x, velocity.x);
+
+                  if (swipe < -swipeConfidenceThreshold) {
+                    handleSelectPrevious();
+                  } else if (swipe > swipeConfidenceThreshold) {
+                    handleSelectNext();
+                  }
+                }}
+                className="values-info"
+              >
+                <div className="header-value heart-beat">
+                  <SubTitleText variant="h3" sx={{ color: "white" }}>
+                    {arrayContent[selected].value}
+                  </SubTitleText>
+                  <img
+                    src={arrayContent[selected].image}
+                    className="about remarkable"
+                    alt="Remarkable about"
+                  />
+                </div>
+                <TextInAnimation>
+                  <LongText className="text-value">
+                    {arrayContent[selected].text}
+                  </LongText>
+                </TextInAnimation>
+              </motion.div>
+            </AnimatePresence>
+            <div>
+              <button onClick={handleSelectNext} className="arrow">
                 <KeyboardDoubleArrowRightIcon fontSize="large" />
               </button>
             </div>

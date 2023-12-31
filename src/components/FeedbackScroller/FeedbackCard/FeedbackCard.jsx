@@ -6,9 +6,9 @@ import { remarkableRed } from "../../../utils/colors";
 import { CardText, CardTitleText } from "../../../utils/utils";
 import "./FeedbackCard.css";
 
-const FeedbackCard = ({ name, subtitle = "", description, stars = 0 }) => {
+const FeedbackCard = ({ name, subtitle = "", description, stars = 0, id }) => {
   return (
-    <Card className="feedbackCard" sx={{ borderRadius: "10px" }}>
+    <Card id={id} className="feedbackCard" sx={{ borderRadius: "10px" }}>
       <CardContent className="feedbackCardContent">
         <Box className="feedbackCardBox">
             <CardTitleText
