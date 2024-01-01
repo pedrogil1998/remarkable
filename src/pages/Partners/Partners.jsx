@@ -10,6 +10,7 @@ import PartnerModal from "../../components/Partner/Modal/PartnerModal";
 import LightBackground from "../../components/Animations/LightBackground/LightBackground";
 import { SubLongText, TitleText } from "../../utils/utils";
 import TuneIcon from "@mui/icons-material/Tune";
+
 const Partners = () => {
   const [data, setData] = useState(PartnerData);
   const [collection, setCollection] = useState([

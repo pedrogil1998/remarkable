@@ -11,8 +11,20 @@ import video from "../../assets/video-1.mp4";
 import "./Home.css";
 import EaseAppearMotion from "../../components/Animations/AppearAnimation";
 import maLogo from "../../assets/maLogo.svg";
-import AdsClickIcon from '@mui/icons-material/AdsClick';
-import TouchAppIcon from '@mui/icons-material/TouchApp';
+import AdsClickIcon from "@mui/icons-material/AdsClick";
+import TouchAppIcon from "@mui/icons-material/TouchApp";
+import PartnerModal from "../../components/Partner/Modal/PartnerModal";
+import { useState } from "react";
+
+const PartnerRemarkable = {
+  id: 1,
+  title: "Remarkable",
+  description: "Muda o teu futuro, junta-te a nós.",
+  type: "Marketing",
+  image: maLogo,
+  to_email: "pedrogilmoura27@gmail.com",
+  services: ["Marketing"],
+};
 
 const Home = ({}) => {
   const isMobile = useIsMobile();
@@ -21,6 +33,12 @@ const Home = ({}) => {
 
     scroll.scrollIntoView();
   };
+
+  //MODAL
+  const [open, setOpen] = useState({ item: PartnerRemarkable, open: false });
+  const handleOpen = () => setOpen({ ...open, open: true });
+  const handleClose = () => setOpen({ ...open, open: false });
+
   return (
     <>
       <div className="home-container">
@@ -49,12 +67,17 @@ const Home = ({}) => {
           <TitleText variant="h2" margin="2rem" style={{ color: "white" }}>
             Mude o futuro do seu negócio:
           </TitleText>
-          <a href="https://instagram.com/remarkable.mkt" target="_blank">
-            <button type="submit" className="submit-button">
-              
-              <SpanKdam>Aqui&nbsp;<AdsClickIcon/></SpanKdam>
-            </button>
-          </a>
+          <button type="submit" className="submit-button">
+            <SpanKdam onClick={handleOpen}>
+              Aqui&nbsp;
+              <AdsClickIcon />
+            </SpanKdam>
+            <PartnerModal
+              open={open.open}
+              item={open.item}
+              handleClose={handleClose}
+            ></PartnerModal>
+          </button>
         </div>
         <Contacts />
         {!isMobile && <video src={video} autoPlay loop muted></video>}

@@ -24,17 +24,6 @@ import { partnerSchema } from "../../../utils/schemas/partnerSchema";
 import { ErrorText, TitleText } from "../../../utils/utils";
 import background from "../../../assets/form/background.png";
 
-const WhiteBorderOutlinedInput = styled(OutlinedInput)`
-  & label.Mui-focused {
-    color: white;
-  }
-  & .MuiOutlinedInput-root {
-    &.Mui-focused fieldset {
-      border-color: white;
-    }
-  }
-`;
-
 const TextInput = ({ name, register, required, ...rest }) => (
   <TextField {...register(name, { required })} {...rest} />
 );
@@ -53,16 +42,14 @@ const CssSelectInput = styled(SelectInput)({
 
 const CssTextField = styled(TextInput)({
   "& label": {
-    color: "#A0AAB4",
+    color: "#595959",
   },
   "& .MuiFilledInput-root": {
     color: "black",
     backgroundColor: "#d6d6d6",
   },
 
-  "&& .Mui-focused": {
-    backgroundColor: "#ffffff",
-  },
+  backgroundColor: "#ffffff",
 });
 
 const NoDisplayTextField = styled(TextInput)({
@@ -79,6 +66,9 @@ const theme = createTheme({
     secondary: {
       main: "#ffffff",
     },
+    tertiary: {
+      main: "#595959"
+    }
   },
 });
 
@@ -94,23 +84,14 @@ const PartnerModal = ({ open, item, handleClose }) => {
   } = useForm({
     resolver: yupResolver(partnerSchema),
   });
+
   const watchTitular = watch("titular", "pessoal");
+
   const onSubmit = (data) => {
+    alert("test")
     console.log(data);
     //sendEmail(data);
   };
-
-  const handleTextFieldChange = (event) => {
-    const { name, value } = event.target;
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
-  };
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   sendEmail(e);
-  // };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -130,6 +111,7 @@ const PartnerModal = ({ open, item, handleClose }) => {
         }
       );
   };
+  
   return (
     <ThemeProvider theme={theme}>
       <Modal
@@ -214,7 +196,7 @@ const PartnerModal = ({ open, item, handleClose }) => {
               <CssTextField
                 name="description"
                 register={register}
-                color={"primary"}
+                color={"tertiary"}
                 label="Descrição do Serviço"
                 multiline
                 rows={4}
@@ -231,8 +213,8 @@ const PartnerModal = ({ open, item, handleClose }) => {
               <NoDisplayTextField className="no-display" name="partner_name">
                 {item?.title}
               </NoDisplayTextField> */}
-              <ErrorText>{errors.to_email?.message}</ErrorText>
-              <ErrorText>{errors.partner_name?.message}</ErrorText>
+              {/* <ErrorText>{errors.to_email?.message}</ErrorText>
+              <ErrorText>{errors.partner_name?.message}</ErrorText> */}
               <Button
                 sx={{ margin: "1rem 10rem 0" }}
                 size={"small"}
