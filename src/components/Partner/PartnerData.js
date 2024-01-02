@@ -4,6 +4,11 @@ import farmotive from "../../assets/Parceiros/farmotive.jpg";
 import tisoauto from "../../assets/Parceiros/tisoauto.jpg";
 import emilia from "../../assets/Parceiros/emilia.jpg";
 import novum from "../../assets/Parceiros/novum.jpg";
+import carlosSeabra from "../../assets/Parceiros/carlosSeabra.jpg";
+import oceanPace from "../../assets/Parceiros/oceanPace.jpg";
+import routeFilms from "../../assets/Parceiros/routeFilms.jpg";
+import sandraTeixeira from "../../assets/Parceiros/sandraTeixeira.jpg";
+
 export const PartnerData = [
   {
     id: 1,
@@ -12,45 +17,77 @@ export const PartnerData = [
     type: "Engenharia",
     image: civilworks,
     to_email: "pedrogilmoura27@gmail.com",
-    services: ["Gestão de frotas", "Peças automóveis"]
+    services: ["Gestão de frotas", "Peças automóveis"],
   },
   {
     id: 2,
-    title: "Flávio Magalhães Fisioterapeuta",
-    description: "Jovem empreendedor que faz fisioterapia.",
-    type: "Saúde",
-    image: flavio,
-    to_email: "pedrogilmoura27@gmail.com"
+    title: "Tisoauto",
+    type: "Setor Automóvel",
+    description: "Peças automóveis / serviços de ratalho.",
+    image: tisoauto,
+    to_email: "ruimoreira@tisoauto.pt",
   },
+
   {
     id: 3,
     title: "Farmotive",
     type: "Setor Automóvel",
     image: farmotive,
-    to_email: "pedrogilmoura27@gmail.com"
+    to_email: "pedrogilmoura27@gmail.com",
   },
   {
     id: 4,
-    title: "Tisoauto",
-    type: "Setor Automóvel",
-    description: "Peças automóveis / serviços de ratalho.",
-    image: tisoauto,
-    to_email: "ruimoreira@tisoauto.pt"
+    title: "Flávio Magalhães Fisioterapeuta",
+    description: "Jovem empreendedor que faz fisioterapia.",
+    type: "Saúde",
+    image: flavio,
+    to_email: "pedrogilmoura27@gmail.com",
   },
+
   {
     id: 5,
     title: "Emilia Maia",
     type: "Advocacia",
     image: emilia,
-    to_email: "pedrogilmoura27@gmail.com"
+    to_email: "pedrogilmoura27@gmail.com",
   },
+
   {
     id: 6,
+    title: "Carlos Seabra",
+    type: "Contabilidade",
+    image: carlosSeabra,
+    to_email: "pedrogilmoura27@gmail.com",
+  },
+  {
+    id: 7,
     title: "Novum Canal",
     type: "Media",
     image: novum,
-    to_email: "pedrogilmoura27@gmail.com"
-  }
+    to_email: "pedrogilmoura27@gmail.com",
+  },
+
+  {
+    id: 8,
+    title: "Route Films",
+    type: "Media",
+    image: routeFilms,
+    to_email: "pedrogilmoura27@gmail.com",
+  },
+  {
+    id: 9,
+    title: "Ocean Pace",
+    type: "Media",
+    image: oceanPace,
+    to_email: "pedrogilmoura27@gmail.com",
+  },
+  {
+    id: 10,
+    title: "Sandra Teixeira",
+    type: "Advocacia",
+    image: sandraTeixeira,
+    to_email: "pedrogilmoura27@gmail.com",
+  },
   // {
   //   id: 6,
   //   title: "Civilworks",

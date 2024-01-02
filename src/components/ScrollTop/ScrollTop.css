@@ -11,10 +11,10 @@
   border-radius: 20px;
   bottom: 1.5rem;
   right: 1.5rem;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .scroll-to-top:hover {
   filter: drop-shadow(0 0 2em black);
   background-color: rgb(107, 0, 0);

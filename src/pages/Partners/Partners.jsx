@@ -10,6 +10,10 @@ import PartnerModal from "../../components/Partner/Modal/PartnerModal";
 import LightBackground from "../../components/Animations/LightBackground/LightBackground";
 import { SubLongText, TitleText } from "../../utils/utils";
 import TuneIcon from "@mui/icons-material/Tune";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
+import PanToolAltIcon from '@mui/icons-material/PanToolAlt';
+import ChatIcon from '@mui/icons-material/Chat';
+import FeedIcon from '@mui/icons-material/Feed';
 
 const Partners = () => {
   const [data, setData] = useState(PartnerData);
@@ -79,8 +83,15 @@ const Partners = () => {
         <EaseAppearMotion>
           <div className="gallery-container">
             {data.map((item) => (
-              <div key={item.id} className="gallery-item">
-                <img src={item.image} onClick={() => handleOpen(item)} />
+              <div
+                key={item.id}
+                className="gallery-item"
+                onClick={() => handleOpen(item)}
+              >
+                <img src={item.image} />
+                <div className="gallery-item-overlay">
+                  <FeedIcon sx={{ fontSize: "4.5rem" }} />
+                </div>
               </div>
             ))}
             <PartnerModal
@@ -91,8 +102,9 @@ const Partners = () => {
           </div>
         </EaseAppearMotion>
       </Box>
-      <Typography variant="h6" style={{marginBottom: "2rem"}}>
-        O seu negócio também pode pertencer à nossa rede. Entre em contacto connosco.
+      <Typography variant="h6" style={{ marginBottom: "2rem" }}>
+        O seu negócio também pode pertencer à nossa rede. Entre em contacto
+        connosco.
       </Typography>
       <Contacts />
     </div>

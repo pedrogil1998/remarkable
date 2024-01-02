@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import {
   Box,
   Button,
+  Fade,
   FormControl,
   Input,
   InputAdornment,
@@ -67,8 +68,8 @@ const theme = createTheme({
       main: "#ffffff",
     },
     tertiary: {
-      main: "#595959"
-    }
+      main: "#595959",
+    },
   },
 });
 
@@ -88,7 +89,7 @@ const PartnerModal = ({ open, item, handleClose }) => {
   const watchTitular = watch("titular", "pessoal");
 
   const onSubmit = (data) => {
-    alert("test")
+    alert("test");
     console.log(data);
     //sendEmail(data);
   };
@@ -111,7 +112,7 @@ const PartnerModal = ({ open, item, handleClose }) => {
         }
       );
   };
-  
+
   return (
     <ThemeProvider theme={theme}>
       <Modal
@@ -120,113 +121,115 @@ const PartnerModal = ({ open, item, handleClose }) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <form
-          ref={form}
-          onSubmit={handleSubmit(onSubmit)}
-          className="modal-box"
-          style={{ backgroundImage: background }}
-        >
-          <Box margin="0.5rem">
-            <TitleText
-              id="modal-modal-contact"
-              variant="h3"
-              color="white"
-              align="center"
-              marginTop="1rem"
-            >
-              {"Formulário de Contacto"}
-            </TitleText>
-            <Typography
-              id="modal-modal-title"
-              variant="h5"
-              component="h2"
-              color="gray"
-              align="center"
-            >
-              {item?.title || "Title"}
-            </Typography>
-            <Typography
-              id="modal-modal-description"
-              sx={{ mt: 2 }}
-              color="gray"
-            >
-              {item?.description || "Esta empresa confia na reMArkable."}
-            </Typography>
-          </Box>
-          <Box margin="0 1rem 0 0">
-            <FormControl fullWidth sx={{ m: 1 }}>
-              <CssSelectInput
-                defaultValue="pessoal"
-                name="titular"
-                register={register}
-                style={{ marginBottom: "1.5rem" }}
+        <Fade in={open}>
+          <form
+            ref={form}
+            onSubmit={handleSubmit(onSubmit)}
+            className="modal-box"
+            style={{ backgroundImage: background }}
+          >
+            <Box margin="0.5rem">
+              <TitleText
+                id="modal-modal-contact"
+                variant="h3"
+                color="white"
+                align="center"
+                marginTop="1rem"
               >
-                <MenuItem value="organizacao">Organização</MenuItem>
-                <MenuItem value="pessoal">Pessoal</MenuItem>
-              </CssSelectInput>
-              <CssTextField
-                name="name"
-                register={register}
-                required
-                label={watchTitular === "pessoal" ? "Nome" : "Empresa"}
-                color={"primary"}
-                variant={"filled"}
-                style={{ marginBottom: !errors.name?.message && "1.5rem" }}
-              />
-              <ErrorText>{errors.name?.message}</ErrorText>
+                {"Formulário de Contacto"}
+              </TitleText>
+              <Typography
+                id="modal-modal-title"
+                variant="h5"
+                component="h2"
+                color="gray"
+                align="center"
+              >
+                {item?.title || "Title"}
+              </Typography>
+              <Typography
+                id="modal-modal-description"
+                sx={{ mt: 2 }}
+                color="gray"
+              >
+                {item?.description || "Esta empresa confia na reMArkable."}
+              </Typography>
+            </Box>
+            <Box margin="0 1rem 0 0">
+              <FormControl fullWidth sx={{ m: 1 }}>
+                <CssSelectInput
+                  defaultValue="pessoal"
+                  name="titular"
+                  register={register}
+                  style={{ marginBottom: "1.5rem" }}
+                >
+                  <MenuItem value="organizacao">Organização</MenuItem>
+                  <MenuItem value="pessoal">Pessoal</MenuItem>
+                </CssSelectInput>
+                <CssTextField
+                  name="name"
+                  register={register}
+                  required
+                  label={watchTitular === "pessoal" ? "Nome" : "Empresa"}
+                  color={"primary"}
+                  variant={"filled"}
+                  style={{ marginBottom: !errors.name?.message && "1.5rem" }}
+                />
+                <ErrorText>{errors.name?.message}</ErrorText>
 
-              <CssTextField
-                name="contact"
-                register={register}
-                color={"primary"}
-                label="Contacto"
-                variant="filled"
-                style={{ marginBottom: !errors.contact?.message && "1.5rem" }}
-              />
-              <ErrorText>{errors.contact?.message}</ErrorText>
-              <CssTextField
-                name="email"
-                register={register}
-                color={"primary"}
-                label="E-mail"
-                variant="filled"
-                style={{ marginBottom: !errors.email?.message && "1.5rem" }}
-              />
-              <ErrorText>{errors.email?.message}</ErrorText>
-              <CssTextField
-                name="description"
-                register={register}
-                color={"tertiary"}
-                label="Descrição do Serviço"
-                multiline
-                rows={4}
-                variant="filled"
-                style={{
-                  marginBottom: !errors.description?.message && "1.5rem",
-                }}
-              />
-              <ErrorText>{errors.description?.message}</ErrorText>
+                <CssTextField
+                  name="contact"
+                  register={register}
+                  color={"primary"}
+                  label="Contacto"
+                  variant="filled"
+                  style={{ marginBottom: !errors.contact?.message && "1.5rem" }}
+                />
+                <ErrorText>{errors.contact?.message}</ErrorText>
+                <CssTextField
+                  name="email"
+                  register={register}
+                  color={"primary"}
+                  label="E-mail"
+                  variant="filled"
+                  style={{ marginBottom: !errors.email?.message && "1.5rem" }}
+                />
+                <ErrorText>{errors.email?.message}</ErrorText>
+                <CssTextField
+                  name="description"
+                  register={register}
+                  color={"tertiary"}
+                  label="Descrição do Serviço"
+                  multiline
+                  rows={4}
+                  variant="filled"
+                  style={{
+                    marginBottom: !errors.description?.message && "1.5rem",
+                  }}
+                />
+                <ErrorText>{errors.description?.message}</ErrorText>
 
-              {/* <NoDisplayTextField className="no-display" name="to_email">
+                {/* <NoDisplayTextField className="no-display" name="to_email">
                 {item?.to_email}
               </NoDisplayTextField>
               <NoDisplayTextField className="no-display" name="partner_name">
                 {item?.title}
               </NoDisplayTextField> */}
-              {/* <ErrorText>{errors.to_email?.message}</ErrorText>
+                {/* <ErrorText>{errors.to_email?.message}</ErrorText>
               <ErrorText>{errors.partner_name?.message}</ErrorText> */}
-              <Button
-                sx={{ margin: "1rem 10rem 0" }}
-                size={"small"}
-                type="submit"
-                variant="outlined"
-                color="secondary"
-              >
-                Enviar
-              </Button>
-            </FormControl>
-          </Box>
-        </form>
+                <Button
+                  sx={{ margin: "1rem 10rem 0" }}
+                  size={"small"}
+                  type="submit"
+                  variant="outlined"
+                  color="secondary"
+                >
+                  Enviar
+                </Button>
+              </FormControl>
+            </Box>
+          </form>
+        </Fade>
       </Modal>
     </ThemeProvider>
   );
