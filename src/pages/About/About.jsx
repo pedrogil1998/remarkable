@@ -21,27 +21,28 @@ import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrow
 import { useState } from "react";
 import { textValues } from "./values";
 import { motion, AnimatePresence } from "framer-motion";
+import FaqAccordion from "../../components/FaqAccordion/FaqAccordion";
 
 const arrayContent = [
   { value: "MISSÃO", image: mission, text: textValues[0] },
   { value: "VALORES", image: values, text: textValues[2] },
   { value: "VISÃO", image: vision, text: textValues[1] },
 ];
-const xValue = 1500;
+const xValue = 500;
 const variants = {
-  enter: (direction) => {
+  initial: (direction) => {
     return {
-      x: -xValue,
+      x: direction < 0 ? -xValue : xValue,
       opacity: 0,
     };
   },
-  center: {
+  animate: {
     x: 0,
     opacity: 1,
   },
   exit: (direction) => {
     return {
-      x: xValue,
+      x: direction < 0 ? xValue : -xValue,
       opacity: 0,
     };
   },
@@ -93,136 +94,62 @@ const About = () => {
           </SubLongText>
         </EaseAppearMotion>
       </Box>
-      {/* <div className="values-container">
-        <Box className="values-box-container">
-          <Box className="values-box">
-            <div>
-              <button onClick={handleSelectNext} className="arrow">
-                <KeyboardDoubleArrowLeftIcon fontSize="large" />
-              </button>
-            </div>
-            {selected == 0 ? (
-              <EaseInAnimation key={"mission"}>
-                <div className="values-info">
-                  <div className="header-value heart-beat">
-                    <SubTitleText variant="h3" sx={{ color: "white" }}>
-                      MISSÃO
-                    </SubTitleText>
-                    <img
-                      src={mission}
-                      className="about remarkable"
-                      alt="Remarkable about"
-                    />
-                  </div>
-                  <TextInAnimation>
-                    <LongText className="text-value">{textValues[0]}</LongText>
-                  </TextInAnimation>
-                </div>
-              </EaseInAnimation>
-            ) : selected == 2 ? (
-              <EaseInAnimation key={"vision"}>
-                <div className="values-info">
-                  <div className="header-value heart-beat">
-                    <SubTitleText variant="h3" sx={{ color: "white" }}>
-                      VISÃO
-                    </SubTitleText>
-                    <img
-                      src={vision}
-                      className="about remarkable"
-                      alt="Remarkable about"
-                    />
-                  </div>
-                  <TextInAnimation>
-                    <LongText className="text-value">{textValues[1]}</LongText>
-                  </TextInAnimation>
-                </div>
-              </EaseInAnimation>
-            ) : (
-              <EaseInAnimation key={"values"}>
-                <div className="values-info">
-                  <div className="header-value heart-beat">
-                    <SubTitleText variant="h3" sx={{ color: "white" }}>
-                      VALORES
-                    </SubTitleText>
-                    <img
-                      src={values}
-                      className="about remarkable"
-                      alt="Remarkable about"
-                    />
-                  </div>
-                  <TextInAnimation>
-                    <LongText className="text-value">{textValues[2]}</LongText>
-                  </TextInAnimation>
-                </div>
-              </EaseInAnimation>
-            )}
-            <div>
-              <button onClick={handleSelectPrevious} className="arrow">
-                <KeyboardDoubleArrowRightIcon fontSize="large" />
-              </button>
-            </div>
-          </Box>
-        </Box>
-      </div> */}
       <div className="values-container">
         <Box className="values-box-container">
-          <Box className="values-box">
-            <div>
-              <button onClick={handleSelectPrevious} className="arrow">
-                <KeyboardDoubleArrowLeftIcon fontSize="large" />
-              </button>
-            </div>
-            <AnimatePresence>
-              <motion.div
-                key={selected}
-                custom={direction}
-                variants={variants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 100, damping: 30 },
-                  opacity: { duration: 0.3 },
-                }}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={1}
-                onDragEnd={(e, { offset, velocity }) => {
-                  const swipe = swipePower(offset.x, velocity.x);
+          <div>
+            <button onClick={handleSelectPrevious} className="arrow">
+              <KeyboardDoubleArrowLeftIcon fontSize="large" />
+            </button>
+          </div>
+          <motion.div
+            key={selected}
+            custom={direction}
+            variants={variants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 100, damping: 30 },
+              opacity: { duration: 0.3 },
+            }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = swipePower(offset.x, velocity.x);
 
-                  if (swipe < -swipeConfidenceThreshold) {
-                    handleSelectPrevious();
-                  } else if (swipe > swipeConfidenceThreshold) {
-                    handleSelectNext();
-                  }
-                }}
-                className="values-info"
-              >
-                <div className="header-value heart-beat">
-                  <SubTitleText variant="h3" sx={{ color: "white" }}>
-                    {arrayContent[selected].value}
-                  </SubTitleText>
-                  <img
-                    src={arrayContent[selected].image}
-                    className="about remarkable"
-                    alt="Remarkable about"
-                  />
-                </div>
-                <TextInAnimation>
-                  <LongText className="text-value">
-                    {arrayContent[selected].text}
-                  </LongText>
-                </TextInAnimation>
-              </motion.div>
-            </AnimatePresence>
-            <div>
-              <button onClick={handleSelectNext} className="arrow">
-                <KeyboardDoubleArrowRightIcon fontSize="large" />
-              </button>
+              if (swipe < -swipeConfidenceThreshold) {
+                handleSelectPrevious();
+              } else if (swipe > swipeConfidenceThreshold) {
+                handleSelectNext();
+              }
+            }}
+            className="values-info"
+          >
+            <div className="header-value heart-beat">
+              <SubTitleText variant="h3" sx={{ color: "white" }}>
+                {arrayContent[selected].value}
+              </SubTitleText>
+              <img
+                src={arrayContent[selected].image}
+                className="about remarkable"
+                alt="Remarkable about"
+              />
             </div>
-          </Box>
+            <TextInAnimation>
+              <LongText className="text-value">
+                {arrayContent[selected].text}
+              </LongText>
+            </TextInAnimation>
+          </motion.div>
+          <div>
+            <button onClick={handleSelectNext} className="arrow">
+              <KeyboardDoubleArrowRightIcon fontSize="large" />
+            </button>
+          </div>
         </Box>
       </div>
+      <FaqAccordion />
       <Contacts />
     </div>
   );
