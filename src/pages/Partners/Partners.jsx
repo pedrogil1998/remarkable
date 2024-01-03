@@ -11,9 +11,10 @@ import LightBackground from "../../components/Animations/LightBackground/LightBa
 import { SubLongText, TitleText } from "../../utils/utils";
 import TuneIcon from "@mui/icons-material/Tune";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
-import PanToolAltIcon from '@mui/icons-material/PanToolAlt';
-import ChatIcon from '@mui/icons-material/Chat';
-import FeedIcon from '@mui/icons-material/Feed';
+import PanToolAltIcon from "@mui/icons-material/PanToolAlt";
+import ChatIcon from "@mui/icons-material/Chat";
+import FeedIcon from "@mui/icons-material/Feed";
+import { Blurhash } from "react-blurhash";
 
 const Partners = () => {
   const [data, setData] = useState(PartnerData);
@@ -30,11 +31,21 @@ const Partners = () => {
   const [open, setOpen] = useState({ item: null, open: false });
   const handleOpen = (item) => setOpen({ item: item, open: true });
   const handleClose = () => setOpen({ item: null, open: false });
+  const [isLoaded, setLoaded] = useState(false);
+  const [isLoadStarted, setLoadStarted] = useState(false);
 
   const [alignment, setAlignment] = useState("todos");
 
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
+  };
+
+  const handleLoad = () => {
+    setLoaded(true);
+  };
+
+  const handleLoadStarted = () => {
+    setLoadStarted(true);
   };
 
   return (
@@ -88,7 +99,24 @@ const Partners = () => {
                 className="gallery-item"
                 onClick={() => handleOpen(item)}
               >
-                <img src={item.image} />
+                <img
+                  src={item.image}
+                  height={300}
+                  width={300}
+                  onLoad={handleLoad}
+                  beforeLoad={handleLoadStarted}
+                />
+                {!isLoaded && isLoadStarted && (
+                  <Blurhash
+                    hash={image.imageHash}
+                    width={300}
+                    height={300}
+                    resolutionX={32}
+                    resolutionY={32}
+                    punch={1}
+                  />
+                )}
+                {/* <img loading="lazy" src={item.image} /> */}
                 <div className="gallery-item-overlay">
                   <FeedIcon sx={{ fontSize: "4.5rem" }} />
                 </div>

@@ -16,6 +16,7 @@ export const PartnerData = [
     description: "Empresa sediada em Paredes.",
     type: "Engenharia",
     image: civilworks,
+    imageHash: "LUK_|E~V%MxtozfPfPj[xuj[Rjay",
     to_email: "pedrogilmoura27@gmail.com",
     services: ["Gestão de frotas", "Peças automóveis"],
   },
