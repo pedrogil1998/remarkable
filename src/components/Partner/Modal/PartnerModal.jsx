@@ -1,29 +1,26 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {
+  Alert,
   Box,
   Button,
   Fade,
   FormControl,
-  Input,
-  InputAdornment,
-  InputLabel,
   MenuItem,
   Modal,
-  OutlinedInput,
   Select,
   TextField,
   Typography,
 } from "@mui/material";
-import { red, purple } from "@mui/material/colors";
 import "./PartnerModal.css";
 import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
-import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { partnerSchema } from "../../../utils/schemas/partnerSchema";
-import { ErrorText, TitleText } from "../../../utils/utils";
+import { ErrorText, SubTitleText, TitleText } from "../../../utils/utils";
 import background from "../../../assets/form/background.png";
+import ReCAPTCHA from "react-google-recaptcha";
+import ClearIcon from "@mui/icons-material/Clear";
 
 const TextInput = ({ name, register, required, ...rest }) => (
   <TextField {...register(name, { required })} {...rest} />
@@ -76,36 +73,63 @@ const theme = createTheme({
 const PartnerModal = ({ open, item, handleClose }) => {
   const form = useRef();
   const [formValues, setFormValues] = useState({});
-
+  const [recaptcha, setRecaptcha] = useState(null);
   const {
     register,
     handleSubmit,
     watch,
+    reset,
+    setValue,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(partnerSchema),
   });
 
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleShowSuccessAlert = () => {
+    setShowAlert(true);
+  };
+
+  const handleCloseSuccessAlert = () => {
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 2000);
+  };
+
   const watchTitular = watch("titular", "pessoal");
 
   const onSubmit = (data) => {
-    alert("test");
+    // setValue("to_email", item?.to_email);
+    // setValue("partner_name", item?.title);
+    handleShowSuccessAlert();
+    handleCloseSuccessAlert();
     console.log(data);
     //sendEmail(data);
   };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const onClose = () => {
+    setRecaptcha(null);
+    reset();
+    handleClose();
+  };
+
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
+
+  const sendEmail = (data) => {
     emailjs
       .send(
         "service_19rzorb",
         "template_f88urod",
-        { ...formValues, to_email: item?.to_email, partner_name: item?.title },
+        { ...data, to_email: item?.to_email, partner_name: item?.title },
         "nmzOET3EouBYnpZfA"
       )
       .then(
         (result) => {
           alert("Contacto efetuado com sucesso.");
+          handleShowSuccessAlert();
         },
         (errors) => {
           alert("Algo de errado não permitiu este contacto...");
@@ -117,7 +141,7 @@ const PartnerModal = ({ open, item, handleClose }) => {
     <ThemeProvider theme={theme}>
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={onClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -128,8 +152,17 @@ const PartnerModal = ({ open, item, handleClose }) => {
             className="modal-box"
             style={{ backgroundImage: background }}
           >
+            {showAlert && (
+              <Alert severity="success" onClose={handleCloseSuccessAlert}>
+                O contacto foi realizado com sucesso! Será contactado
+                brevemente.
+              </Alert>
+            )}
             <Box margin="0.5rem">
-              <TitleText
+              <div className="close-icon-div">
+                <ClearIcon className="close-icon" onClick={onClose} />
+              </div>
+              <SubTitleText
                 id="modal-modal-contact"
                 variant="h3"
                 color="white"
@@ -137,7 +170,7 @@ const PartnerModal = ({ open, item, handleClose }) => {
                 marginTop="1rem"
               >
                 {"Formulário de Contacto"}
-              </TitleText>
+              </SubTitleText>
               <Typography
                 id="modal-modal-title"
                 variant="h5"
@@ -149,8 +182,9 @@ const PartnerModal = ({ open, item, handleClose }) => {
               </Typography>
               <Typography
                 id="modal-modal-description"
-                sx={{ mt: 2 }}
+                sx={{ mt: "2rem" }}
                 color="gray"
+                align="justify"
               >
                 {item?.description || "Esta empresa confia na reMArkable."}
               </Typography>
@@ -217,12 +251,19 @@ const PartnerModal = ({ open, item, handleClose }) => {
               </NoDisplayTextField> */}
                 {/* <ErrorText>{errors.to_email?.message}</ErrorText>
               <ErrorText>{errors.partner_name?.message}</ErrorText> */}
+                <div className="recaptcha-div">
+                  <ReCAPTCHA
+                    sitekey="6Lcx80UpAAAAALwzUnJHHiiw1QkMvlwFcufWhwW0"
+                    onChange={(val) => setRecaptcha(val)}
+                  />
+                </div>
                 <Button
                   sx={{ margin: "1rem 10rem 0" }}
                   size={"small"}
                   type="submit"
                   variant="outlined"
                   color="secondary"
+                  disabled={!recaptcha}
                 >
                   Enviar
                 </Button>

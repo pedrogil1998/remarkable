@@ -10,7 +10,7 @@ const phoneRegExp =
 export const partnerSchema = yup
   .object({
     name: yup.string().required(requiredMessage),
-    company: yup.string().required(requiredMessage),
+    //company: yup.string().required(requiredMessage),
     contact: yup.string().matches(phoneRegExp, contactMessage),
     email: yup.string().email(emailMessage).required(requiredMessage),
     description: yup.string().required(requiredMessage),

@@ -104,7 +104,7 @@ const Partners = () => {
                   height={300}
                   width={300}
                   onLoad={handleLoad}
-                  beforeLoad={handleLoadStarted}
+                  //beforeLoad={handleLoadStarted}
                 />
                 {!isLoaded && isLoadStarted && (
                   <Blurhash

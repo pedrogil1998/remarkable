@@ -149,7 +149,7 @@ const About = () => {
           </div>
         </Box>
       </div>
-      <FaqAccordion />
+      {/* <FaqAccordion /> */}
       <Contacts />
     </div>
   );
