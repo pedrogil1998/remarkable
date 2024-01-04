@@ -85,20 +85,36 @@ const PartnerModal = ({ open, item, handleClose }) => {
     resolver: yupResolver(partnerSchema),
   });
 
-  const [showAlert, setShowAlert] = useState(false);
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
 
   const handleShowSuccessAlert = () => {
-    setShowAlert(true);
+    setShowSuccessAlert(true);
   };
 
   const handleCloseSuccessAlert = () => {
     setTimeout(() => {
-      setShowAlert(false);
+      setShowSuccessAlert(false);
+    }, 2000);
+  };
+
+  const handleShowErrorAlert = () => {
+    setShowErrorAlert(true);
+  };
+
+  const handleCloseErrorAlert = () => {
+    setTimeout(() => {
+      setShowErrorAlert(false);
     }, 2000);
   };
 
   const watchTitular = watch("titular", "pessoal");
 
+  const onClose = () => {
+    setRecaptcha(null);
+    reset();
+    handleClose();
+  };
   const onSubmit = (data) => {
     // setValue("to_email", item?.to_email);
     // setValue("partner_name", item?.title);
@@ -106,14 +122,8 @@ const PartnerModal = ({ open, item, handleClose }) => {
     handleCloseSuccessAlert();
     console.log(data);
     //sendEmail(data);
+    onClose();
   };
-
-  const onClose = () => {
-    setRecaptcha(null);
-    reset();
-    handleClose();
-  };
-
   useEffect(() => {
     console.log(errors);
   }, [errors]);
@@ -128,17 +138,37 @@ const PartnerModal = ({ open, item, handleClose }) => {
       )
       .then(
         (result) => {
-          alert("Contacto efetuado com sucesso.");
           handleShowSuccessAlert();
+          handleCloseSuccessAlert();
         },
         (errors) => {
-          alert("Algo de errado não permitiu este contacto...");
+          handleShowErrorAlert();
+          handleCloseErrorAlert();
         }
       );
   };
 
   return (
     <ThemeProvider theme={theme}>
+      {showSuccessAlert && (
+        <div
+          style={{
+            position: "absolute",
+            top: "1rem",
+            left: 0,
+            right: 0,
+            zIndex: 999,
+          }}
+        >
+          <Alert
+            severity="success"
+            onClose={handleCloseSuccessAlert}
+            className="alert-div"
+          >
+            O contacto foi realizado com sucesso! Será contactado brevemente.
+          </Alert>
+        </div>
+      )}
       <Modal
         open={open}
         onClose={onClose}
@@ -152,12 +182,6 @@ const PartnerModal = ({ open, item, handleClose }) => {
             className="modal-box"
             style={{ backgroundImage: background }}
           >
-            {showAlert && (
-              <Alert severity="success" onClose={handleCloseSuccessAlert}>
-                O contacto foi realizado com sucesso! Será contactado
-                brevemente.
-              </Alert>
-            )}
             <Box margin="0.5rem">
               <div className="close-icon-div">
                 <ClearIcon className="close-icon" onClick={onClose} />
@@ -257,6 +281,7 @@ const PartnerModal = ({ open, item, handleClose }) => {
                     onChange={(val) => setRecaptcha(val)}
                   />
                 </div>
+
                 <Button
                   sx={{ margin: "1rem 10rem 0" }}
                   size={"small"}
