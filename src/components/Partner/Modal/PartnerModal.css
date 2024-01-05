@@ -1,13 +1,15 @@
 .modal-box {
   position: absolute;
-  top: 50%;
+  top: 2rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   background-image: linear-gradient(#141414, black, #141414);
   background-size: cover;
-  width: 800px;
+  width: 50%;
+  height: 80%;
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 1);
   padding: 2rem;
+  overflow-y: auto;
 }
 
 .modal-box:focus {
@@ -40,7 +42,7 @@
 
 @media screen and (max-width: 960px) {
   .modal-box {
-    width: 300px;
+    width: 80%;
   }
 }
 

@@ -79,7 +79,6 @@ const PartnerModal = ({ open, item, handleClose }) => {
     handleSubmit,
     watch,
     reset,
-    setValue,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(partnerSchema),
@@ -118,15 +117,14 @@ const PartnerModal = ({ open, item, handleClose }) => {
   const onSubmit = (data) => {
     // setValue("to_email", item?.to_email);
     // setValue("partner_name", item?.title);
-    handleShowSuccessAlert();
-    handleCloseSuccessAlert();
+    // handleShowSuccessAlert();
+    // handleCloseSuccessAlert();
+    handleShowErrorAlert();
+          handleCloseErrorAlert();
     console.log(data);
     //sendEmail(data);
     onClose();
   };
-  useEffect(() => {
-    console.log(errors);
-  }, [errors]);
 
   const sendEmail = (data) => {
     emailjs
@@ -150,16 +148,16 @@ const PartnerModal = ({ open, item, handleClose }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      {showSuccessAlert && (
-        <div
-          style={{
-            position: "absolute",
-            top: "1rem",
-            left: 0,
-            right: 0,
-            zIndex: 999,
-          }}
-        >
+      <div
+        style={{
+          position: "absolute",
+          top: "1rem",
+          left: 0,
+          right: 0,
+          zIndex: 999,
+        }}
+      >
+        {showSuccessAlert && (
           <Alert
             severity="success"
             onClose={handleCloseSuccessAlert}
@@ -167,8 +165,19 @@ const PartnerModal = ({ open, item, handleClose }) => {
           >
             O contacto foi realizado com sucesso! Será contactado brevemente.
           </Alert>
-        </div>
-      )}
+        )}
+
+        {showErrorAlert && (
+          <Alert
+            severity="error"
+            onClose={handleCloseErrorAlert}
+            className="alert-div"
+          >
+            Algo correu mal. Tente novamente mais tarde.
+          </Alert>
+        )}
+      </div>
+
       <Modal
         open={open}
         onClose={onClose}

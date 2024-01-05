@@ -5,20 +5,21 @@ import FeedbackCard from "./FeedbackCard/FeedbackCard";
 import data from "./FeedbackCard/FeedbackInfo.json";
 import "./CardScroller.css";
 import EaseAppearMotion from "../Animations/AppearAnimation";
+import useIsMobile from "../../utils/utils";
+import { useState } from "react";
 
 const CardScroller = () => {
-  // const scrollCard = (e, right = false) => {
-  //   e.preventDefault();
-  //   let scroll = document.querySelector(".card-scroller");
-  //   scroll.scrollBy({
-  //     top: 0,
-  //     left: right ? 305 : -305,
-  //     behavior: "smooth",
-  //   });
-  // };
+  const [selected, setSelected] = useState(0);
+  const maxValue = 3;
+  const minValue = 1;
+  const isMobile = useIsMobile();
 
   const scrollRight = () => {
-    let scroll = document.getElementById("card-3");
+    const newValue = selected + 1;
+    const cardName = isMobile ? "card-" + newValue : "card-3";
+    selected < maxValue && setSelected(newValue);
+
+    let scroll = document.getElementById(cardName);
     scroll.scrollIntoView({
       behavior: "smooth",
       block: "nearest",
@@ -26,7 +27,11 @@ const CardScroller = () => {
     });
   };
   const scrollLeft = () => {
-    let scroll = document.getElementById("card-0");
+    const newValue = selected - 1;
+    const cardName = isMobile ? "card-" + newValue : "card-0";
+    selected > minValue && setSelected(newValue);
+
+    let scroll = document.getElementById(cardName);
     scroll.scrollIntoView({
       behavior: "smooth",
       block: "nearest",

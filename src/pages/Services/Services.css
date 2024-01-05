@@ -26,7 +26,11 @@
     margin: 0;
   }
 
-  .service-container {
-    margin: 0 1rem;
+  .title-services {
+    margin: 1rem !important;
+  }
+
+  .service {
+    height: 8rem;
   }
 }

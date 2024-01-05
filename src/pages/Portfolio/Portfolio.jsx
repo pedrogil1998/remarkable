@@ -28,10 +28,10 @@ const Portfolio = () => {
       <LightBackground zIndex={-1} />
       <div className="upper-container">
         <TitleText variant="h1">SÊ O PRÓXIMO</TitleText>
-      </div>
+      
       <SubLongText className="long-text" variant="h7" marginBottom="1rem">
         {"Alguns dos nossos trabalhos em redes sociais e identidade visual."}
-      </SubLongText>
+      </SubLongText></div>
       <Lottie options={lottieOptions} height={50} width={300} />
       {/* <DragScroller title="FINANCEIRO" icon={financeiro}/> */}
       <EaseAppearMotion>

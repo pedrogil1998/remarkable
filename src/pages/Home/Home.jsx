@@ -19,7 +19,7 @@ import { useState } from "react";
 const PartnerRemarkable = {
   id: 1,
   title: "Remarkable",
-  description: "Muda o teu futuro, junta-te a nós.",
+  description: "Mudo seu futuro, junte-se a nós.",
   type: "Marketing",
   image: maLogo,
   to_email: "pedrogilmoura27@gmail.com",

@@ -20,7 +20,7 @@ const Services = () => {
     <div className="service-container">
       <div className="service-content">
         <LightBackground zIndex={-1} />
-        <TitleText variant="h2">AS SOLUÇÕES PARA O SEU NEGÓCIO</TitleText>
+        <TitleText className="title-services" variant="h2">AS SOLUÇÕES PARA O SEU NEGÓCIO</TitleText>
         <SubLongText className="long-text" variant="h7">
           {"O que podemos fazer por si"}
         </SubLongText>

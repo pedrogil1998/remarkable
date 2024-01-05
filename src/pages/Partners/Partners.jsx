@@ -52,6 +52,7 @@ const Partners = () => {
     <div className="partners-container">
       <LightBackground zIndex={-1} />
       <Box
+        className="upper-container"
         sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
         <TitleText variant="h2">Mais do que uma agência de Marketing</TitleText>

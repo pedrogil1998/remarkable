@@ -1,12 +1,12 @@
-import letteringLogo from "./../../assets/letteringLogo.svg";
-import { Outlet, Link, useLocation } from "react-router-dom";
-import { Box, Typography } from "@mui/material";
-import { ContactButton } from "./NavBarMui";
 import { useState } from "react";
+import { Outlet, Link, useLocation } from "react-router-dom";
+import { Box } from "@mui/material";
+import { ContactButton } from "./NavBarMui";
+import letteringLogo from "./../../assets/letteringLogo.svg";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-import "./NavBar.css";
 import { CardText, NavText, UnderlinedNavText } from "../../utils/utils";
+import "./NavBar.css";
 
 const useUnderline = (path, text, location) => {
   return location.pathname === path ? (

@@ -3,7 +3,6 @@
   flex-direction: row;
   align-items: center;
   padding: 0 2rem 0 2rem;
-
   justify-content: center;
 }
 
@@ -49,6 +48,7 @@
   }
 
   .swiper {
+    width: 100%;
     margin-right: 0;
     padding-bottom: 2rem;
   }
@@ -57,13 +57,15 @@
     display: none;
   }
 
-  .boxContainer {
-    justify-content: space-between;
-  }
 
   .cardIcon {
+    display: none;
     height: 3em;
     width: 3em;
+  }
+
+  .boxContainer {
+    padding: 0;
   }
 }
 
