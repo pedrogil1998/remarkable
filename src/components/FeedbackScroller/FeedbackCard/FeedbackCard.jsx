@@ -49,7 +49,7 @@ const FeedbackCard = ({ name, subtitle = "", description, stars = 0, id }) => {
             color="error"
             onClick={() => setExpanded(!expanded)}
           >
-            {!expanded ? "Ler Mais" : "Colapsar"}
+            {!expanded ? "Ler Mais" : "Ler Menos"}
           </Button>
         </div>
       </CardContent>

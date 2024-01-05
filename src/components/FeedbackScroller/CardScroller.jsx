@@ -11,13 +11,13 @@ import { useState } from "react";
 const CardScroller = () => {
   const [selected, setSelected] = useState(0);
   const maxValue = 3;
-  const minValue = 1;
+  const minValue = 0;
   const isMobile = useIsMobile();
 
   const scrollRight = () => {
     const newValue = selected + 1;
     const cardName = isMobile ? "card-" + newValue : "card-3";
-    selected < maxValue && setSelected(newValue);
+    selected < maxValue && setSelected(isMobile ? newValue : 3);
 
     let scroll = document.getElementById(cardName);
     scroll.scrollIntoView({
@@ -29,7 +29,7 @@ const CardScroller = () => {
   const scrollLeft = () => {
     const newValue = selected - 1;
     const cardName = isMobile ? "card-" + newValue : "card-0";
-    selected > minValue && setSelected(newValue);
+    selected > minValue && setSelected(isMobile ? newValue : 0);
 
     let scroll = document.getElementById(cardName);
     scroll.scrollIntoView({
@@ -44,7 +44,10 @@ const CardScroller = () => {
       <EaseAppearMotion>
         <Box className="box-scroller">
           <div>
-            <button onClick={scrollLeft} className="arrow">
+            <button
+              onClick={scrollLeft}
+              className="arrow"
+            >
               <KeyboardDoubleArrowLeftIcon fontSize="large" />
             </button>
           </div>
@@ -63,7 +66,7 @@ const CardScroller = () => {
             })}
           </Box>
           <div>
-            <button onClick={scrollRight} className="arrow">
+            <button onClick={scrollRight}  className="arrow">
               <KeyboardDoubleArrowRightIcon fontSize="large" />
             </button>
           </div>

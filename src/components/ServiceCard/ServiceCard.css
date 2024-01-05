@@ -10,13 +10,14 @@
 .service-card-content {
   padding: 2rem;
   min-height: 300px;
-  background: linear-gradient(
+  /* background: linear-gradient(
     25deg,
     rgb(156, 119, 119) 0%,
     rgba(232, 232, 232, 1) 25%,
     rgba(232, 232, 232, 1) 75%,
     rgb(156, 119, 119) 100%
-  );
+  ); */
+  background-color: #fffff7;
   width: 300px;
 }
 

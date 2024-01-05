@@ -1,5 +1,6 @@
 .feedbackCard {
   margin: 1rem;
+  background-color: #fffff7 !important;
 }
 
 .feedbackCard:hover {

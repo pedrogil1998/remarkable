@@ -21,7 +21,7 @@ const Contacts = () => {
         <Box className="office-container">
           <TitleText>Contactos</TitleText>
           <Box display={"flex"} flexDirection={"column"}>
-          <a
+            <a
               className="instagram-container"
               href="https://instagram.com/remarkable.mkt"
               target="_blank"
@@ -43,12 +43,12 @@ const Contacts = () => {
             </Box>
             <a
               className="instagram-container"
-              href="https://maps.app.goo.gl/VVvcvGYDYmVCLo287"
+              href="https://maps.app.goo.gl/xXG8HKSjoyTgRoc59"
               target="_blank"
             >
               <MapsHomeWorkIcon />
-              <Typography  style={{ marginLeft: 5 }}>
-                Rua do Calvário, 4580-130 Paredes
+              <Typography style={{ marginLeft: 5 }}>  
+                Rua do Calvário, nº11, 2º, Escritório 15
               </Typography>
             </a>
           </Box>

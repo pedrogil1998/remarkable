@@ -55,10 +55,7 @@ const ServiceCard = ({ name, icon, description, last, hidden, wide }) => {
             {name}
           </CardTitleText>
           <Button variant="outlined" color="error" onClick={handleClick}>
-            <ThreeSixtyIcon
-              className="rotate-button"
-              
-            ></ThreeSixtyIcon>
+            Saber Mais
           </Button>
         </Box>
         <Box

@@ -222,7 +222,7 @@ const PartnerModal = ({ open, item, handleClose }) => {
                 {item?.description || "Esta empresa confia na reMArkable."}
               </Typography>
             </Box>
-            <Box margin="0 1rem 0 0">
+            <Box margin="0 1rem 0 0" className="form-inputs">
               <FormControl fullWidth sx={{ m: 1 }}>
                 <CssSelectInput
                   defaultValue="pessoal"
