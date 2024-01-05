@@ -44,7 +44,7 @@
 
 @media screen and (max-width: 960px) {
   .contacts-container {
-    margin: 1rem;
+    padding:  1rem;
     justify-content: center !important;
   }
 

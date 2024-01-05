@@ -41,6 +41,14 @@
   margin-left: 1rem;
 }
 
+.read-more-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
 @media screen and (max-width: 960px) {
   .card-title-text {
     font-size: large !important;
@@ -56,5 +64,9 @@
 
   .aspas {
     display: none;
+  }
+
+  .feedbackCardContent {
+    padding: 0 !important;
   }
 }

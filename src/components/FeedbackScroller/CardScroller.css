@@ -33,13 +33,14 @@
 
 @media screen and (max-width: 960px) {
   .box-scroller {
-    margin: 1rem;
+    margin: 0.5rem;
   }
   .arrow {
     font-size: 0;
   }
   .card-scroller {
     grid-auto-columns: 100%;
+    padding: 1rem ;
   }
 }
 

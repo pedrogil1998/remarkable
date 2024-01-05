@@ -53,7 +53,7 @@ const NavBar = ({}) => {
             <Link className="link" to="/partners" onClick={closeMobileMenu}>
               {useUnderline("/partners", "NETWORKING", location)}
             </Link>
-            <ContactButton href="#contacts" onClick={closeMobileMenu}>
+            <ContactButton href="#contacts" className="contact-button" onClick={closeMobileMenu}>
               <CardText>CONTACTOS</CardText>
             </ContactButton>
           </nav>
