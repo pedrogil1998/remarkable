@@ -13,8 +13,8 @@
   position: absolute;
   width: 0px;
   opacity: 0;
-  background-color: white;
-  box-shadow: #7c81815e 0px 0px 20px 2px;
+  background-color: #5a5a5a5e;
+  box-shadow: #ff0000b6 0px 0px 20px 2px;
   top: 100vh;
   bottom: 0px;
   left: 0px;

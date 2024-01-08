@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
 const variants = {
   hover: {
@@ -22,6 +23,8 @@ export const RotateAnimation = ({ children, ...rest }) => {
     </motion.div>
   );
 };
-RotateAnimation.proptypes = {};
+RotateAnimation.propTypes = {
+  children: PropTypes.any,
+};
 
 export default RotateAnimation;

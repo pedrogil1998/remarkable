@@ -16,7 +16,7 @@ const useUnderline = (path, text, location) => {
   );
 };
 
-const NavBar = ({}) => {
+const NavBar = () => {
   const location = useLocation();
   const [click, setClick] = useState(false);
 

@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
-
-export const EaseInAnimation = ({ children, delay, ...rest }) => {
+import PropTypes from "prop-types";
+export const EaseInAnimation = ({ children }) => {
   return (
     <AnimatePresence>
       <motion.div
@@ -9,7 +9,7 @@ export const EaseInAnimation = ({ children, delay, ...rest }) => {
         // // viewport={{ once: true }}
         // // whileInView={{ x: 0 }}
         // // exit={{ opacity: 0 }}
-      
+
         initial={{ x: 300, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         exit={{ x: -300, opacity: 0 }}
@@ -19,6 +19,9 @@ export const EaseInAnimation = ({ children, delay, ...rest }) => {
     </AnimatePresence>
   );
 };
-EaseInAnimation.proptypes = {};
+
+EaseInAnimation.propTypes = {
+  children: PropTypes.any,
+};
 
 export default EaseInAnimation;

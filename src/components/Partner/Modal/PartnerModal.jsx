@@ -1,11 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {
   Alert,
   Box,
   Button,
-  Fade,
   FormControl,
   MenuItem,
   Modal,
@@ -17,20 +16,34 @@ import "./PartnerModal.css";
 import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
 import { useForm } from "react-hook-form";
 import { partnerSchema } from "../../../utils/schemas/partnerSchema";
-import { ErrorText, SubTitleText, TitleText } from "../../../utils/utils";
+import { ErrorText, SubTitleText } from "../../../utils/utils";
 import background from "../../../assets/form/background.png";
 import ReCAPTCHA from "react-google-recaptcha";
 import ClearIcon from "@mui/icons-material/Clear";
+import emailjs from "@emailjs/browser";
 
 const TextInput = ({ name, register, required, ...rest }) => (
   <TextField {...register(name, { required })} {...rest} />
 );
+
+TextInput.propTypes = {
+  name: PropTypes.string,
+  register: PropTypes.func,
+  required: PropTypes.bool,
+};
 
 const SelectInput = ({ name, register, required, children, ...rest }) => (
   <Select {...register(name, { required })} {...rest}>
     {children}
   </Select>
 );
+
+SelectInput.propTypes = {
+  name: PropTypes.string,
+  register: PropTypes.func,
+  required: PropTypes.bool,
+  children: PropTypes.any,
+};
 
 const CssSelectInput = styled(SelectInput)({
   "& .MuiSelect-select": {
@@ -50,12 +63,6 @@ const CssTextField = styled(TextInput)({
   backgroundColor: "#ffffff",
 });
 
-const NoDisplayTextField = styled(TextInput)({
-  "& .MuiInputBase-input": {
-    display: "none",
-  },
-});
-
 const theme = createTheme({
   palette: {
     primary: {
@@ -72,7 +79,6 @@ const theme = createTheme({
 
 const PartnerModal = ({ open, item, handleClose }) => {
   const form = useRef();
-  const [formValues, setFormValues] = useState({});
   const [recaptcha, setRecaptcha] = useState(null);
   const {
     register,
@@ -115,15 +121,7 @@ const PartnerModal = ({ open, item, handleClose }) => {
     handleClose();
   };
   const onSubmit = (data) => {
-    // setValue("to_email", item?.to_email);
-    // setValue("partner_name", item?.title);
-    // handleShowSuccessAlert();
-    // handleCloseSuccessAlert();
-    handleShowErrorAlert();
-          handleCloseErrorAlert();
-    console.log(data);
-    //sendEmail(data);
-    onClose();
+    sendEmail(data);
   };
 
   const sendEmail = (data) => {
@@ -135,15 +133,20 @@ const PartnerModal = ({ open, item, handleClose }) => {
         "nmzOET3EouBYnpZfA"
       )
       .then(
-        (result) => {
+        () => {
           handleShowSuccessAlert();
           handleCloseSuccessAlert();
         },
-        (errors) => {
-          handleShowErrorAlert();
-          handleCloseErrorAlert();
+        (resError) => {
+          if (errors || resError) {
+            handleShowErrorAlert();
+            handleCloseErrorAlert();
+          }
         }
-      );
+      )
+      .finally(() => {
+        onClose();
+      });
   };
 
   return (
@@ -181,137 +184,132 @@ const PartnerModal = ({ open, item, handleClose }) => {
       <Modal
         open={open}
         onClose={onClose}
+        closeAfterTransition
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Fade in={open}>
-          <form
-            ref={form}
-            onSubmit={handleSubmit(onSubmit)}
-            className="modal-box"
-            style={{ backgroundImage: background }}
-          >
-            <Box margin="0.5rem">
-              <div className="close-icon-div">
-                <ClearIcon className="close-icon" onClick={onClose} />
+        <form
+          ref={form}
+          onSubmit={handleSubmit(onSubmit)}
+          className="modal-box"
+          style={{ backgroundImage: background }}
+        >
+          <Box margin="0.5rem">
+            <div className="close-icon-div">
+              <ClearIcon className="close-icon" onClick={onClose} />
+            </div>
+            <SubTitleText
+              id="modal-modal-contact"
+              variant="h3"
+              color="white"
+              align="center"
+              marginTop="1rem"
+            >
+              {"Formulário de Contacto"}
+            </SubTitleText>
+            <Typography
+              id="modal-modal-title"
+              variant="h5"
+              component="h2"
+              color="gray"
+              align="center"
+            >
+              {item?.title || "Title"}
+            </Typography>
+            <Typography
+              id="modal-modal-description"
+              sx={{ mt: "2rem" }}
+              color="gray"
+              align="justify"
+            >
+              {item?.description || "Esta empresa confia na reMArkable."}
+            </Typography>
+          </Box>
+          <Box margin="0 1rem 0 0">
+            <FormControl
+              fullWidth
+              sx={{
+                m: 1,
+              }}
+            >
+              <CssSelectInput
+                defaultValue="pessoal"
+                name="titular"
+                register={register}
+                style={{ marginBottom: "1.5rem" }}
+              >
+                <MenuItem value="organizacao">Organização</MenuItem>
+                <MenuItem value="pessoal">Pessoal</MenuItem>
+              </CssSelectInput>
+              <CssTextField
+                name="name"
+                register={register}
+                required
+                label={watchTitular === "pessoal" ? "Nome" : "Empresa"}
+                color={"primary"}
+                variant={"filled"}
+                style={{ marginBottom: !errors.name?.message && "1.5rem" }}
+              />
+              <ErrorText>{errors.name?.message}</ErrorText>
+
+              <CssTextField
+                name="contact"
+                register={register}
+                color={"primary"}
+                label="Contacto"
+                variant="filled"
+                style={{ marginBottom: !errors.contact?.message && "1.5rem" }}
+              />
+              <ErrorText>{errors.contact?.message}</ErrorText>
+              <CssTextField
+                name="email"
+                register={register}
+                color={"primary"}
+                label="E-mail"
+                variant="filled"
+                style={{ marginBottom: !errors.email?.message && "1.5rem" }}
+              />
+              <ErrorText>{errors.email?.message}</ErrorText>
+              <CssTextField
+                name="description"
+                register={register}
+                color={"tertiary"}
+                label="Descrição do Serviço"
+                multiline
+                rows={4}
+                variant="filled"
+                style={{
+                  marginBottom: !errors.description?.message && "1.5rem",
+                }}
+              />
+              <ErrorText>{errors.description?.message}</ErrorText>
+              <div className="recaptcha-div">
+                <ReCAPTCHA
+                  sitekey="6Lcx80UpAAAAALwzUnJHHiiw1QkMvlwFcufWhwW0"
+                  onChange={(val) => setRecaptcha(val)}
+                />
               </div>
-              <SubTitleText
-                id="modal-modal-contact"
-                variant="h3"
-                color="white"
-                align="center"
-                marginTop="1rem"
+              <Button
+                className="send-button"
+                size={"small"}
+                type="submit"
+                variant="outlined"
+                color="secondary"
+                disabled={!recaptcha}
               >
-                {"Formulário de Contacto"}
-              </SubTitleText>
-              <Typography
-                id="modal-modal-title"
-                variant="h5"
-                component="h2"
-                color="gray"
-                align="center"
-              >
-                {item?.title || "Title"}
-              </Typography>
-              <Typography
-                id="modal-modal-description"
-                sx={{ mt: "2rem" }}
-                color="gray"
-                align="justify"
-              >
-                {item?.description || "Esta empresa confia na reMArkable."}
-              </Typography>
-            </Box>
-            <Box margin="0 1rem 0 0" className="form-inputs">
-              <FormControl fullWidth sx={{ m: 1 }}>
-                <CssSelectInput
-                  defaultValue="pessoal"
-                  name="titular"
-                  register={register}
-                  style={{ marginBottom: "1.5rem" }}
-                >
-                  <MenuItem value="organizacao">Organização</MenuItem>
-                  <MenuItem value="pessoal">Pessoal</MenuItem>
-                </CssSelectInput>
-                <CssTextField
-                  name="name"
-                  register={register}
-                  required
-                  label={watchTitular === "pessoal" ? "Nome" : "Empresa"}
-                  color={"primary"}
-                  variant={"filled"}
-                  style={{ marginBottom: !errors.name?.message && "1.5rem" }}
-                />
-                <ErrorText>{errors.name?.message}</ErrorText>
-
-                <CssTextField
-                  name="contact"
-                  register={register}
-                  color={"primary"}
-                  label="Contacto"
-                  variant="filled"
-                  style={{ marginBottom: !errors.contact?.message && "1.5rem" }}
-                />
-                <ErrorText>{errors.contact?.message}</ErrorText>
-                <CssTextField
-                  name="email"
-                  register={register}
-                  color={"primary"}
-                  label="E-mail"
-                  variant="filled"
-                  style={{ marginBottom: !errors.email?.message && "1.5rem" }}
-                />
-                <ErrorText>{errors.email?.message}</ErrorText>
-                <CssTextField
-                  name="description"
-                  register={register}
-                  color={"tertiary"}
-                  label="Descrição do Serviço"
-                  multiline
-                  rows={4}
-                  variant="filled"
-                  style={{
-                    marginBottom: !errors.description?.message && "1.5rem",
-                  }}
-                />
-                <ErrorText>{errors.description?.message}</ErrorText>
-
-                {/* <NoDisplayTextField className="no-display" name="to_email">
-                {item?.to_email}
-              </NoDisplayTextField>
-              <NoDisplayTextField className="no-display" name="partner_name">
-                {item?.title}
-              </NoDisplayTextField> */}
-                {/* <ErrorText>{errors.to_email?.message}</ErrorText>
-              <ErrorText>{errors.partner_name?.message}</ErrorText> */}
-                <div className="recaptcha-div">
-                  <ReCAPTCHA
-                    sitekey="6Lcx80UpAAAAALwzUnJHHiiw1QkMvlwFcufWhwW0"
-                    onChange={(val) => setRecaptcha(val)}
-                  />
-                </div>
-
-                <Button
-                  sx={{ margin: "1rem 10rem 0" }}
-                  size={"small"}
-                  type="submit"
-                  variant="outlined"
-                  color="secondary"
-                  disabled={!recaptcha}
-                >
-                  Enviar
-                </Button>
-              </FormControl>
-            </Box>
-          </form>
-        </Fade>
+                Enviar
+              </Button>
+            </FormControl>
+          </Box>
+        </form>
       </Modal>
     </ThemeProvider>
   );
 };
 
-PartnerModal.proptype = {
-  open: PropTypes.obj,
+PartnerModal.propTypes = {
+  open: PropTypes.bool,
+  item: PropTypes.object,
   handleOpen: PropTypes.func,
   handleClose: PropTypes.func,
 };

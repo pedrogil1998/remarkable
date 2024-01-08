@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import PropTypes from "prop-types";
 import marketingdigital from "../../assets/marketingdigital.svg";
 import gestaofrotas from "../../assets/gestaofrotas.svg";
 import branding from "../../assets/branding.svg";
@@ -10,10 +9,10 @@ import siteseweb from "../../assets/siteseweb.svg";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import Contacts from "../../components/Contacts/Contacts";
 import { SubLongText, TitleText } from "../../utils/utils";
-import "./Services.css";
-import EaseAppearMotion from "../../components/Animations/AppearAnimation";
 import data from "../../components/ServiceCard/ServiceCardInfo.json";
 import LightBackground from "../../components/Animations/LightBackground/LightBackground";
+import "./Services.css";
+import EaseAppearMotionAnimate from "../../components/Animations/AppearAnimationAnimate";
 
 const Services = () => {
   return (
@@ -25,7 +24,7 @@ const Services = () => {
           {"O que podemos fazer por si"}
         </SubLongText>
 
-        <EaseAppearMotion className="lines-content service-box">
+        <EaseAppearMotionAnimate className="lines-content service-box">
           <Box className="service-line-box">
             <ServiceCard
               name={data.services[0].name}
@@ -70,7 +69,7 @@ const Services = () => {
               description={data.services[6].description}
             />
           </Box>
-        </EaseAppearMotion>
+        </EaseAppearMotionAnimate>
       </div>
       <Contacts />
     </div>

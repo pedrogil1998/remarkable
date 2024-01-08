@@ -1,8 +1,7 @@
-import PropTypes from "prop-types";
 import mission from "./../../assets/mission.svg";
 import vision from "./../../assets/vision.svg";
 import values from "./../../assets/values.svg";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import Contacts from "../../components/Contacts/Contacts";
 import {
   LongText,
@@ -13,15 +12,13 @@ import {
 import "./About.css";
 import "../../components/Animations/LightBackground/LightBackground.css";
 import EaseAppearMotion from "../../components/Animations/AppearAnimation";
-import EaseInAnimation from "../../components/Animations/EaseInAnimation";
 import TextInAnimation from "../../components/Animations/TextInAnimation";
 import LightBackground from "../../components/Animations/LightBackground/LightBackground";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import { useState } from "react";
 import { textValues } from "./values";
-import { motion, AnimatePresence } from "framer-motion";
-import FaqAccordion from "../../components/FaqAccordion/FaqAccordion";
+import { motion } from "framer-motion";
 
 const arrayContent = [
   { value: "MISSÃO", image: mission, text: textValues[0] },

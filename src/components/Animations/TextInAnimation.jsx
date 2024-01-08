@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
-export const TextInAnimation = ({ children, delay, ...rest }) => {
+export const TextInAnimation = ({ children }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -16,6 +17,8 @@ export const TextInAnimation = ({ children, delay, ...rest }) => {
     </motion.div>
   );
 };
-TextInAnimation.proptypes = {};
+TextInAnimation.propTypes = {
+  children: PropTypes.any,
+};
 
 export default TextInAnimation;

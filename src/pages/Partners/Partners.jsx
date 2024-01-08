@@ -1,26 +1,19 @@
-import PropTypes from "prop-types";
 import { PartnerData } from "../../components/Partner/PartnerData";
 import { useState } from "react";
 import "./Partners.css";
-import { Box, Button, ToggleButtonGroup, Typography } from "@mui/material";
+import { Box, ToggleButtonGroup, Typography } from "@mui/material";
 import { PartnerButton } from "../../components/Partner/PartnerMui";
 import Contacts from "../../components/Contacts/Contacts";
-import EaseAppearMotion from "../../components/Animations/AppearAnimation";
 import PartnerModal from "../../components/Partner/Modal/PartnerModal";
 import LightBackground from "../../components/Animations/LightBackground/LightBackground";
 import { SubLongText, TitleText } from "../../utils/utils";
 import TuneIcon from "@mui/icons-material/Tune";
-import ContactMailIcon from "@mui/icons-material/ContactMail";
-import PanToolAltIcon from "@mui/icons-material/PanToolAlt";
-import ChatIcon from "@mui/icons-material/Chat";
 import FeedIcon from "@mui/icons-material/Feed";
-import { Blurhash } from "react-blurhash";
+import EaseAppearMotionAnimate from "../../components/Animations/AppearAnimationAnimate";
 
 const Partners = () => {
   const [data, setData] = useState(PartnerData);
-  const [collection, setCollection] = useState([
-    ...new Set(PartnerData.map((item) => item.type)),
-  ]);
+  const collection = [...new Set(PartnerData.map((item) => item.type))];
 
   const galleryFilter = (type) => {
     const filteredData = PartnerData.filter((item) => item.type == type);
@@ -31,21 +24,11 @@ const Partners = () => {
   const [open, setOpen] = useState({ item: null, open: false });
   const handleOpen = (item) => setOpen({ item: item, open: true });
   const handleClose = () => setOpen({ item: null, open: false });
-  const [isLoaded, setLoaded] = useState(false);
-  const [isLoadStarted, setLoadStarted] = useState(false);
 
   const [alignment, setAlignment] = useState("todos");
 
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
-  };
-
-  const handleLoad = () => {
-    setLoaded(true);
-  };
-
-  const handleLoadStarted = () => {
-    setLoadStarted(true);
   };
 
   return (
@@ -59,7 +42,6 @@ const Partners = () => {
         <SubLongText className="long-text" variant="h7">
           {"Uma rede de NETWORKING"}
         </SubLongText>
-
         <SubLongText className="long-text" variant="h7">
           {
             "O nosso trabalho é ajudá-lo a fazer o seu. Precisa de algum serviço noutra área? Não perca tempo."
@@ -92,7 +74,7 @@ const Partners = () => {
           </ToggleButtonGroup>
         </div>
 
-        <EaseAppearMotion>
+        <EaseAppearMotionAnimate>
           <div className="gallery-container">
             {data.map((item) => (
               <div
@@ -104,20 +86,7 @@ const Partners = () => {
                   src={item.image}
                   height={300}
                   width={300}
-                  onLoad={handleLoad}
-                  //beforeLoad={handleLoadStarted}
                 />
-                {!isLoaded && isLoadStarted && (
-                  <Blurhash
-                    hash={image.imageHash}
-                    width={300}
-                    height={300}
-                    resolutionX={32}
-                    resolutionY={32}
-                    punch={1}
-                  />
-                )}
-                {/* <img loading="lazy" src={item.image} /> */}
                 <div className="gallery-item-overlay">
                   <FeedIcon sx={{ fontSize: "4.5rem" }} />
                 </div>
@@ -129,7 +98,7 @@ const Partners = () => {
               handleClose={handleClose}
             ></PartnerModal>
           </div>
-        </EaseAppearMotion>
+        </EaseAppearMotionAnimate>
       </Box>
       <Typography variant="h6" style={{ marginBottom: "2rem" }}>
         O seu negócio também pode pertencer à nossa rede. Entre em contacto

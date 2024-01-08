@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import "./LightBackground.css";
 
-export const LightBackground = ({ children, zIndex, ...rest }) => {
+export const LightBackground = ({ children, zIndex }) => {
   return (
     <div className="light-container">
       {children}
@@ -13,6 +14,9 @@ export const LightBackground = ({ children, zIndex, ...rest }) => {
     </div>
   );
 };
-LightBackground.proptypes = {};
+LightBackground.propTypes = {
+  children: PropTypes.any,
+  zIndex: PropTypes.number,
+};
 
 export default LightBackground;

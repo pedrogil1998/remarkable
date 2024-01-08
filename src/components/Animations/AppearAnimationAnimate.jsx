@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
-export const EaseAppearMotion = ({ children, ...rest }) => {
+export const EaseAppearMotionAnimate = ({ children, ...rest }) => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
       viewport={{ once: true }}
       {...rest}
@@ -14,9 +14,8 @@ export const EaseAppearMotion = ({ children, ...rest }) => {
     </motion.div>
   );
 };
-
-EaseAppearMotion.propTypes = {
+EaseAppearMotionAnimate.propTypes = {
   children: PropTypes.any,
 };
 
-export default EaseAppearMotion;
+export default EaseAppearMotionAnimate;

@@ -40,9 +40,15 @@
   margin: 4rem;
 }
 
+.send-button {
+  margin: 1rem 10rem 0 !important;
+}
 @media screen and (max-width: 960px) {
   .modal-box {
     width: 80%;
+  }
+  .send-button {
+    margin: 1.5rem !important;
   }
 }
 
