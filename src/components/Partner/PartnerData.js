@@ -13,7 +13,7 @@ export const PartnerData = [
   {
     id: 1,
     title: "Civilworks",
-    description: "",
+    description: "A CivilWorks assume-se como uma empresa de Engenharia e Consultoria, tendo assim os seguintes serviços: Trabalhos de Consultoria na Área de Engenharia, Peritagens e Vistorias, Engenharia Forense, Fiscalizações de Obra, Gestão Contratual de Projetos, Avaliação Imobiliária, Análise de propostas de Empreitadas, Projetos de Especialidades, Execução de Empreitadas",
     type: "Engenharia",
     image: civilworks,
     imageHash: "LUK_|E~V%MxtozfPfPj[xuj[Rjay",

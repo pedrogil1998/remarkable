@@ -3,7 +3,6 @@ import useIsMobile, {
   LongText,
   SpanKdam,
   SubLongText,
-  SubTitleText,
   TitleText,
 } from "../../utils/utils";
 import CardScroller from "../../components/FeedbackScroller/CardScroller";
@@ -12,7 +11,6 @@ import "./Home.css";
 import EaseAppearMotion from "../../components/Animations/AppearAnimation";
 import maLogo from "../../assets/maLogo.svg";
 import AdsClickIcon from "@mui/icons-material/AdsClick";
-import TouchAppIcon from "@mui/icons-material/TouchApp";
 import PartnerModal from "../../components/Partner/Modal/PartnerModal";
 import { useState } from "react";
 
@@ -26,7 +24,7 @@ const PartnerRemarkable = {
   services: ["Marketing"],
 };
 
-const Home = ({}) => {
+const Home = () => {
   const isMobile = useIsMobile();
   const scrollHover = () => {
     let scroll = document.querySelector(".home-container");

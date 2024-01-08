@@ -10,6 +10,7 @@ import { useState } from "react";
 
 const CardScroller = () => {
   const [selected, setSelected] = useState(0);
+  const [expanded, setExpanded] = useState(false);
   const maxValue = 3;
   const minValue = 0;
   const isMobile = useIsMobile();
@@ -61,6 +62,8 @@ const CardScroller = () => {
                   subtitle={obj.subtitle}
                   description={obj.description}
                   stars={obj.stars}
+                  expanded={expanded}
+                  setExpanded={setExpanded}
                 />
               );
             })}

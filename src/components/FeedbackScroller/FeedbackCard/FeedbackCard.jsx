@@ -3,14 +3,26 @@ import { Box, Button, Card, CardContent } from "@mui/material";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import aspas from "../../../assets/aspas.svg";
 import { remarkableRed } from "../../../utils/colors";
-import { CardText, CardTitleText } from "../../../utils/utils";
+import useIsMobile, { CardText, CardTitleText } from "../../../utils/utils";
 import "./FeedbackCard.css";
 import { useState } from "react";
 
-const FeedbackCard = ({ name, subtitle = "", description, stars = 0, id }) => {
-  const [expanded, setExpanded] = useState(false);
-  let text = !expanded ? description.substring(0, 218) + "..." : description;
+const FeedbackCard = ({
+  name,
+  subtitle = "",
+  description,
+  stars = 0,
+  id,
+  expanded,
+  setExpanded,
+}) => {
+  const [localExpanded, setLocalExpanded] = useState(false);
+  let text = (!expanded && !localExpanded) ? description.substring(0, 218) + "..." : description;
+  const isMobile = useIsMobile();
 
+  const expandFunc = () => {
+    isMobile ? setExpanded(!expanded) : setLocalExpanded(!localExpanded);
+  };
   return (
     <Card id={id} className="feedbackCard" sx={{ borderRadius: "10px" }}>
       <CardContent className="feedbackCardContent">
@@ -44,12 +56,8 @@ const FeedbackCard = ({ name, subtitle = "", description, stars = 0, id }) => {
           {text}
         </CardText>
         <div className="read-more-div">
-          <Button
-            variant="outlined"
-            color="error"
-            onClick={() => setExpanded(!expanded)}
-          >
-            {!expanded ? "Ler Mais" : "Ler Menos"}
+          <Button variant="outlined" color="error" onClick={expandFunc}>
+            {(!expanded && !localExpanded) ? "Ler Mais" : "Ler Menos"}
           </Button>
         </div>
       </CardContent>
@@ -57,11 +65,14 @@ const FeedbackCard = ({ name, subtitle = "", description, stars = 0, id }) => {
   );
 };
 
-FeedbackCard.proptypes = {
+FeedbackCard.propTypes = {
   name: PropTypes.string,
   subtitle: PropTypes.string,
   description: PropTypes.string,
   stars: PropTypes.number,
+  id: PropTypes.number,
+  expanded: PropTypes.bool,
+  setExpanded: PropTypes.func,
 };
 
 export default FeedbackCard;
