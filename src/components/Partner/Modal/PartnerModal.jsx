@@ -12,7 +12,6 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import "./PartnerModal.css";
 import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
 import { useForm } from "react-hook-form";
 import { partnerSchema } from "../../../utils/schemas/partnerSchema";
@@ -21,6 +20,8 @@ import background from "../../../assets/form/background.png";
 import ReCAPTCHA from "react-google-recaptcha";
 import ClearIcon from "@mui/icons-material/Clear";
 import emailjs from "@emailjs/browser";
+import "./PartnerModal.css";
+import CompanyInfo from "../CompanyInfo/CompanyInfo";
 
 const TextInput = ({ name, register, required, ...rest }) => (
   <TextField {...register(name, { required })} {...rest} />
@@ -194,10 +195,11 @@ const PartnerModal = ({ open, item, handleClose }) => {
           className="modal-box"
           style={{ backgroundImage: background }}
         >
+          <div className="close-icon-div">
+            <ClearIcon className="close-icon" onClick={onClose} />
+          </div>
+          <CompanyInfo item={item} />
           <Box margin="0.5rem">
-            <div className="close-icon-div">
-              <ClearIcon className="close-icon" onClick={onClose} />
-            </div>
             <SubTitleText
               id="modal-modal-contact"
               variant="h3"
@@ -207,23 +209,6 @@ const PartnerModal = ({ open, item, handleClose }) => {
             >
               {"Formulário de Contacto"}
             </SubTitleText>
-            <Typography
-              id="modal-modal-title"
-              variant="h5"
-              component="h2"
-              color="gray"
-              align="center"
-            >
-              {item?.title || "Title"}
-            </Typography>
-            <Typography
-              id="modal-modal-description"
-              sx={{ mt: "2rem" }}
-              color="gray"
-              align="justify"
-            >
-              {item?.description || "Esta empresa confia na reMArkable."}
-            </Typography>
           </Box>
           <Box margin="0 1rem 0 0">
             <FormControl
