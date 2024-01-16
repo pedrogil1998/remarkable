@@ -17,14 +17,11 @@ const CompanyInfo = ({ item }) => {
   } = item;
   return (
     <Box className="info-box">
-      <img src={image}></img>
+      <div>
+        <img className="image-company" src={image}></img>
+      </div>
       <Box className="right-box">
-        <SubTitleText
-          variant="h3"
-          color="white"
-          align="center"
-          marginTop="1rem"
-        >
+        <SubTitleText variant="h3" color="white" marginTop="1rem">
           {title}
         </SubTitleText>
         <Typography sx={{ mt: "2rem" }} color="lightgray" align="justify">
