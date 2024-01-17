@@ -2,6 +2,8 @@ import civilworks from "../../assets/Parceiros/civilworks.jpg";
 import flavio from "../../assets/Parceiros/flavio.jpg";
 import farmotive from "../../assets/Parceiros/farmotive.jpg";
 import tisoauto from "../../assets/Parceiros/tisoauto.jpg";
+import tisoauto1 from "../../assets/Parceiros/tisoauto/tisoauto1.jpg";
+import farmotive1 from "../../assets/Parceiros/farmotive/farmotive1.jpg";
 import emilia from "../../assets/Parceiros/emilia.jpg";
 import novum from "../../assets/Parceiros/novum.jpg";
 import carlosSeabra from "../../assets/Parceiros/carlosSeabra.jpg";
@@ -17,6 +19,7 @@ export const PartnerData = [
       "A CivilWorks assume-se como uma empresa de Engenharia e Consultoria.",
     type: "Engenharia",
     image: civilworks,
+    sliderImages: [],
     to_email: "mmagalhaes@civilworks.pt",
     services: [
       "Trabalhos de Consultoria na Área de Engenharia",
@@ -29,9 +32,9 @@ export const PartnerData = [
       "Projetos de Especialidades",
       "Execução de Empreitadas",
     ],
-    address: "",
-    addressLink: "",
-    phone: "",
+    address: "Rua do Calvário, nº11, 2º, Escritório 15",
+    addressLink: "https://maps.app.goo.gl/rjfG8jQVnHR3nhdG7",
+    phone: "917 231 259",
   },
   {
     id: 2,
@@ -40,6 +43,7 @@ export const PartnerData = [
     description:
       "Mais do que um fornecedor, um parceiro da sua oficina. A Tisoauto tem uma visão 360º para os seus clientes profissionais. Empresa dedicada à venda exclusiva de Peças de Automóveis para clientes Profissionais.",
     image: tisoauto,
+    sliderImages: [tisoauto, tisoauto1],
     to_email: "ruimoreira@tisoauto.pt",
     services: [
       "Distribuição",
@@ -49,9 +53,9 @@ export const PartnerData = [
       "Ferramentas para oficinas",
       "Ferramentas de diagnóstico",
     ],
-    address: "",
-    addressLink: "",
-    phone: "255 310 230",
+    address: "Z.I. da Longra Fração E R/C Rande 4650-328 Felgueiras",
+    addressLink: "https://maps.app.goo.gl/A27tjRB25ioVS51c8",
+    phone: "289 882 377",
   },
   {
     id: 3,
@@ -60,6 +64,7 @@ export const PartnerData = [
       "A Farmotive assume-se como uma oficina Multimarcas especializada no grupo VAG.",
     type: "Setor Automóvel",
     image: farmotive,
+    sliderImages: [farmotive, farmotive1],
     to_email: "geral@farmotive.pt",
     services: [
       "Manutenção Oficial",
@@ -68,9 +73,9 @@ export const PartnerData = [
       "Serviço de Pré-Inspeção",
       "Lavagens",
     ],
-    address: "",
-    addressLink: "",
-    phone: "",
+    address: "Parque Multiusos do Areal Gordo Lote 2 Fração E 8005-409 Faro",
+    addressLink: "https://maps.app.goo.gl/wNH8KCv5mG2fH52C8",
+    phone: "289 882 021",
   },
   {
     id: 4,
@@ -78,6 +83,7 @@ export const PartnerData = [
     description: "Fisioterapeuta",
     type: "Saúde",
     image: flavio,
+    sliderImages: [],
     to_email: "fisioflaviomagalhaes@gmail.com",
     services: [
       "Fisioterapia Espcializada",
@@ -89,9 +95,9 @@ export const PartnerData = [
       "Reeducação Postural Global",
       "Massagens",
     ],
-    address: "",
-    addressLink: "",
-    phone: "",
+    address: "Rua de Sambade n°318 4560-833 Guilhufe-Urro Penafiel",
+    addressLink: "https://maps.app.goo.gl/zofjvpNvQmurtBgu9",
+    phone: "910 798 922",
   },
   {
     id: 5,
@@ -99,11 +105,12 @@ export const PartnerData = [
     description: "Advogada",
     type: "Advocacia",
     image: emilia,
+    sliderImages: [],
     to_email: "emiliammaia-50850P@adv.oa.pt",
     services: ["Advocacia", "Consultoria Júridica"],
-    address: "",
-    addressLink: "",
-    phone: "",
+    address: "Rua do Calvário, nº11, 2º, Escritório 15",
+    addressLink: "https://maps.app.goo.gl/rjfG8jQVnHR3nhdG7",
+    phone: "917 264 193",
   },
   {
     id: 6,
@@ -111,11 +118,12 @@ export const PartnerData = [
     type: "Contabilidade",
     description: "Contabilista",
     image: carlosSeabra,
+    sliderImages: [],
     to_email: "geral@cscontabilidade.pt",
     services: ["Contabilidade", "Consultoria", "Jurisdição", "Portugal2030"],
-    address: "",
-    addressLink: "",
-    phone: "",
+    address: "Praceta da Cidade 18, 4580-204 Paredes",
+    addressLink: "https://maps.app.goo.gl/mxM2msmApcVN1K8t5",
+    phone: "916 135 746",
   },
   {
     id: 7,
@@ -123,6 +131,7 @@ export const PartnerData = [
     description: "",
     type: "Media",
     image: novum,
+    sliderImages: [],
     to_email: "geral@novumcanal.pt",
     services: [
       "Cobertura de Eventos",
@@ -130,9 +139,9 @@ export const PartnerData = [
       "Inauguração de Espaços",
       "Cartões de Publicidade",
     ],
-    address: "",
-    addressLink: "",
-    phone: "",
+    address: "Avenida dos Bombeiros Voluntários loja nº36, 4580-053 Paredes",
+    addressLink: "https://maps.app.goo.gl/YYDJHcAJTFpmrLxG6",
+    phone: "912 093 669",
   },
   {
     id: 8,
@@ -140,11 +149,12 @@ export const PartnerData = [
     description: "",
     type: "Media",
     image: routeFilms,
+    sliderImages: [],
     to_email: "routefilmspt@gmail.com",
     services: ["Cinemamatografia", "Audivisuais", "Fotografia", "Design"],
     address: "",
     addressLink: "",
-    phone: "",
+    phone: "934 754 355",
   },
   {
     id: 9,
@@ -152,6 +162,7 @@ export const PartnerData = [
     description: "",
     type: "Media",
     image: oceanPace,
+    sliderImages: [],
     to_email: "geral@oceanpacevisuals.pt",
     services: [
       "Vídeo e Fotografia para Eventos",
@@ -160,7 +171,7 @@ export const PartnerData = [
     ],
     address: "",
     addressLink: "",
-    phone: "",
+    phone: "964 493 850",
   },
   {
     id: 10,
@@ -168,10 +179,19 @@ export const PartnerData = [
     description: "Advogada",
     type: "Advocacia",
     image: sandraTeixeira,
+    sliderImages: [],
     to_email: "sandratgomes-10909p@adv.oa.pt",
-    services: ["Advocacia", "Consultoria Júridica"],
-    address: "",
-    addressLink: "",
-    phone: "",
+    services: [
+      "Direito de Família",
+      "Direito dos Estrangeiros",
+      "Insolvências",
+      "Arrendamento",
+      "Cobranças",
+      "Contratos",
+      "Consultas Online",
+    ],
+    address: "Praceta Capela do Calvário, n.º 34, 4580-059 Paredes",
+    addressLink: "https://maps.app.goo.gl/fLMwpBJnXF1RQwPv7",
+    phone: "917 640 594",
   },
 ];
