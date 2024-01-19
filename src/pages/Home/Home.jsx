@@ -17,11 +17,20 @@ import { useState } from "react";
 const PartnerRemarkable = {
   id: 1,
   title: "Remarkable",
-  description: "Mudo seu futuro, junte-se a nós.",
+  description: "Mude o seu futuro, junte-se a nós.",
   type: "Marketing",
   image: maLogo,
-  to_email: "pedrogilmoura27@gmail.com",
-  services: ["Marketing"],
+  to_email: "geral@remarkablemkt.pt",
+  phone: "+351 917 264 157",
+  services: [
+    "Marketing Digital",
+    "Gestão de Frotas",
+    "Branding | Identidade Visual",
+    "Gestão de Redes Sociais",
+    "Planos de Marketing e Comunicação",
+    "Sites e Aplicações Web",
+    "Plano 360º",
+  ],
 };
 
 const Home = () => {
