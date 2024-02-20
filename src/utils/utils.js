@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useEffect, useState } from "react";
+import { remarkableRed } from "./colors";
 
 export const LongText = styled(Typography)((props) => ({
   fontFamily: "Arimo",
@@ -36,16 +37,16 @@ export const ErrorText = styled(Typography)((props) => ({
 
 export const NavText = styled(Typography)((props) => ({
   fontFamily: "Arimo",
+  transition: "0.3s",
   "&:hover": {
-    textDecoration: "underline",
-    textUnderlineOffset: "4px",
+    color: remarkableRed
   },
 }));
 
 export const UnderlinedNavText = styled(Typography)((props) => ({
   fontFamily: "Arimo",
-  textDecoration: "underline",
-  textUnderlineOffset: "4px",
+  transition: "0.3s",
+  color: remarkableRed
 }));
 
 export const ServiceCardText = styled(Typography)((props) => ({
