@@ -40,6 +40,9 @@ const Contacts = () => {
               <Typography style={{ marginLeft: 5 }}>
                 +351 917 264 157
               </Typography>
+              <Typography style={{ marginLeft: 5, fontSize: "0.7rem" }}>
+                {"(Custo de chamada para rede móvel nacional)"}
+              </Typography>
             </Box>
             <a
               className="instagram-container"
@@ -47,7 +50,7 @@ const Contacts = () => {
               target="_blank"
             >
               <MapsHomeWorkIcon />
-              <Typography style={{ marginLeft: 5 }}>  
+              <Typography style={{ marginLeft: 5 }}>
                 Rua do Calvário, nº11, 2º, Escritório 15
               </Typography>
             </a>
