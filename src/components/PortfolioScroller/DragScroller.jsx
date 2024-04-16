@@ -14,6 +14,8 @@ import imagesImo from "../../assets/Imobiliário";
 import imagesRet from "../../assets/Retalho";
 import imagesSau from "../../assets/Saude";
 import imagesOutros from "../../assets/Outros";
+import imagesCont from "../../assets/Contabilidade";
+
 import "./DragScroller.css";
 import { useState } from "react";
 
@@ -74,6 +76,29 @@ const DragScroller = ({ title, background, icon }) => {
             className="swiper"
           >
             {Object.values(imagesEng).map((image, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <img
+                    src={image}
+                    className="sliderImage"
+                    alt="slide_image"
+                    onClick={() =>
+                      setOpen({ item: image, open: isMobile ? true : false })
+                    }
+                  />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        ) : title === "CONTABILIDADE" ? (
+          <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            loop={true}
+            slidesPerView={3}
+            className="swiper"
+          >
+            {Object.values(imagesCont).map((image, index) => {
               return (
                 <SwiperSlide key={index}>
                   <img
